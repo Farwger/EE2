@@ -1737,3 +1737,33 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/scripts/dexnav.inc"
 	.include "data/scripts/battle_frontier.inc"
 	.include "data/scripts/apricorn_tree.inc"
+
+	.include "data/maps/BersketCity/scripts.inc"
+
+	.include "data/maps/OldaleRuins/scripts.inc"
+
+	.include "data/maps/RustboroHarbor/scripts.inc"
+
+	.include "data/maps/BersketCity_FoodStorage/scripts.inc"
+
+	.include "data/maps/BersketCity_restaurant/scripts.inc"
+
+	.include "data/maps/BersketCity_Lab/scripts.inc"
+
+	.include "data/maps/BersketCity_PokemonCenter_1F/scripts.inc"
+
+	.include "data/maps/BersketCity_HighRise1/scripts.inc"
+
+	.include "data/maps/BersketCity_Mart/scripts.inc"
+
+	.include "data/maps/BersketCity_HighRise3/scripts.inc"
+
+	.include "data/maps/BersketCity_House3/scripts.inc"
+
+	.include "data/maps/BersketCity_HighRise2/scripts.inc"
+
+	.include "data/maps/BersketCity_House1/scripts.inc"
+
+	.include "data/maps/BersketCity_House2/scripts.inc"
+
+	.include "data/maps/BersketCity_PokemonCenter_2F/scripts.inc"

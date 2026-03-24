@@ -74,7 +74,8 @@
     "gMapGroup_IndoorFiveIslandRoute_Frlg",
     "gMapGroup_IndoorTwoIslandRoute_Frlg",
     "gMapGroup_IndoorSixIslandRoute_Frlg",
-    "gMapGroup_IndoorSevenIslandRoute_Frlg"
+    "gMapGroup_IndoorSevenIslandRoute_Frlg",
+    "gMapGroup_IndoorBersket"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -133,7 +134,10 @@
     "Underwater_Route128",
     "Underwater_Route129",
     "Underwater_Route105",
-    "Underwater_Route125"
+    "Underwater_Route125",
+    "BersketCity",
+    "OldaleRuins",
+    "RustboroHarbor"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
@@ -1160,5 +1164,19 @@
   ],
   "gMapGroup_IndoorSevenIslandRoute_Frlg": [
     "SevenIsland_SevaultCanyon_House_Frlg"
+  ],
+  "gMapGroup_IndoorBersket": [
+    "BersketCity_FoodStorage",
+    "BersketCity_restaurant",
+    "BersketCity_Lab",
+    "BersketCity_PokemonCenter_1F",
+    "BersketCity_PokemonCenter_2F",
+    "BersketCity_Mart",
+    "BersketCity_HighRise1",
+    "BersketCity_HighRise2",
+    "BersketCity_HighRise3",
+    "BersketCity_House1",
+    "BersketCity_House2",
+    "BersketCity_House3"
   ]
 }

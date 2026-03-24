@@ -27,6 +27,16 @@
       "map": "MAP_ROUTE116",
       "offset": 0,
       "direction": "right"
+    },
+    {
+      "map": "MAP_BERSKET_CITY",
+      "offset": 50,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_RUSTBORO_HARBOR",
+      "offset": 30,
+      "direction": "left"
     }
   ],
   "object_events": [
@@ -233,8 +243,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
-      "x": 31,
-      "y": 36,
+      "x": 33,
+      "y": 34,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -247,8 +257,8 @@
   ],
   "warp_events": [
     {
-      "x": 27,
-      "y": 19,
+      "x": 30,
+      "y": 18,
       "elevation": 0,
       "dest_map": "MAP_RUSTBORO_CITY_GYM",
       "dest_warp_id": "0"
@@ -296,8 +306,8 @@
       "dest_warp_id": "1"
     },
     {
-      "x": 33,
-      "y": 19,
+      "x": 29,
+      "y": 8,
       "elevation": 0,
       "dest_map": "MAP_RUSTBORO_CITY_HOUSE1",
       "dest_warp_id": "0"
@@ -526,7 +536,7 @@
     {
       "type": "sign",
       "x": 23,
-      "y": 19,
+      "y": 20,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "RustboroCity_EventScript_GymSign"
@@ -557,7 +567,7 @@
     },
     {
       "type": "sign",
-      "x": 19,
+      "x": 22,
       "y": 49,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",

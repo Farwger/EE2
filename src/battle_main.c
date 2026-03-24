@@ -1948,6 +1948,16 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             monsCount = trainer->partySize;
         }
 
+        //if battle type flags & rotter
+        //determine what rotter party from scripted variable
+        //define rotter parties in some file
+        //set partyData to rotter party
+        //make a bunch of sParty_ files, one for each Rotter
+        //put them in an array
+        //variable gets the right one from array
+        //make sure to include the file/s
+        
+
         u32 monIndices[monsCount];
         DoTrainerPartyPool(trainer, monIndices, monsCount, battleTypeFlags);
 

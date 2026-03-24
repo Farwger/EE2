@@ -1,0 +1,22 @@
+mapscripts OldaleRuins_MapScripts {}
+
+script OldaleRuins_Sign {
+    msgbox("{RIGHT_ARROW} Oldale Ruins", MSGBOX_SIGN)
+    end
+}
+
+script OldaleRuins_Grunt1 {
+    trainerbattle_single (TRAINER_GRUNT_OLDALE_RUINS_1, OldaleRuins_Grunt1_Intro, OldaleRuins_Grunt1_Defeat)
+    clearflag(FLAG_HIDE_OLDALE_RUIN_ALDEN)
+    msgbox(format("You may have defeated me, but if you go in there, you'll be in for a world of hurt!"), MSGBOX_NPC)
+    end
+}
+text OldaleRuins_Grunt1_Intro {
+    "What're you doing out here, kid?\n" 
+    "You're trespassing."
+}
+text OldaleRuins_Grunt1_Defeat {
+    "These ruins belong to Team Magma!"
+}
+
+// "See those trees blocking the bridge? They grew up overnight! The grown-ups are too superstitious to try and clear them."

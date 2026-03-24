@@ -27,6 +27,11 @@
       "map": "MAP_ROUTE102",
       "offset": 0,
       "direction": "left"
+    },
+    {
+      "map": "MAP_OLDALE_RUINS",
+      "offset": 0,
+      "direction": "right"
     }
   ],
   "object_events": [
@@ -88,13 +93,6 @@
   ],
   "warp_events": [
     {
-      "x": 5,
-      "y": 7,
-      "elevation": 0,
-      "dest_map": "MAP_OLDALE_TOWN_HOUSE1",
-      "dest_warp_id": "0"
-    },
-    {
       "x": 15,
       "y": 16,
       "elevation": 0,
@@ -113,6 +111,13 @@
       "y": 6,
       "elevation": 0,
       "dest_map": "MAP_OLDALE_TOWN_MART",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 5,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_OLDALE_TOWN_HOUSE1",
       "dest_warp_id": "0"
     }
   ],
