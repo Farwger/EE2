@@ -8225,6 +8225,10 @@ static inline void MulByTypeEffectiveness(struct BattleContext *ctx, uq4_12_t *m
             RecordAbilityBattle(ctx->battlerAtk, ctx->abilityAtk);
     }
 
+    if (GetMoveEffect(ctx->move) == EFFECT_ABSORB_GULP && defType == TYPE_WATER)
+        mod = UQ_4_12(1.3);
+    if (GetMoveEffect(ctx->move) == EFFECT_ABSORB_LICK && defType == TYPE_ICE)
+        mod = UQ_4_12(1.3);
     if (ctx->moveType == TYPE_PSYCHIC && defType == TYPE_DARK && gBattleMons[ctx->battlerDef].volatiles.miracleEye && mod == UQ_4_12(0.0))
         mod = UQ_4_12(1.0);
     if (GetMoveEffect(ctx->move) == EFFECT_SUPER_EFFECTIVE_ON_ARG && defType == GetMoveArgType(ctx->move) && !ctx->isAnticipation)

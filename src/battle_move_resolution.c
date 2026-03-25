@@ -2205,6 +2205,8 @@ static enum MoveEndResult MoveEndAbsorb(void)
         break;
     case EFFECT_ABSORB:
     case EFFECT_DREAM_EATER:
+    case EFFECT_ABSORB_GULP:
+    case EFFECT_ABSORB_LICK:
         if (gBattleStruct->moveDamage[gBattlerTarget] > 0
          && IsBattlerTurnDamaged(gBattlerTarget, INCLUDING_SUBSTITUTES)
          && IsBattlerAlive(gBattlerAttacker))

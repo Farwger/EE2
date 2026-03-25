@@ -4794,33 +4794,42 @@ Class: Leader
 Pic: Leader Roxanne
 Gender: Female
 Music: Female
-Items: Potion / Potion
 Double Battle: No
 AI: Basic Trainer
+Difficulty: Normal
 
-Geodude
-Level: 12
+Kabuto
+Level: 9
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Tackle
-- Defense Curl
+- Scratch
+- Aqua Jet
 - Rock Throw
-- Rock Tomb
+- Absorb
 
-Geodude
-Level: 12
+Lileep
+Level: 9
+Ability: Storm Drain
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Tackle
-- Defense Curl
-- Rock Throw
+- Absorb
+- Acid
 - Rock Tomb
+- Astonish
 
-Nosepass @ Oran Berry
-Level: 15
+Anorith @ Charti Berry
+Level: 11
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Block
-- Harden
-- Tackle
+- Fury Cutter
+- Scratch
 - Rock Tomb
+- Metal Claw
+
+Gulpin @ Oran Berry
+Level: 10
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Gulp
+- Spew
+- Pound
+- Water Gun
 
 === TRAINER_BRAWLY_1 ===
 Name: BRAWLY

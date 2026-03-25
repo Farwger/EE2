@@ -3334,20 +3334,16 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Lick"),
         .description = COMPOUND_STRING(
             "Licks with a long tongue to\n"
-            "injure. May also paralyze."),
-        .effect = EFFECT_HIT,
-        .power = B_UPDATED_MOVE_DATA >= GEN_6 ? 30 : 20,
+            "absorb energy."),
+        .effect = EFFECT_ABSORB,
+        .power = 30,
         .type = TYPE_GHOST,
         .accuracy = 100,
-        .pp = 30,
+        .pp = 25,
         .target = TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_PARALYSIS,
-            .chance = 30,
-        }),
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_STARTLE_PREV_MON : CONTEST_EFFECT_BADLY_STARTLE_FRONT_MON,
         .contestCategory = C_UPDATED_MOVE_CATEGORIES >= GEN_6 ? CONTEST_CATEGORY_CUTE : CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = 0,
@@ -6916,13 +6912,13 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Spit Up"),
         .description = COMPOUND_STRING(
-            "Releases stockpiled power\n"
-            "(the more the better)."),
+            "Does damage, channels\n"
+            "secondary typing."),
         .effect = EFFECT_SPIT_UP,
-        .power = 1,
+        .power = 80,
         .type = TYPE_NORMAL,
         .accuracy = 100,
-        .pp = 10,
+        .pp = 15,
         .target = TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
@@ -21398,6 +21394,222 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         }),
         .battleAnimScript = gBattleAnimMove_MalignantChain,
     },
+
+    [MOVE_GULP] =
+    {
+        .name = COMPOUND_STRING("Gulp"),
+        .description = COMPOUND_STRING(
+            "An attack that gulps half\n"
+            "the damage inflicted."),
+        .effect = EFFECT_ABSORB_GULP,
+        .power = 30,
+        .type = TYPE_POISON,
+        .accuracy = 100,
+        .pp = 25,
+        .target = TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .argument = { .absorbPercentage = 50 },
+        .ignoresKingsRock = (B_UPDATED_MOVE_FLAGS == GEN_3 || B_UPDATED_MOVE_FLAGS == GEN_4),
+        .healingMove = B_HEAL_BLOCKING >= GEN_6,
+        .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_BADLY_STARTLE_FRONT_MON : CONTEST_EFFECT_STARTLE_MON_WITH_JUDGES_ATTENTION,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_GROWTH},
+        .battleAnimScript = gBattleAnimMove_Acid,
+        .validApprenticeMove = TRUE,
+    },
+
+    [MOVE_MEGA_GULP] =
+    {
+        .name = COMPOUND_STRING("Mega Gulp"),
+        .description = COMPOUND_STRING(
+            "An attack that gulps half\n"
+            "the damage inflicted."),
+        .effect = EFFECT_ABSORB_GULP,
+        .power = 60,
+        .type = TYPE_POISON,
+        .accuracy = 100,
+        .pp = 15,
+        .target = TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .argument = { .absorbPercentage = 50 },
+        .ignoresKingsRock = (B_UPDATED_MOVE_FLAGS == GEN_3 || B_UPDATED_MOVE_FLAGS == GEN_4),
+        .healingMove = B_HEAL_BLOCKING >= GEN_6,
+        .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_BADLY_STARTLE_FRONT_MON : CONTEST_EFFECT_STARTLE_MON_WITH_JUDGES_ATTENTION,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_GROWTH},
+        .battleAnimScript = gBattleAnimMove_Venoshock,
+        .validApprenticeMove = TRUE,
+    },
+
+    [MOVE_GIGA_GULP] =
+    {
+        .name = COMPOUND_STRING("Giga Gulp"),
+        .description = COMPOUND_STRING(
+            "An attack that gulps half\n"
+            "the damage inflicted."),
+        .effect = EFFECT_ABSORB_GULP,
+        .power = 75,
+        .type = TYPE_POISON,
+        .accuracy = 100,
+        .pp = 10,
+        .target = TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .argument = { .absorbPercentage = 50 },
+        .ignoresKingsRock = (B_UPDATED_MOVE_FLAGS == GEN_3 || B_UPDATED_MOVE_FLAGS == GEN_4),
+        .healingMove = B_HEAL_BLOCKING >= GEN_6,
+        .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_BADLY_STARTLE_FRONT_MON : CONTEST_EFFECT_STARTLE_MON_WITH_JUDGES_ATTENTION,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_GROWTH},
+        .battleAnimScript = gBattleAnimMove_SludgeBomb,
+        .validApprenticeMove = TRUE,
+    },
+
+    [MOVE_TERA_GULP] =
+    {
+        .name = COMPOUND_STRING("Tera Gulp"),
+        .description = COMPOUND_STRING(
+            "An attack that gulps half\n"
+            "the damage inflicted."),
+        .effect = EFFECT_ABSORB_GULP,
+        .power = 90,
+        .type = TYPE_POISON,
+        .accuracy = 100,
+        .pp = 5,
+        .target = TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .argument = { .absorbPercentage = 50 },
+        .ignoresKingsRock = (B_UPDATED_MOVE_FLAGS == GEN_3 || B_UPDATED_MOVE_FLAGS == GEN_4),
+        .healingMove = B_HEAL_BLOCKING >= GEN_6,
+        .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_BADLY_STARTLE_FRONT_MON : CONTEST_EFFECT_STARTLE_MON_WITH_JUDGES_ATTENTION,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_GROWTH},
+        .battleAnimScript = gBattleAnimMove_GunkShot,
+        .validApprenticeMove = TRUE,
+    },
+
+    [MOVE_SPEW] =
+    {
+        .name = COMPOUND_STRING("Spew"),
+        .description = COMPOUND_STRING(
+            "Does damage, channels\n"
+            "secondary typing."),
+        .effect = EFFECT_SPIT_UP,
+        .power = 40,
+        .type = TYPE_NORMAL,
+        .accuracy = 100,
+        .pp = 25,
+        .target = TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .mirrorMoveBanned = TRUE,
+        .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_BETTER_WITH_GOOD_CONDITION : CONTEST_EFFECT_HIGHLY_APPEALING,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_STOCKPILE},
+        .battleAnimScript = gBattleAnimMove_SpitUp,
+        .validApprenticeMove = TRUE,
+    },
+
+    [MOVE_SPOUT] =
+    {
+        .name = COMPOUND_STRING("Spout"),
+        .description = COMPOUND_STRING(
+            "Does damage, channels\n"
+            "secondary typing."),
+        .effect = EFFECT_SPIT_UP,
+        .power = 60,
+        .type = TYPE_NORMAL,
+        .accuracy = 100,
+        .pp = 20,
+        .target = TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .mirrorMoveBanned = TRUE,
+        .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_BETTER_WITH_GOOD_CONDITION : CONTEST_EFFECT_HIGHLY_APPEALING,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_STOCKPILE},
+        .battleAnimScript = gBattleAnimMove_SpitUp,
+        .validApprenticeMove = TRUE,
+    },
+
+    [MOVE_EMESISM] =
+    {
+        .name = COMPOUND_STRING("Spout"),
+        .description = COMPOUND_STRING(
+            "Does damage, channels\n"
+            "secondary typing."),
+        .effect = EFFECT_SPIT_UP,
+        .power = 100,
+        .type = TYPE_NORMAL,
+        .accuracy = 100,
+        .pp = 10,
+        .target = TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .mirrorMoveBanned = TRUE,
+        .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_BETTER_WITH_GOOD_CONDITION : CONTEST_EFFECT_HIGHLY_APPEALING,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_STOCKPILE},
+        .battleAnimScript = gBattleAnimMove_SpitUp,
+        .validApprenticeMove = TRUE,
+    },
+
+    [MOVE_HYPER_LICK] =
+    {
+        .name = COMPOUND_STRING("Hyper Lick"),
+        .description = COMPOUND_STRING(
+            "Licks with a long tongue to\n"
+            "absorb energy."),
+        .effect = EFFECT_ABSORB_LICK,
+        .power = 50,
+        .type = TYPE_GHOST,
+        .accuracy = 100,
+        .pp = 15,
+        .target = TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_STARTLE_PREV_MON : CONTEST_EFFECT_BADLY_STARTLE_FRONT_MON,
+        .contestCategory = C_UPDATED_MOVE_CATEGORIES >= GEN_6 ? CONTEST_CATEGORY_CUTE : CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Lick,
+        .validApprenticeMove = TRUE,
+    },
+
+    [MOVE_SUPER_LICK] =
+    {
+        .name = COMPOUND_STRING("Super Lick"),
+        .description = COMPOUND_STRING(
+            "Licks with a long tongue to\n"
+            "absorb energy."),
+        .effect = EFFECT_ABSORB_LICK,
+        .power = 75,
+        .type = TYPE_GHOST,
+        .accuracy = 100,
+        .pp = 10,
+        .target = TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_STARTLE_PREV_MON : CONTEST_EFFECT_BADLY_STARTLE_FRONT_MON,
+        .contestCategory = C_UPDATED_MOVE_CATEGORIES >= GEN_6 ? CONTEST_CATEGORY_CUTE : CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Lick,
+        .validApprenticeMove = TRUE,
+    },
+
 
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =

@@ -1047,6 +1047,8 @@ static bool32 AI_IsMoveEffectInPlus(enum BattlerId battlerAtk, enum BattlerId ba
     {
     case EFFECT_ABSORB:
     case EFFECT_DREAM_EATER:
+    case EFFECT_ABSORB_GULP:
+    case EFFECT_ABSORB_LICK:
         if (!IsBattlerAtMaxHp(battlerAtk) || (!aiIsFaster && GetMoveCategory(GetIncomingMove(battlerAtk, battlerDef, gAiLogicData)) != DAMAGE_CATEGORY_STATUS))
             return TRUE;
         break;

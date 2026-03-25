@@ -706,8 +706,8 @@ static inline u32 GetMoveFixedHPDamage(enum Move moveId)
 static inline u32 GetMoveAbsorbPercentage(enum Move moveId)
 {
     moveId = SanitizeMoveId(moveId);
-    enum BattleMoveEffects effect = gMovesInfo[moveId].effect;
-    assertf(effect == EFFECT_ABSORB || effect == EFFECT_DREAM_EATER, "not an absorbing move: %S", gMovesInfo[moveId].name);
+    //enum BattleMoveEffects effect = gMovesInfo[moveId].effect;
+    //assertf(effect == EFFECT_ABSORB || effect == EFFECT_DREAM_EATER, "not an absorbing move: %S", gMovesInfo[moveId].name);
     if (gMovesInfo[moveId].argument.absorbPercentage == 0)
         return 50;
     return gMovesInfo[moveId].argument.absorbPercentage;

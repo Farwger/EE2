@@ -4227,8 +4227,8 @@ static void Cmd_getexp(void)
             {
                 gBattleScripting.getexpState = 5;
                 gBattleStruct->battlerExpReward = 0;
-                if (B_MAX_LEVEL_EV_GAINS >= GEN_5)
-                    MonGainEVs(&gPlayerParty[*expMonId], gBattleMons[gBattlerFainted].species);
+                //if (B_MAX_LEVEL_EV_GAINS >= GEN_5)
+                  //  MonGainEVs(&gPlayerParty[*expMonId], gBattleMons[gBattlerFainted].species);
             }
             else
             {
@@ -4315,7 +4315,7 @@ static void Cmd_getexp(void)
                         gBattleStruct->teamGotExpMsgPrinted = TRUE;
                     }
 
-                    MonGainEVs(&gPlayerParty[*expMonId], gBattleMons[gBattlerFainted].species);
+                    //MonGainEVs(&gPlayerParty[*expMonId], gBattleMons[gBattlerFainted].species);
                 }
                 gBattleScripting.getexpState++;
             }
@@ -12435,6 +12435,8 @@ void BS_TryHealPulse(void)
     else
     {
         s32 healAmount = 0;
+        //if IsSetupMove(gCurrentMove)
+        // healAmount = GetNonDynamaxMaxHP(gBattlerTarget) * 25 / 100;
         if (GetBattlerAbility(gBattlerAttacker) == ABILITY_MEGA_LAUNCHER && IsPulseMove(gCurrentMove))
             healAmount = GetNonDynamaxMaxHP(gBattlerTarget) * 75 / 100;
         else if (gFieldStatuses & STATUS_FIELD_GRASSY_TERRAIN && GetMoveEffectArg_MoveProperty(gCurrentMove) == MOVE_EFFECT_FLORAL_HEALING)
