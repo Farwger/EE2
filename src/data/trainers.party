@@ -11052,13 +11052,38 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: Check Bad Move
+Difficulty: Normal
 
 Zigzagoon
-Level: 4
+Level: 1
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Shroomish
-Level: 4
+=== TRAINER_TIANA ===
+Name: TIANA
+Class: Lass
+Pic: Lass
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move
+Difficulty: 2badges
+
+Mew
+Level: 1
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_TIANA ===
+Name: TIANA
+Class: Lass
+Pic: Lass
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Postgame
+
+Mewtwo
+Level: 1
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_HALEY_1 ===
@@ -11069,6 +11094,7 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: Check Bad Move
+Difficulty: Normal
 
 Lotad
 Level: 6

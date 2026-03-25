@@ -6,21 +6,21 @@
 
 enum DifficultyLevel GetCurrentDifficultyLevel(void)
 {
-    if (!B_VAR_DIFFICULTY)
+    if (!VAR_DIFFICULTY)
         return DIFFICULTY_NORMAL;
 
-    return VarGet(B_VAR_DIFFICULTY);
+    return VarGet(VAR_DIFFICULTY);
 }
 
 void SetCurrentDifficultyLevel(enum DifficultyLevel desiredDifficulty)
 {
-    if (!B_VAR_DIFFICULTY)
+    if (!VAR_DIFFICULTY)
         return;
 
     if (desiredDifficulty > DIFFICULTY_MAX)
         desiredDifficulty = DIFFICULTY_MAX;
 
-    VarSet(B_VAR_DIFFICULTY, desiredDifficulty);
+    VarSet(VAR_DIFFICULTY, desiredDifficulty);
 }
 
 enum DifficultyLevel GetBattlePartnerDifficultyLevel(u16 partnerId)
@@ -56,7 +56,7 @@ void Script_IncreaseDifficulty(void)
 {
     enum DifficultyLevel currentDifficulty;
 
-    if (!B_VAR_DIFFICULTY)
+    if (!VAR_DIFFICULTY)
         return;
 
     currentDifficulty = GetCurrentDifficultyLevel();
@@ -65,7 +65,7 @@ void Script_IncreaseDifficulty(void)
         return;
 
     Script_RequestEffects(SCREFF_V1);
-    Script_RequestWriteVar(B_VAR_DIFFICULTY);
+    Script_RequestWriteVar(VAR_DIFFICULTY);
 
     SetCurrentDifficultyLevel(currentDifficulty);
 }
@@ -74,7 +74,7 @@ void Script_DecreaseDifficulty(void)
 {
     enum DifficultyLevel currentDifficulty;
 
-    if (!B_VAR_DIFFICULTY)
+    if (!VAR_DIFFICULTY)
         return;
 
     currentDifficulty = GetCurrentDifficultyLevel();
@@ -83,7 +83,7 @@ void Script_DecreaseDifficulty(void)
         return;
 
     Script_RequestEffects(SCREFF_V1);
-    Script_RequestWriteVar(B_VAR_DIFFICULTY);
+    Script_RequestWriteVar(VAR_DIFFICULTY);
 
     SetCurrentDifficultyLevel(--currentDifficulty);
 }
@@ -99,7 +99,7 @@ void Script_SetDifficulty(struct ScriptContext *ctx)
     enum DifficultyLevel desiredDifficulty = ScriptReadByte(ctx);
 
     Script_RequestEffects(SCREFF_V1);
-    Script_RequestWriteVar(B_VAR_DIFFICULTY);
+    Script_RequestWriteVar(VAR_DIFFICULTY);
 
     SetCurrentDifficultyLevel(desiredDifficulty);
 }
