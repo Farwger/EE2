@@ -1687,8 +1687,62 @@
 #define SPECIES_TATSUGIRI_DROOPY_MEGA                   1570
 #define SPECIES_TATSUGIRI_STRETCHY_MEGA                 1571
 #define SPECIES_GLIMMORA_MEGA                           1572
+#define SPECIES_GULPIN_NORMAL                           1573 // Gulpin forms
+#define SPECIES_GULPIN_FIGHTING                         1574
+#define SPECIES_GULPIN_FLYING                           1575
+#define SPECIES_GULPIN_GROUND                           1576
+#define SPECIES_GULPIN_ROCK                             1577
+#define SPECIES_GULPIN_BUG                              1578
+#define SPECIES_GULPIN_GHOST                            1579
+#define SPECIES_GULPIN_STEEL                            1580
+#define SPECIES_GULPIN_FIRE                             1581
+#define SPECIES_GULPIN_WATER                            1582
+#define SPECIES_GULPIN_GRASS                            1583
+#define SPECIES_GULPIN_ELECTRIC                         1584
+#define SPECIES_GULPIN_PSYCHIC                          1585
+#define SPECIES_GULPIN_ICE                              1586
+#define SPECIES_GULPIN_DRAGON                           1587
+#define SPECIES_GULPIN_DARK                             1588
+#define SPECIES_GULPIN_FAIRY                            1589
+#define SPECIES_SWALOT_NORMAL                           1590 // Swalot forms
+#define SPECIES_SWALOT_FIGHTING                         1591
+#define SPECIES_SWALOT_FLYING                           1592
+#define SPECIES_SWALOT_GROUND                           1593
+#define SPECIES_SWALOT_ROCK                             1594
+#define SPECIES_SWALOT_BUG                              1595
+#define SPECIES_SWALOT_GHOST                            1596
+#define SPECIES_SWALOT_STEEL                            1597
+#define SPECIES_SWALOT_FIRE                             1598
+#define SPECIES_SWALOT_WATER                            1599
+#define SPECIES_SWALOT_GRASS                            1600
+#define SPECIES_SWALOT_ELECTRIC                         1601
+#define SPECIES_SWALOT_PSYCHIC                          1602
+#define SPECIES_SWALOT_ICE                              1603
+#define SPECIES_SWALOT_DRAGON                           1604
+#define SPECIES_SWALOT_DARK                             1605
+#define SPECIES_SWALOT_FAIRY                            1606
+#define SPECIES_VALVORIN                                1607 // Valvorin forms
+#define SPECIES_VALVORIN_NORMAL                         1608
+#define SPECIES_VALVORIN_FIGHTING                       1609
+#define SPECIES_VALVORIN_FLYING                         1610
+#define SPECIES_VALVORIN_GROUND                         1611
+#define SPECIES_VALVORIN_ROCK                           1612
+#define SPECIES_VALVORIN_BUG                            1613
+#define SPECIES_VALVORIN_GHOST                          1614
+#define SPECIES_VALVORIN_STEEL                          1615
+#define SPECIES_VALVORIN_FIRE                           1616
+#define SPECIES_VALVORIN_WATER                          1617
+#define SPECIES_VALVORIN_GRASS                          1618
+#define SPECIES_VALVORIN_ELECTRIC                       1619
+#define SPECIES_VALVORIN_PSYCHIC                        1620
+#define SPECIES_VALVORIN_ICE                            1621
+#define SPECIES_VALVORIN_DRAGON                         1622
+#define SPECIES_VALVORIN_DARK                           1623
+#define SPECIES_VALVORIN_FAIRY                          1624
+#define SPECIES_LICKITUNG_GHOST                         1625 // Lickitung form
+#define SPECIES_LICKILICKY_GHOST                        1626 // Lickilicky form
 
-#define SPECIES_EGG                                     (SPECIES_GLIMMORA_MEGA + 1)
+#define SPECIES_EGG                                     (SPECIES_LICKILICKY_GHOST + 1)
 
 #define NUM_SPECIES SPECIES_EGG
 
