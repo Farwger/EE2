@@ -4844,7 +4844,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_INTIMIDATE, ABILITY_MOXIE, ABILITY_ANGER_POINT },
+        .abilities = { ABILITY_INTIMIDATE, ABILITY_MOXIE, ABILITY_NONE },
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("Sandile"),
         .cryId = CRY_SANDILE,
@@ -4914,7 +4914,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_INTIMIDATE, ABILITY_MOXIE, ABILITY_ANGER_POINT },
+        .abilities = { ABILITY_INTIMIDATE, ABILITY_MOXIE, ABILITY_STRONG_JAW },
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("Krokorok"),
         .cryId = CRY_KROKOROK,
@@ -4967,11 +4967,11 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
     [SPECIES_KROOKODILE] =
     {
         .baseHP        = 95,
-        .baseAttack    = 117,
-        .baseDefense   = P_UPDATED_STATS >= GEN_6 ? 80 : 70,
+        .baseAttack    = 110,
+        .baseDefense   = 80,
         .baseSpeed     = 92,
         .baseSpAttack  = 65,
-        .baseSpDefense = 70,
+        .baseSpDefense = 80,
         .types = MON_TYPES(TYPE_GROUND, TYPE_DARK),
         .catchRate = 45,
     #if P_UPDATED_EXP_YIELDS >= GEN_8
@@ -4988,7 +4988,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_INTIMIDATE, ABILITY_MOXIE, ABILITY_ANGER_POINT },
+        .abilities = { ABILITY_INTIMIDATE, ABILITY_MOXIE, ABILITY_STRONG_JAW },
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("Krookodile"),
         .cryId = CRY_KROOKODILE,
@@ -7731,7 +7731,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
     #if P_UPDATED_ABILITIES >= GEN_7
-        .abilities = { ABILITY_ICE_BODY, ABILITY_SNOW_CLOAK, ABILITY_WEAK_ARMOR },
+        .abilities = { ABILITY_ICE_BODY, ABILITY_WEAK_ARMOR, ABILITY_SNOW_WARNING },
     #else
         .abilities = { ABILITY_ICE_BODY, ABILITY_NONE, ABILITY_WEAK_ARMOR },
     #endif
@@ -7785,7 +7785,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sVanilliteLevelUpLearnset,
         .teachableLearnset = sVanilliteTeachableLearnset,
         .eggMoveLearnset = sVanilliteEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 35, SPECIES_VANILLISH}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 22, SPECIES_VANILLISH}),
     },
 
     [SPECIES_VANILLISH] =
@@ -7807,7 +7807,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
     #if P_UPDATED_ABILITIES >= GEN_7
-        .abilities = { ABILITY_ICE_BODY, ABILITY_SNOW_CLOAK, ABILITY_WEAK_ARMOR },
+        .abilities = { ABILITY_ICE_BODY, ABILITY_WEAK_ARMOR, ABILITY_SNOW_WARNING },
     #else
         .abilities = { ABILITY_ICE_BODY, ABILITY_NONE, ABILITY_WEAK_ARMOR },
     #endif
@@ -7858,15 +7858,15 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sVanillishLevelUpLearnset,
         .teachableLearnset = sVanillishTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 47, SPECIES_VANILLUXE}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_VANILLUXE}),
     },
 
     [SPECIES_VANILLUXE] =
     {
-        .baseHP        = 71,
-        .baseAttack    = 95,
+        .baseHP        = 75,
+        .baseAttack    = 70,
         .baseDefense   = 85,
-        .baseSpeed     = 79,
+        .baseSpeed     = 100,
         .baseSpAttack  = 110,
         .baseSpDefense = 95,
         .types = MON_TYPES(TYPE_ICE),
@@ -7880,7 +7880,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
     #if P_UPDATED_ABILITIES >= GEN_7
-        .abilities = { ABILITY_ICE_BODY, ABILITY_SNOW_WARNING, ABILITY_WEAK_ARMOR },
+        .abilities = { ABILITY_ICE_BODY, ABILITY_WEAK_ARMOR, ABILITY_SNOW_WARNING },
     #else
         .abilities = { ABILITY_ICE_BODY, ABILITY_NONE, ABILITY_WEAK_ARMOR },
     #endif

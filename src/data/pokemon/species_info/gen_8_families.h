@@ -6619,7 +6619,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS, EGG_GROUP_DRAGON),
-        .abilities = { ABILITY_CLEAR_BODY, ABILITY_INFILTRATOR, ABILITY_CURSED_BODY },
+        .abilities = { ABILITY_CLEAR_BODY, ABILITY_CURSED_BODY, ABILITY_INFILTRATOR },
         .bodyColor = BODY_COLOR_GREEN,
         .speciesName = _("Dreepy"),
         .cryId = CRY_DREEPY,
@@ -6685,7 +6685,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS, EGG_GROUP_DRAGON),
-        .abilities = { ABILITY_CLEAR_BODY, ABILITY_INFILTRATOR, ABILITY_CURSED_BODY },
+        .abilities = { ABILITY_CLEAR_BODY, ABILITY_CURSED_BODY, ABILITY_INFILTRATOR },
         .bodyColor = BODY_COLOR_GREEN,
         .speciesName = _("Drakloak"),
         .cryId = CRY_DRAKLOAK,
@@ -6729,7 +6729,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         )
         .levelUpLearnset = sDrakloakLevelUpLearnset,
         .teachableLearnset = sDrakloakTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 60, SPECIES_DRAGAPULT}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 51, SPECIES_DRAGAPULT}),
     },
 
     [SPECIES_DRAGAPULT] =
@@ -6749,7 +6749,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS, EGG_GROUP_DRAGON),
-        .abilities = { ABILITY_CLEAR_BODY, ABILITY_INFILTRATOR, ABILITY_CURSED_BODY },
+        .abilities = { ABILITY_CLEAR_BODY, ABILITY_CURSED_BODY, ABILITY_INFILTRATOR },
         .bodyColor = BODY_COLOR_GREEN,
         .speciesName = _("Dragapult"),
         .cryId = CRY_DRAGAPULT,

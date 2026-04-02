@@ -6698,6 +6698,10 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct BattleContext *ctx)
         if (IsSlicingMove(move))
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
+    case ABILITY_GLUTTONY:
+        if (moveEffect == EFFECT_ABSORB || moveEffect == EFFECT_ABSORB_GULP || moveEffect == EFFECT_ABSORB_LICK)
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+        break;
     case ABILITY_SUPREME_OVERLORD:
         modifier = uq4_12_multiply(modifier, GetSupremeOverlordModifier(battlerAtk));
         break;
@@ -8226,9 +8230,9 @@ static inline void MulByTypeEffectiveness(struct BattleContext *ctx, uq4_12_t *m
     }
 
     if (GetMoveEffect(ctx->move) == EFFECT_ABSORB_GULP && defType == TYPE_WATER)
-        mod = UQ_4_12(1.3);
+        mod = UQ_4_12(1.5);
     if (GetMoveEffect(ctx->move) == EFFECT_ABSORB_LICK && defType == TYPE_ICE)
-        mod = UQ_4_12(1.3);
+        mod = UQ_4_12(1.5);
     if (ctx->moveType == TYPE_PSYCHIC && defType == TYPE_DARK && gBattleMons[ctx->battlerDef].volatiles.miracleEye && mod == UQ_4_12(0.0))
         mod = UQ_4_12(1.0);
     if (GetMoveEffect(ctx->move) == EFFECT_SUPER_EFFECTIVE_ON_ARG && defType == GetMoveArgType(ctx->move) && !ctx->isAnticipation)

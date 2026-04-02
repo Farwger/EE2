@@ -1341,8 +1341,8 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_MEGA_LAUNCHER] =
     {
-        .name = _("Mega Launcher"),
-        .description = COMPOUND_STRING("Boosts pulse moves."),
+        .name = _("Launcher"),
+        .description = COMPOUND_STRING("Boosts pulse/ball/bomb moves."),
         .aiRating = 7,
     },
 
@@ -1855,7 +1855,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_PUNK_ROCK] =
     {
-        .name = _("Punk Rock"),
+        .name = _("Cacophony"),
         .description = COMPOUND_STRING("Ups and resists sound."),
         .aiRating = 2,
         .breakable = TRUE,

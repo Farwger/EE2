@@ -361,6 +361,12 @@
       "map": "MAP_BERSKET_CITY",
       "x": 21,
       "y": 31
+    },
+    {
+      "id": "HEAL_LOCATION_MT_PYRE_EXTERIOR",
+      "map": "MAP_MT_PYRE_EXTERIOR",
+      "x": 10,
+      "y": 44
     }
   ]
 }

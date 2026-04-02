@@ -4816,20 +4816,20 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Astonish
 
 Anorith @ Charti Berry
-Level: 11
+Level: 10
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Fury Cutter
 - Scratch
 - Rock Tomb
 - Metal Claw
 
-Gulpin @ Oran Berry
+SPECIES_GULPIN_ROCK @ Oran Berry
 Level: 10
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Gulp
 - Spew
 - Pound
-- Water Gun
+- Absorb
 
 === TRAINER_BRAWLY_1 ===
 Name: BRAWLY
