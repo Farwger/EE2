@@ -2943,6 +2943,12 @@ static enum MoveEndResult MoveEndMoveBlock(void)
             }
         }
         break;
+    case EFFECT_TERA_BLAST:
+        if (!gBattleStruct->unableToUseMove && gBattleMons[gBattlerAttacker].volatiles.stockpileCounter) // if stockpiled
+        {
+            gBattleMons[gBattlerAttacker].volatiles.stockpileCounter--;
+        }
+        break;
     case EFFECT_KNOCK_OFF:
         if (gBattleMons[gBattlerTarget].item != ITEM_NONE
          && IsBattlerAlive(gBattlerAttacker)

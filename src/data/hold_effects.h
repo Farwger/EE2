@@ -383,6 +383,8 @@ const struct HoldEffectInfo gHoldEffectsInfo[HOLD_EFFECT_COUNT] =
 
     [HOLD_EFFECT_RESIST_BERRY] =
     {
+        .onSwitchIn = TRUE,
+        .onHpThreshold = TRUE,
     },
 
     [HOLD_EFFECT_POWER_ITEM] =

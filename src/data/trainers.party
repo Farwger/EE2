@@ -4807,7 +4807,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Absorb
 
 Lileep
-Level: 9
+Level: 10
 Ability: Storm Drain
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Absorb
@@ -4816,18 +4816,18 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Astonish
 
 Anorith @ Charti Berry
-Level: 10
+Level: 11
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Fury Cutter
 - Scratch
 - Rock Tomb
 - Metal Claw
 
-SPECIES_GULPIN_ROCK @ Oran Berry
+SPECIES_GULPIN @ Oran Berry
 Level: 10
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Gulp
-- Spew
+- Water Gun
+- Toxic
 - Pound
 - Absorb
 
@@ -11061,11 +11061,16 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: Check Bad Move
-Difficulty: Normal
 
-Zigzagoon
-Level: 1
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Sceptile @ Occa Berry
+Level: 30
+IVs: 24 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+EVs: 74 HP
+
+Rattata @ Occa Berry
+Level: 30
+IVs: 24 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+EVs: 74 HP
 
 === TRAINER_TIANA ===
 Name: TIANA

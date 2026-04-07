@@ -6499,8 +6499,8 @@ static inline u32 CalcMoveBasePower(struct BattleContext *ctx)
         basePower = GetMaxMovePower(GetBattlerChosenMove(battlerAtk));
         break;
     case EFFECT_RAGE_FIST:
-        basePower += 50 * GetBattlerPartyState(battlerAtk)->timesGotHit;
-        basePower = (basePower > 350) ? 350 : basePower;
+        basePower += 15 * GetBattlerPartyState(battlerAtk)->timesGotHit;
+        basePower = (basePower > 120) ? 120 : basePower;
         break;
     case EFFECT_FICKLE_BEAM:
         if (gBattleStruct->fickleBeamBoosted)
@@ -6509,6 +6509,8 @@ static inline u32 CalcMoveBasePower(struct BattleContext *ctx)
     case EFFECT_TERA_BLAST:
         if (GetActiveGimmick(battlerAtk) == GIMMICK_TERA && GetBattlerTeraType(battlerAtk) == TYPE_STELLAR)
             basePower = 100;
+        if (gBattleMons[battlerAtk].volatiles.stockpileCounter) // if stockpiled
+            basePower = uq4_12_multiply(basePower, UQ_4_12(1.5));
         break;
     case EFFECT_LAST_RESPECTS:
         basePower += (basePower * min(100, GetBattlerSideFaintCounter(battlerAtk)));
@@ -6648,15 +6650,15 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct BattleContext *ctx)
         break;
     case ABILITY_TOUGH_CLAWS:
         if (IsMoveMakingContact(battlerAtk, battlerDef, ctx->abilityAtk, ctx->holdEffectAtk, ctx->move))
-           modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
         break;
     case ABILITY_STRONG_JAW:
         if (IsBitingMove(move))
-           modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
         break;
     case ABILITY_MEGA_LAUNCHER:
         if (IsPulseMove(move))
-           modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
         break;
     case ABILITY_WATER_BUBBLE:
         if (moveType == TYPE_WATER)
@@ -6696,11 +6698,11 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct BattleContext *ctx)
         break;
     case ABILITY_SHARPNESS:
         if (IsSlicingMove(move))
-           modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
         break;
     case ABILITY_GLUTTONY:
         if (moveEffect == EFFECT_ABSORB || moveEffect == EFFECT_ABSORB_GULP || moveEffect == EFFECT_ABSORB_LICK)
-           modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
         break;
     case ABILITY_SUPREME_OVERLORD:
         modifier = uq4_12_multiply(modifier, GetSupremeOverlordModifier(battlerAtk));
@@ -7431,7 +7433,7 @@ static inline uq4_12_t GetBurnOrFrostBiteModifier(struct BattleContext *ctx)
 static inline uq4_12_t GetCriticalModifier(bool32 isCrit)
 {
     if (isCrit)
-        return GetConfig(B_CRIT_MULTIPLIER) >= GEN_6 ? UQ_4_12(1.5) : UQ_4_12(2.0);
+        return UQ_4_12(1.3);
     return UQ_4_12(1.0);
 }
 
@@ -7643,13 +7645,13 @@ static inline uq4_12_t GetDefenderItemsModifier(struct BattleContext *ctx)
     case HOLD_EFFECT_RESIST_BERRY:
         if (IsUnnerveBlocked(ctx->battlerDef, gBattleMons[ctx->battlerDef].item))
             return UQ_4_12(1.0);
-        if (ctx->moveType == GetBattlerHoldEffectParam(ctx->battlerDef) && (ctx->moveType == TYPE_NORMAL || ctx->typeEffectivenessModifier >= UQ_4_12(2.0)))
+        if (ctx->moveType == GetBattlerHoldEffectParam(ctx->battlerDef)) //&& (ctx->moveType == TYPE_NORMAL || ctx->typeEffectivenessModifier >= UQ_4_12(2.0)))
         {
             if (ctx->updateFlags)
                 gSpecialStatuses[ctx->battlerDef].berryReduced = TRUE;
             if (ctx->aiCalc && AI_DAMAGES_THROUGH_BERRIES)
                 ctx->aiCheckBerryModifier = TRUE;
-            return (ctx->abilityDef == ABILITY_RIPEN) ? UQ_4_12(0.25) : UQ_4_12(0.5);
+            return UQ_4_12(0.25);
         }
         break;
     default:
@@ -7929,7 +7931,8 @@ bool32 IsFutureSightAttackerInParty(enum BattlerId battlerAtk, enum BattlerId ba
 #undef DAMAGE_APPLY_MODIFIER
 
 // The chance is 1/N for each stage.
-static const u32 sGen7CriticalHitOdds[] = {24,  8,  2,  1,   1}; // 1/X
+// sGen7CriticalHitOdds modified to fit the new chances
+static const u32 sGen7CriticalHitOdds[] = {10,  2,  1,  1,   1}; // 1/X
 static const u32 sGen6CriticalHitOdds[] = {16,  8,  2,  1,   1}; // 1/X
 static const u32 sCriticalHitOdds[]     = {16,  8,  4,  3,   2}; // 1/X, Gens 3,4,5
 static const u32 sGen2CriticalHitOdds[] = {17, 32, 64, 85, 128}; // X/256
@@ -9747,6 +9750,9 @@ void GetBattlerTypes(enum BattlerId battler, bool32 ignoreTera, enum Type types[
         if (teraType != TYPE_STELLAR)
         {
             types[0] = types[1] = types[2] = teraType;
+       //   types[0] = gBattleMons[battler].types[0];
+      //    types[1] = teraType;
+        //  types[2] = gBattleMons[battler].types[2];
             return;
         }
     }

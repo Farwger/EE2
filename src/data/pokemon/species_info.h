@@ -256,6 +256,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             TRACKS_SPOT,
             sAnimTable_Following
         )
+        .isGulpinForm = TRUE,
         .levelUpLearnset = sGulpinLevelUpLearnset,
         .teachableLearnset = sGulpinTeachableLearnset,
         .eggMoveLearnset = sGulpinEggMoveLearnset,
@@ -342,6 +343,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             TRACKS_SPOT,
             sAnimTable_Following
         )
+        .isGulpinForm = TRUE,
         .levelUpLearnset = sGulpinLevelUpLearnset,
         .teachableLearnset = sGulpinTeachableLearnset,
         .eggMoveLearnset = sGulpinEggMoveLearnset,
@@ -428,6 +430,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             TRACKS_SPOT,
             sAnimTable_Following
         )
+        .isGulpinForm = TRUE,
         .levelUpLearnset = sGulpinLevelUpLearnset,
         .teachableLearnset = sGulpinTeachableLearnset,
         .eggMoveLearnset = sGulpinEggMoveLearnset,
@@ -514,6 +517,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             TRACKS_SPOT,
             sAnimTable_Following
         )
+        .isGulpinForm = TRUE,
         .levelUpLearnset = sGulpinLevelUpLearnset,
         .teachableLearnset = sGulpinTeachableLearnset,
         .eggMoveLearnset = sGulpinEggMoveLearnset,
@@ -600,13 +604,14 @@ const struct SpeciesInfo gSpeciesInfo[] =
             TRACKS_SPOT,
             sAnimTable_Following
         )
+        .isGulpinForm = TRUE,
         .levelUpLearnset = sGulpinLevelUpLearnset,
         .teachableLearnset = sGulpinTeachableLearnset,
         .eggMoveLearnset = sGulpinEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_SWALOT_ROCK}),
     },
 
-        [SPECIES_GULPIN_BUG] =
+    [SPECIES_GULPIN_BUG] =
     {
         .baseHP        = 70,
         .baseAttack    = 43,
@@ -686,13 +691,14 @@ const struct SpeciesInfo gSpeciesInfo[] =
             TRACKS_SPOT,
             sAnimTable_Following
         )
+        .isGulpinForm = TRUE,
         .levelUpLearnset = sGulpinLevelUpLearnset,
         .teachableLearnset = sGulpinTeachableLearnset,
         .eggMoveLearnset = sGulpinEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_SWALOT_BUG}),
     },
 
-        [SPECIES_GULPIN_GHOST] =
+    [SPECIES_GULPIN_GHOST] =
     {
         .baseHP        = 70,
         .baseAttack    = 43,
@@ -772,13 +778,14 @@ const struct SpeciesInfo gSpeciesInfo[] =
             TRACKS_SPOT,
             sAnimTable_Following
         )
+        .isGulpinForm = TRUE,
         .levelUpLearnset = sGulpinLevelUpLearnset,
         .teachableLearnset = sGulpinTeachableLearnset,
         .eggMoveLearnset = sGulpinEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_SWALOT_GHOST}),
     },
 
-        [SPECIES_GULPIN_STEEL] =
+    [SPECIES_GULPIN_STEEL] =
     {
         .baseHP        = 70,
         .baseAttack    = 43,
@@ -858,6 +865,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             TRACKS_SPOT,
             sAnimTable_Following
         )
+        .isGulpinForm = TRUE,
         .levelUpLearnset = sGulpinLevelUpLearnset,
         .teachableLearnset = sGulpinTeachableLearnset,
         .eggMoveLearnset = sGulpinEggMoveLearnset,
@@ -944,6 +952,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             TRACKS_SPOT,
             sAnimTable_Following
         )
+        .isGulpinForm = TRUE,
         .levelUpLearnset = sGulpinLevelUpLearnset,
         .teachableLearnset = sGulpinTeachableLearnset,
         .eggMoveLearnset = sGulpinEggMoveLearnset,
@@ -1030,6 +1039,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             TRACKS_SPOT,
             sAnimTable_Following
         )
+        .isGulpinForm = TRUE,
         .levelUpLearnset = sGulpinLevelUpLearnset,
         .teachableLearnset = sGulpinTeachableLearnset,
         .eggMoveLearnset = sGulpinEggMoveLearnset,
@@ -1116,6 +1126,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             TRACKS_SPOT,
             sAnimTable_Following
         )
+        .isGulpinForm = TRUE,
         .levelUpLearnset = sGulpinLevelUpLearnset,
         .teachableLearnset = sGulpinTeachableLearnset,
         .eggMoveLearnset = sGulpinEggMoveLearnset,
@@ -1202,6 +1213,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             TRACKS_SPOT,
             sAnimTable_Following
         )
+        .isGulpinForm = TRUE,
         .levelUpLearnset = sGulpinLevelUpLearnset,
         .teachableLearnset = sGulpinTeachableLearnset,
         .eggMoveLearnset = sGulpinEggMoveLearnset,
@@ -1288,6 +1300,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             TRACKS_SPOT,
             sAnimTable_Following
         )
+        .isGulpinForm = TRUE,
         .levelUpLearnset = sGulpinLevelUpLearnset,
         .teachableLearnset = sGulpinTeachableLearnset,
         .eggMoveLearnset = sGulpinEggMoveLearnset,
@@ -1374,6 +1387,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             TRACKS_SPOT,
             sAnimTable_Following
         )
+        .isGulpinForm = TRUE,
         .levelUpLearnset = sGulpinLevelUpLearnset,
         .teachableLearnset = sGulpinTeachableLearnset,
         .eggMoveLearnset = sGulpinEggMoveLearnset,
@@ -1460,6 +1474,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             TRACKS_SPOT,
             sAnimTable_Following
         )
+        .isGulpinForm = TRUE,
         .levelUpLearnset = sGulpinLevelUpLearnset,
         .teachableLearnset = sGulpinTeachableLearnset,
         .eggMoveLearnset = sGulpinEggMoveLearnset,
@@ -1546,6 +1561,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             TRACKS_SPOT,
             sAnimTable_Following
         )
+        .isGulpinForm = TRUE,
         .levelUpLearnset = sGulpinLevelUpLearnset,
         .teachableLearnset = sGulpinTeachableLearnset,
         .eggMoveLearnset = sGulpinEggMoveLearnset,
@@ -1632,6 +1648,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             TRACKS_SPOT,
             sAnimTable_Following
         )
+        .isGulpinForm = TRUE,
         .levelUpLearnset = sGulpinLevelUpLearnset,
         .teachableLearnset = sGulpinTeachableLearnset,
         .eggMoveLearnset = sGulpinEggMoveLearnset,
@@ -1717,6 +1734,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             TRACKS_SLITHER,
             sAnimTable_Following
         )
+        .isGulpinForm = TRUE,
         .levelUpLearnset = sSwalotLevelUpLearnset,
         .teachableLearnset = sSwalotTeachableLearnset,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_VALVORIN_NORMAL}), // Ambrosia
@@ -1801,6 +1819,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             TRACKS_SLITHER,
             sAnimTable_Following
         )
+        .isGulpinForm = TRUE,
         .levelUpLearnset = sSwalotLevelUpLearnset,
         .teachableLearnset = sSwalotTeachableLearnset,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_VALVORIN_FIGHTING}), // Ambrosia
@@ -1885,6 +1904,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             TRACKS_SLITHER,
             sAnimTable_Following
         )
+        .isGulpinForm = TRUE,
         .levelUpLearnset = sSwalotLevelUpLearnset,
         .teachableLearnset = sSwalotTeachableLearnset,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_VALVORIN_FLYING}), // Ambrosia
@@ -1969,6 +1989,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             TRACKS_SLITHER,
             sAnimTable_Following
         )
+        .isGulpinForm = TRUE,
         .levelUpLearnset = sSwalotLevelUpLearnset,
         .teachableLearnset = sSwalotTeachableLearnset,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_VALVORIN_GROUND}), // Ambrosia
@@ -2053,6 +2074,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             TRACKS_SLITHER,
             sAnimTable_Following
         )
+        .isGulpinForm = TRUE,
         .levelUpLearnset = sSwalotLevelUpLearnset,
         .teachableLearnset = sSwalotTeachableLearnset,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_VALVORIN_ROCK}), // Ambrosia
@@ -2137,6 +2159,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             TRACKS_SLITHER,
             sAnimTable_Following
         )
+        .isGulpinForm = TRUE,
         .levelUpLearnset = sSwalotLevelUpLearnset,
         .teachableLearnset = sSwalotTeachableLearnset,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_VALVORIN_BUG}), // Ambrosia
@@ -2221,6 +2244,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             TRACKS_SLITHER,
             sAnimTable_Following
         )
+        .isGulpinForm = TRUE,
         .levelUpLearnset = sSwalotLevelUpLearnset,
         .teachableLearnset = sSwalotTeachableLearnset,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_VALVORIN_GHOST}), // Ambrosia
@@ -2305,6 +2329,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             TRACKS_SLITHER,
             sAnimTable_Following
         )
+        .isGulpinForm = TRUE,
         .levelUpLearnset = sSwalotLevelUpLearnset,
         .teachableLearnset = sSwalotTeachableLearnset,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_VALVORIN_STEEL}), // Ambrosia
@@ -2389,6 +2414,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             TRACKS_SLITHER,
             sAnimTable_Following
         )
+        .isGulpinForm = TRUE,
         .levelUpLearnset = sSwalotLevelUpLearnset,
         .teachableLearnset = sSwalotTeachableLearnset,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_VALVORIN_FIRE}), // Ambrosia
@@ -2473,6 +2499,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             TRACKS_SLITHER,
             sAnimTable_Following
         )
+        .isGulpinForm = TRUE,
         .levelUpLearnset = sSwalotLevelUpLearnset,
         .teachableLearnset = sSwalotTeachableLearnset,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_VALVORIN_WATER}), // Ambrosia
@@ -2557,6 +2584,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             TRACKS_SLITHER,
             sAnimTable_Following
         )
+        .isGulpinForm = TRUE,
         .levelUpLearnset = sSwalotLevelUpLearnset,
         .teachableLearnset = sSwalotTeachableLearnset,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_VALVORIN_GRASS}), // Ambrosia
@@ -2641,6 +2669,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             TRACKS_SLITHER,
             sAnimTable_Following
         )
+        .isGulpinForm = TRUE,
         .levelUpLearnset = sSwalotLevelUpLearnset,
         .teachableLearnset = sSwalotTeachableLearnset,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_VALVORIN_ELECTRIC}), // Ambrosia
@@ -2725,6 +2754,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             TRACKS_SLITHER,
             sAnimTable_Following
         )
+        .isGulpinForm = TRUE,
         .levelUpLearnset = sSwalotLevelUpLearnset,
         .teachableLearnset = sSwalotTeachableLearnset,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_VALVORIN_PSYCHIC}), // Ambrosia
@@ -2809,6 +2839,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             TRACKS_SLITHER,
             sAnimTable_Following
         )
+        .isGulpinForm = TRUE,
         .levelUpLearnset = sSwalotLevelUpLearnset,
         .teachableLearnset = sSwalotTeachableLearnset,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_VALVORIN_ICE}), // Ambrosia
@@ -2893,6 +2924,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             TRACKS_SLITHER,
             sAnimTable_Following
         )
+        .isGulpinForm = TRUE,
         .levelUpLearnset = sSwalotLevelUpLearnset,
         .teachableLearnset = sSwalotTeachableLearnset,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_VALVORIN_DRAGON}), // Ambrosia
@@ -2977,6 +3009,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             TRACKS_SLITHER,
             sAnimTable_Following
         )
+        .isGulpinForm = TRUE,
         .levelUpLearnset = sSwalotLevelUpLearnset,
         .teachableLearnset = sSwalotTeachableLearnset,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_VALVORIN_DARK}), // Ambrosia
@@ -3061,9 +3094,94 @@ const struct SpeciesInfo gSpeciesInfo[] =
             TRACKS_SLITHER,
             sAnimTable_Following
         )
+        .isGulpinForm = TRUE,
         .levelUpLearnset = sSwalotLevelUpLearnset,
         .teachableLearnset = sSwalotTeachableLearnset,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_VALVORIN_FAIRY}), // Ambrosia
+    },
+
+    [SPECIES_VALVORIN] =
+    {
+        .baseHP        = 100,
+        .baseAttack    = 83,
+        .baseDefense   = 93,
+        .baseSpeed     = 55,
+        .baseSpAttack  = 83,
+        .baseSpDefense = 93,
+        .types = MON_TYPES(TYPE_POISON, TYPE_FAIRY),
+        .catchRate = 75,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 163 : 168,
+        .evYield_HP = 2,
+        .itemCommon = ITEM_ORAN_BERRY,
+        .itemRare = ITEM_SITRUS_BERRY,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
+        .abilities = { ABILITY_GLUTTONY, ABILITY_NONE, ABILITY_DROUGHT }, //Rending Tide
+        .bodyColor = BODY_COLOR_PURPLE,
+        .speciesName = _("Swalot"),
+        .cryId = CRY_SWALOT,
+        .natDexNum = NATIONAL_DEX_SWALOT,
+        .categoryName = _("Big Stomach"),
+        .height = 17,
+        .weight = 800,
+        .description = COMPOUND_STRING(
+            "Its powerful stomach acid is capable of\n"
+            "digesting almost anything. The one thing\n"
+            "in the whole world a Swalot can't digest is\n"
+            "its own stomach."),
+        .pokemonScale = 256,
+        .pokemonOffset = 6,
+        .trainerScale = 345,
+        .trainerOffset = 3,
+        .frontPic = gMonFrontPic_Swalot,
+        .frontPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(48, 48) : MON_COORDS_SIZE(56, 56),
+        .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 8 : 5,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 15),
+            ANIMCMD_FRAME(1, 30),
+            ANIMCMD_FRAME(1, 30),
+            ANIMCMD_FRAME(0, 30),
+        ),
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
+        .backPic = gMonBackPic_Swalot,
+        .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(56, 56) : MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 6 : 2,
+        .backAnimId = BACK_ANIM_V_STRETCH,
+        .palette = gMonPalette_Swalot,
+        .shinyPalette = gMonShinyPalette_Swalot,
+        .iconSprite = gMonIcon_Swalot,
+        .iconPalIndex = 2,
+    #if P_GENDER_DIFFERENCES && !P_GBA_STYLE_SPECIES_GFX
+        .frontPicFemale = gMonFrontPic_SwalotF,
+        .frontPicSizeFemale = MON_COORDS_SIZE(56, 56),
+        .backPicFemale = gMonBackPic_SwalotF,
+        .backPicSizeFemale = MON_COORDS_SIZE(64, 64),
+    #endif //P_GENDER_DIFFERENCES && !P_GBA_STYLE_SPECIES_GFX
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(4, 3, SHADOW_SIZE_L)
+        FOOTPRINT(Swalot)
+        OVERWORLD(
+            sPicTable_Swalot,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_SLITHER,
+            sAnimTable_Following,
+            gOverworldPalette_Swalot,
+            gShinyOverworldPalette_Swalot
+        )
+        OVERWORLD_FEMALE(
+            sPicTable_SwalotF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_SLITHER,
+            sAnimTable_Following
+        )
+        .isGulpinForm = TRUE,
+        .levelUpLearnset = sSwalotLevelUpLearnset,
+        .teachableLearnset = sSwalotTeachableLearnset,
     },
 
     /*

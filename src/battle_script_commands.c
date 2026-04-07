@@ -844,19 +844,11 @@ void (*const gBattleScriptingCommandsTable[])(void) =
 
 const struct StatFractions gAccuracyStageRatios[] =
 {
-    { 33, 100}, // -6
-    { 36, 100}, // -5
-    { 43, 100}, // -4
-    { 50, 100}, // -3
     { 60, 100}, // -2
     { 75, 100}, // -1
     {  1,   1}, //  0
     {133, 100}, // +1
     {166, 100}, // +2
-    {  2,   1}, // +3
-    {233, 100}, // +4
-    {133,  50}, // +5
-    {  3,   1}, // +6
 };
 
 static const struct WindowTemplate sUnusedWinTemplate =

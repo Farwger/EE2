@@ -45,14 +45,14 @@ BattleScript_MagnitudeMessage::
 
 BattleScript_Terastallization::
 	@ TODO: no string prints in S/V, but right now this helps with clarity
-	printstring STRINGID_PKMNSTORINGENERGY
-	playanimation BS_ATTACKER, B_ANIM_TERA_CHARGE
-	waitanimation
+	printstring STRINGID_PKMNTERASTALLIZEDINTO
+	@ playanimation BS_ATTACKER, B_ANIM_TERA_CHARGE
+	@ waitanimation
 	applyterastallization
 	playanimation BS_ATTACKER, B_ANIM_TERA_ACTIVATE
 	waitanimation
-	printstring STRINGID_PKMNTERASTALLIZEDINTO
-	waitmessage B_WAIT_TIME_LONG
+	@printstring 
+	@waitmessage B_WAIT_TIME_LONG
 	end3
 
 BattleScript_TeraFormChange::

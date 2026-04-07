@@ -810,6 +810,7 @@ enum HealAmount
 {
     FIXED_HEAL_AMOUNT,
     PERCENT_HEAL_AMOUNT,
+    INLINE_HEAL_AMOUNT, // damage reducing berry
 };
 
 static u32 ItemHealHp(enum BattlerId battler, enum Item itemId, enum HealAmount percentHeal)
@@ -824,8 +825,10 @@ static u32 ItemHealHp(enum BattlerId battler, enum Item itemId, enum HealAmount 
         s32 healAmount = 0;
         if (percentHeal == PERCENT_HEAL_AMOUNT)
             healAmount = (GetNonDynamaxMaxHP(battler) * GetItemHoldEffectParam(itemId) / 100);
-        else
+        else if (FIXED_HEAL_AMOUNT)
             healAmount = GetItemHoldEffectParam(itemId);
+        else // damage reducing berry
+            healAmount = (GetNonDynamaxMaxHP(battler) * 25 / 100);
 
         if (ability == ABILITY_RIPEN && GetItemPocket(itemId) == POCKET_BERRIES)
             healAmount *= 2;
@@ -1157,6 +1160,9 @@ enum ItemEffect ItemBattleEffects(enum BattlerId itemBattler, enum BattlerId bat
         break;
     case HOLD_EFFECT_RESTORE_PCT_HP: // Sitrus Berry
         effect = ItemHealHp(itemBattler, item, PERCENT_HEAL_AMOUNT);
+        break;
+    case HOLD_EFFECT_RESIST_BERRY: // new, resist berries heal like sitrus berries
+        effect = ItemHealHp(itemBattler, item, INLINE_HEAL_AMOUNT); // same as sitrus
         break;
     case HOLD_EFFECT_RESTORE_PP: // Leppa Berry
         effect = ItemRestorePp(itemBattler, item);

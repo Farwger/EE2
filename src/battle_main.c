@@ -5827,7 +5827,7 @@ enum Type TrySetAteType(enum Move move, enum BattlerId battlerAtk, enum Ability 
     switch (GetMoveEffect(move))
     {
     case EFFECT_TERA_BLAST:
-        if (GetActiveGimmick(battlerAtk) == GIMMICK_TERA)
+        if (GetActiveGimmick(battlerAtk) == GIMMICK_TERA || gSpeciesInfo[gBattleMons[battlerAtk].species].isGulpinForm == TRUE)
             return ateType;
         break;
     case EFFECT_TERA_STARSTORM:
@@ -6059,7 +6059,7 @@ enum Type GetDynamicMoveType(struct Pokemon *mon, enum Move move, enum BattlerId
         }
         break;
     case EFFECT_TERA_BLAST:
-        if (gimmick == GIMMICK_TERA)
+        if (gimmick == GIMMICK_TERA || gSpeciesInfo[species].isGulpinForm == TRUE)
             return GetMonData(mon, MON_DATA_TERA_TYPE);
         break;
     case EFFECT_TERA_STARSTORM:

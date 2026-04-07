@@ -1832,6 +1832,14 @@ static u32 GetSwitchinHitsToKO(s32 damageTaken, enum BattlerId battler, const st
                         singleUseItemHeal = 1;
                 }
                 break;
+            case  HOLD_EFFECT_RESIST_BERRY:
+                if (currentHP < maxHP / 2)
+                {
+                    singleUseItemHeal = maxHP / 25; // same as sitrus
+                    if (singleUseItemHeal == 0)
+                        singleUseItemHeal = 1;
+                }
+                break;
             case HOLD_EFFECT_CONFUSE_SPICY:
             case HOLD_EFFECT_CONFUSE_DRY:
             case HOLD_EFFECT_CONFUSE_SWEET:

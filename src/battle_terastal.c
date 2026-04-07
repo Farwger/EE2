@@ -66,6 +66,10 @@ bool32 CanTerastallize(enum BattlerId battler)
     if (gBattleMons[battler].volatiles.transformed && GET_BASE_SPECIES_ID(gBattleMons[battler].species) == SPECIES_TERAPAGOS)
         return FALSE;
 
+    //Gulpin forms are already digesting!
+    if (gSpeciesInfo[gBattleMons[battler].species].isGulpinForm == TRUE)
+        return FALSE;
+
     // Prevents Zigzagoon from terastalizing in vanilla.
     if (gBattleTypeFlags & BATTLE_TYPE_FIRST_BATTLE && !IsOnPlayerSide(battler))
         return FALSE;
@@ -155,16 +159,9 @@ uq4_12_t GetTeraMultiplier(struct BattleContext *ctx)
         else
             return UQ_4_12(1.0);
     }
-    // Base and Tera type.
-    if (ctx->moveType == teraType && IS_BATTLER_OF_BASE_TYPE(ctx->battlerAtk, ctx->moveType))
-    {
-        if (ctx->abilityAtk == ABILITY_ADAPTABILITY)
-            return UQ_4_12(2.25);
-        else
-            return UQ_4_12(2.0);
-    }
-    // Tera type only (Adaptability applies).
-    else if (ctx->moveType == teraType && !IS_BATTLER_OF_BASE_TYPE(ctx->battlerAtk, ctx->moveType))
+
+    // Tera type STAB (base type is irrelevant; STAB does not stack.)
+    if (ctx->moveType == teraType)
     {
         if (ctx->abilityAtk == ABILITY_ADAPTABILITY)
             return UQ_4_12(2.0);
@@ -172,9 +169,10 @@ uq4_12_t GetTeraMultiplier(struct BattleContext *ctx)
             return UQ_4_12(1.5);
     }
     // Base type only (Adaptability does not apply while Terastallized).
+    // STAB is reduced
     else if (ctx->moveType != teraType && IS_BATTLER_OF_BASE_TYPE(ctx->battlerAtk, ctx->moveType))
     {
-        return UQ_4_12(1.5);
+        return UQ_4_12(1.25);
     }
     // Neither base or Tera type.
     else
