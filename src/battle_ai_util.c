@@ -1937,6 +1937,7 @@ u32 AI_GetSwitchinWeather(enum BattlerId battler)
     case ABILITY_DROUGHT:
         return B_WEATHER_SUN_NORMAL;
     case ABILITY_SAND_STREAM:
+    case ABILITY_SAND_SPIRIT:
         return B_WEATHER_SANDSTORM;
     case ABILITY_SNOW_WARNING:
         return GetConfig(B_SNOW_WARNING) >= GEN_9 ? B_WEATHER_SNOW : B_WEATHER_HAIL;
@@ -3973,7 +3974,7 @@ bool32 ShouldAbsorb(enum BattlerId battlerAtk, enum BattlerId battlerDef, enum M
     u32 maxHP = gBattleMons[battlerAtk].maxHP;
     u32 currHP = gBattleMons[battlerAtk].hp;
     u32 healAmount = (AI_GetDamage(battlerAtk, battlerDef, gAiThinkingStruct->movesetIndex, AI_ATTACKING, gAiLogicData) * GetMoveAbsorbPercentage(move) / 100);
-    healAmount = GetDrainedBigRootHp(battlerAtk, healAmount);
+    healAmount = GetDrainedBigRootHp(battlerAtk, healAmount, TRUE);
     enum Move predictedMoveSpeedCheck = GetIncomingMoveSpeedCheck(battlerAtk, battlerDef, gAiLogicData);
     bool32 aiIsFaster = AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, CONSIDER_PRIORITY);
     if (healAmount == 0)
@@ -5882,12 +5883,13 @@ bool32 ShouldTriggerAbility(enum BattlerId battlerAtk, enum BattlerId battlerDef
     {
         switch (ability)
         {
-        case ABILITY_LIGHTNING_ROD:
-        case ABILITY_STORM_DRAIN:
-            if (GetConfig(B_REDIRECT_ABILITY_IMMUNITY) < GEN_5)
-                return FALSE;
-            else
-                return (BattlerStatCanRise(battlerDef, ability, STAT_SPATK) && HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_SPECIAL));
+        //case ABILITY_LIGHTNING_ROD:
+        //case ABILITY_STORM_DRAIN:
+         //   if (GetConfig(B_REDIRECT_ABILITY_IMMUNITY) < GEN_5)
+          //      return FALSE;
+         //   else
+          //      return ((BattlerStatCanRise(battlerDef, ability, STAT_SPATK) && HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_SPECIAL))
+             //           || (BattlerStatCanRise(battlerDef, ability, STAT_ATK) && HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_PHYSICAL)));
 
         case ABILITY_DEFIANT:
         case ABILITY_JUSTIFIED:

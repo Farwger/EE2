@@ -1355,7 +1355,8 @@ void BattleSetup_StartTrainerBattle(void)
 
         SetHillTrainerFlag();
     }
-    else if (GetTrainerBattleType(TRAINER_BATTLE_PARAM.opponentA) == TRAINER_BATTLE_TYPE_DOUBLES)
+    // if the player has only one Pokemon, double battles are converted into singles by simply not adding the BATTLE_TYPE_DOUBLE flag.
+    else if (GetTrainerBattleType(TRAINER_BATTLE_PARAM.opponentA) == TRAINER_BATTLE_TYPE_DOUBLES && GetMonsStateToDoubles() == PLAYER_HAS_TWO_USABLE_MONS) 
     {
         gBattleTypeFlags |= BATTLE_TYPE_DOUBLE;
     }

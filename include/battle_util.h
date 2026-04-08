@@ -213,7 +213,7 @@ u32 TrySetCantSelectMoveBattleScript(enum BattlerId battler);
 u32 CheckMoveLimitations(enum BattlerId battler, u8 unusableMoves, u16 check);
 bool32 AreAllMovesUnusable(enum BattlerId battler);
 u8 GetImprisonedMovesCount(enum BattlerId battler, enum Move move);
-s32 GetDrainedBigRootHp(enum BattlerId battler, s32 hp);
+s32 GetDrainedBigRootHp(enum BattlerId battler, s32 hp, bool32 parasitic);
 bool32 IsAbilityAndRecord(enum BattlerId battler, enum Ability battlerAbility, enum Ability abilityToCheck);
 bool32 HandleFaintedMonActions(void);
 void TryClearRageAndFuryCutter(void);

@@ -193,7 +193,7 @@ static const struct BattlePyramidRequirement sBattlePyramidRequirementsByRound[]
         .type = TYPE_MYSTERY,
         .moves = sWeatherChangingMoves,
         .nMoves = NELEMS(sWeatherChangingMoves),
-        .abilities = { ABILITY_SAND_SPIT, ABILITY_DRIZZLE, ABILITY_SNOW_WARNING, ABILITY_DROUGHT, ABILITY_SAND_STREAM },
+        .abilities = { ABILITY_SAND_SPIT, ABILITY_DRIZZLE, ABILITY_SNOW_WARNING, ABILITY_DROUGHT, ABILITY_SAND_STREAM, ABILITY_SAND_SPIRIT },
         .nAbilities = 5,
     },
     [12] = /* bug types */

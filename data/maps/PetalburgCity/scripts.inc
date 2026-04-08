@@ -224,6 +224,7 @@ PetalburgCity_EventScript_GymSign::
 
 PetalburgCity_EventScript_CitySign::
 	msgbox PetalburgCity_Text_CitySign, MSGBOX_SIGN
+	giveitem ITEM_TERA_ORB
 	end
 
 PetalburgCity_EventScript_Gentleman::

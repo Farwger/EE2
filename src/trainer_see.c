@@ -618,9 +618,9 @@ static u8 CheckTrainer(u8 objectEventId)
             || temp->params.mode == TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE)
         {
             if (GetMonsStateToDoubles_2() != PLAYER_HAS_TWO_USABLE_MONS)
-                return 0;
-
-            numTrainers = 2;
+                numTrainers = 1;
+            else
+                numTrainers = 2;
         }
     }
 

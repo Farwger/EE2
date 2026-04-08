@@ -13991,7 +13991,7 @@ void BS_TryActivateSoulheart(void)
     {
         gBattleScripting.battler = gBattleStruct->soulheartBattlerId++;
         u32 ability = GetBattlerAbility(gBattleScripting.battler);
-        if (ability == ABILITY_SOUL_HEART
+        if ((ability == ABILITY_SOUL_HEART || ability == ABILITY_REAPER)
             && IsBattlerAlive(gBattleScripting.battler)
             && !NoAliveMonsForEitherParty()
             && CompareStat(gBattleScripting.battler, STAT_SPATK, MAX_STAT_STAGE, CMP_LESS_THAN, ability))

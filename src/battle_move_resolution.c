@@ -2155,7 +2155,7 @@ static enum MoveEndResult MoveEndProtectLikeEffect(void)
 
 static void SetHealScript(s32 healAmount)
 {
-    healAmount = GetDrainedBigRootHp(gBattlerAttacker, healAmount);
+    healAmount = GetDrainedBigRootHp(gBattlerAttacker, healAmount, TRUE);
     if (GetBattlerAbility(gBattlerTarget) == ABILITY_LIQUID_OOZE
      && (GetMoveEffect(gCurrentMove) != EFFECT_DREAM_EATER || GetConfig(B_DREAM_EATER_LIQUID_OOZE) >= GEN_5))
     {

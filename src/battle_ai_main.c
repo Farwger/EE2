@@ -3570,6 +3570,7 @@ static s32 AI_DoubleBattle(enum BattlerId battlerAtk, enum BattlerId battlerDef,
             case ABILITY_DRY_SKIN:
             case ABILITY_WATER_ABSORB:
             case ABILITY_STORM_DRAIN:
+            case ABILITY_ULTIMATE_HEAT:
                 if (moveType == TYPE_WATER)
                 {
                     if (GetConfig(B_REDIRECT_ABILITY_IMMUNITY) < GEN_5 && atkPartnerAbility == ABILITY_STORM_DRAIN)
@@ -3982,12 +3983,6 @@ static bool32 DoesAbilityBenefitFromSunOrRain(enum BattlerId battler, enum Abili
     case ABILITY_RAIN_DISH:
     case ABILITY_SWIFT_SWIM:
         return (weather & B_WEATHER_RAIN);
-    case ABILITY_HARVEST:
-        if (GetItemPocket(gAiLogicData->items[battler]) != POCKET_BERRIES
-            && GetItemPocket(GetBattlerPartyState(battler)->usedHeldItem) != POCKET_BERRIES)
-        {
-            return FALSE;
-        }
     case ABILITY_CHLOROPHYLL:
     case ABILITY_FLOWER_GIFT:
     case ABILITY_LEAF_GUARD:
@@ -4006,7 +4001,7 @@ static u32 GetWindAbilityScore(enum BattlerId battlerAtk, enum BattlerId battler
 
     if (aiData->abilities[battlerAtk] == ABILITY_WIND_RIDER)
     {
-        score = IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_ATK);
+        score = IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_SPATK);
     }
     else if (aiData->abilities[battlerAtk] == ABILITY_WIND_POWER)
     {
@@ -4416,6 +4411,8 @@ static s32 AI_CalcMoveEffectScore(enum BattlerId battlerAtk, enum BattlerId batt
         IncreaseSleepScore(battlerAtk, battlerDef, move, &score);
         break;
     case EFFECT_ABSORB:
+    case EFFECT_ABSORB_GULP:
+    case EFFECT_ABSORB_LICK:
     case EFFECT_DREAM_EATER:
         if (ShouldAbsorb(battlerAtk, battlerDef, move))
             ADJUST_SCORE(DECENT_EFFECT);
@@ -4755,7 +4752,7 @@ static s32 AI_CalcMoveEffectScore(enum BattlerId battlerAtk, enum BattlerId batt
         ADJUST_SCORE(GOOD_EFFECT);
         if (!HasDamagingMove(battlerDef)
             || IsBattlerTrapped(battlerAtk, battlerDef)
-            || aiData->holdEffects[battlerAtk] == HOLD_EFFECT_BIG_ROOT)
+            || aiData->holdEffects[battlerAtk] == HOLD_EFFECT_BIG_ROOT || aiData->abilities[battlerAtk] == ABILITY_PARASITIC)
             ADJUST_SCORE(DECENT_EFFECT);
         break;
     case EFFECT_DO_NOTHING:

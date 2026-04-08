@@ -621,7 +621,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Gluttony"),
         .description = COMPOUND_STRING("Boosts absorbing moves."),
-        .aiRating = 3,
+        .aiRating = 6,
     },
 
     [ABILITY_ANGER_POINT] =
@@ -917,7 +917,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_FLOWER_GIFT] =
     {
         .name = _("Flower Gift"),
-        .description = COMPOUND_STRING("Allies power up in sunshine."),
+        .description = COMPOUND_STRING("Power up in sunshine."),
         .aiRating = 4,
         .cantBeCopied = TRUE,
         .cantBeTraced = TRUE,
@@ -1044,8 +1044,8 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_HARVEST] =
     {
         .name = _("Harvest"),
-        .description = COMPOUND_STRING("May recycle a used Berry."),
-        .aiRating = 5,
+        .description = COMPOUND_STRING("Recycles a used Berry."),
+        .aiRating = 6,
     },
 
     [ABILITY_TELEPATHY] =
@@ -1495,7 +1495,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_WATER_BUBBLE] =
     {
-        .name = _("Water Bubble"),
+        .name = _("Water Shield"),
         .description = COMPOUND_STRING("Guards from fire and burns."),
         .aiRating = 8,
         .breakable = TRUE,
@@ -1533,7 +1533,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Liquid Voice"),
         .description = COMPOUND_STRING("Makes sound moves Water."),
-        .aiRating = 5,
+        .aiRating = 7,
     },
 
     [ABILITY_TRIAGE] =
@@ -2097,7 +2097,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_WIND_RIDER] =
     {
         .name = _("Wind Rider"),
-        .description = COMPOUND_STRING("Ups Attack if hit by wind."),
+        .description = COMPOUND_STRING("Wind boosts Sp. Atk."),
         .aiRating = 4,
         .breakable = TRUE,
     },
@@ -2412,5 +2412,140 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeCopied = TRUE,
         .cantBeSwapped = TRUE,
         .cantBeTraced = TRUE,
+    },
+
+    [ABILITY_RENDING_TIDE] = //todo
+    {
+        .name = _("Rending Tide"),
+        .description = COMPOUND_STRING("Summons a black hole."),
+        .aiRating = 10,
+    },
+
+    [ABILITY_GRUDGE] =
+    {
+        .name = _("Grudge"),
+        .description = COMPOUND_STRING("Boosts Sp. Atk when hit."),
+        .aiRating = 6,
+    },
+
+    [ABILITY_FRICE] =
+    {
+        .name = _("Frice"),
+        .description = COMPOUND_STRING("Ups Fire and Ice."),
+        .aiRating = 7,
+        .breakable = TRUE,
+    },
+
+    [ABILITY_PARASITIC] =
+    {
+        .name = _("Parasitic"),
+        .description = COMPOUND_STRING("Absorbs more HP."),
+        .aiRating = 6,
+    },
+
+    [ABILITY_MINDFUL] =
+    {
+        .name = _("Parasitic"),
+        .description = COMPOUND_STRING("Has Psychic power."),
+        .aiRating = 6,
+        .breakable = TRUE,
+    },
+
+    [ABILITY_GROUNDED] =
+    {
+        .name = _("Grounded"),
+        .description = COMPOUND_STRING("Has Ground power."),
+        .aiRating = 7,
+        .breakable = TRUE,
+    },
+
+    [ABILITY_HYPNOTIC] = //todo
+    {
+        .name = _("Grounded"),
+        .description = COMPOUND_STRING("Puts foe to sleep."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_RADIANT] =
+    {
+        .name = _("Radiant"),
+        .description = COMPOUND_STRING("Dark/Ghost protection."),
+        .aiRating = 7,
+        .breakable = TRUE,
+    },
+
+    [ABILITY_REBORN] = // todo
+    {
+        .name = _("Radiant"),
+        .description = COMPOUND_STRING("Dark/Ghost protection."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_INSIDIOUS] =
+    {
+        .name = _("Insidious"),
+        .description = COMPOUND_STRING("Has Dark power."),
+        .aiRating = 6,
+        .breakable = TRUE,
+    },
+
+    [ABILITY_ULTIMATE_HEAT] =
+    {
+        .name = _("Ulimate Heat"),
+        .description = COMPOUND_STRING("Powers up from Water."),
+        .aiRating = 8,
+        .breakable = TRUE,
+    },
+
+    [ABILITY_RESTFUL] = // todo
+    {
+        .name = _("RESTFUL"),
+        .description = COMPOUND_STRING("Heals when truant."),
+        .aiRating = -1,
+        .cantBeOverwritten = TRUE,
+    },
+
+    [ABILITY_VENOM_HEAL] = // todo
+    {
+        .name = _("Venom Heal"),
+        .description = COMPOUND_STRING("Heals from foe's poison."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_REAPER] =
+    {
+        .name = _("Reaper"),
+        .description = COMPOUND_STRING("KOs raise Sp. Atk."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_RESONANCE] =
+    {
+        .name = _("Resonance"),
+        .description = COMPOUND_STRING("Makes sound moves Psychic."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_SAND_SPIRIT] =
+    {
+        .name = _("Sand Spirit"),
+        .description = COMPOUND_STRING("Hides in a sandstorm."),
+        .aiRating = 9,
+    },
+
+    [ABILITY_OLD_STEEL] =
+    {
+        .name = _("Old Steel"),
+        .description = COMPOUND_STRING("As it once was."),
+        .aiRating = 6,
+        .breakable = TRUE,
+    },
+
+    [ABILITY_DREAMER] =
+    {
+        .name = _("Dreamer"),
+        .description = COMPOUND_STRING("What could have been..."),
+        .aiRating = 8,
+        .breakable = TRUE,
     },
 };

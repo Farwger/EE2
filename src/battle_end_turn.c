@@ -402,7 +402,7 @@ static bool32 HandleEndTurnAquaRing(enum BattlerId battler)
      && !IsBattlerAtMaxHp(battler)
      && IsBattlerAlive(battler))
     {
-        SetHealAmount(battler, GetDrainedBigRootHp(battler, GetNonDynamaxMaxHP(battler) / 16));
+        SetHealAmount(battler, GetDrainedBigRootHp(battler, GetNonDynamaxMaxHP(battler) / 16, FALSE));
         BattleScriptExecute(BattleScript_AquaRingHeal);
         effect = TRUE;
     }
@@ -421,7 +421,7 @@ static bool32 HandleEndTurnIngrain(enum BattlerId battler)
      && !IsBattlerAtMaxHp(battler)
      && IsBattlerAlive(battler))
     {
-        SetHealAmount(battler, GetDrainedBigRootHp(battler, GetNonDynamaxMaxHP(battler) / 16));
+        SetHealAmount(battler, GetDrainedBigRootHp(battler, GetNonDynamaxMaxHP(battler) / 16, FALSE));
         BattleScriptExecute(BattleScript_IngrainTurnHeal);
         effect = TRUE;
     }
@@ -444,7 +444,7 @@ static bool32 HandleEndTurnLeechSeed(enum BattlerId battler)
         gBattleScripting.animArg1 = gBattlerTarget;
         gBattleScripting.animArg2 = gBattlerAttacker;
         s32 drainAmount = GetNonDynamaxMaxHP(gBattlerAttacker) / 8;
-        s32 healAmount = GetDrainedBigRootHp(gBattlerTarget, drainAmount);
+        s32 healAmount = GetDrainedBigRootHp(gBattlerTarget, drainAmount, TRUE);
         if (GetBattlerAbility(battler) == ABILITY_LIQUID_OOZE)
         {
             SetPassiveDamageAmount(gBattlerAttacker, drainAmount);

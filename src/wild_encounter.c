@@ -320,6 +320,7 @@ static u32 ChooseWildMonIndex_Fishing(u8 rod)
     return wildMonIndex;
 }
 
+// Now only used by fishing
 static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon, u8 wildMonIndex, enum WildPokemonArea area)
 {
     u8 min;
@@ -479,6 +480,7 @@ static bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, enum 
 {
     u8 wildMonIndex = 0;
     u8 level;
+    u8 randomVariance;
 
     switch (area)
     {
@@ -523,7 +525,23 @@ static bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, enum 
         break;
     }
 
-    level = ChooseWildMonLevel(wildMonInfo->wildPokemon, wildMonIndex, area);
+    randomVariance = Random() % 3;
+
+	switch(randomVariance)
+	{
+		case 0:
+			randomVariance = -1;
+			break;
+		case 1:
+			randomVariance = 0;
+			break;
+		case 2:
+			randomVariance = 1;
+			break;
+	}
+
+    level = GetMonData(&gPlayerParty[0], MON_DATA_LEVEL) + randomVariance;
+    
     if (flags & WILD_CHECK_REPEL && !IsWildLevelAllowedByRepel(level))
         return FALSE;
     if (gMapHeader.mapLayoutId != LAYOUT_BATTLE_FRONTIER_BATTLE_PIKE_ROOM_WILD_MONS && flags & WILD_CHECK_KEEN_EYE && !IsAbilityAllowingEncounter(level))

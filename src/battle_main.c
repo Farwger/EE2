@@ -6074,9 +6074,12 @@ enum Type GetDynamicMoveType(struct Pokemon *mon, enum Move move, enum BattlerId
         break;
     }
 
-    if (IsSoundMove(move) && ability == ABILITY_LIQUID_VOICE)
+    if (IsSoundMove(move))
     {
-        return TYPE_WATER;
+        if (ability == ABILITY_LIQUID_VOICE)
+            return TYPE_WATER;
+        else if (ability == ABILITY_RESONANCE)
+            return TYPE_PSYCHIC;
     }
     else if (moveEffect == EFFECT_AURA_WHEEL
           && species == SPECIES_MORPEKO_HANGRY
