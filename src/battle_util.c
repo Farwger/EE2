@@ -3452,6 +3452,16 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
                 effect++;
             }
             break;
+        case ABILITY_RENDING_TIDE:
+            if (!shouldAbilityTrigger || gFieldStatuses & STATUS_FIELD_BLACK_HOLE)
+                break;
+                
+                gFieldStatuses |= STATUS_FIELD_BLACK_HOLE;
+                gBattleScripting.animArg1 = B_ANIM_SUN_CONTINUES; // todo
+                BattleScriptCall(BattleScript_RendingTideActivates);
+                effect++;
+
+            break;
         case ABILITY_INTIMIDATE:
             if (shouldAbilityTrigger && !IsOpposingSideEmpty(battler))
             {
@@ -3698,6 +3708,16 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
                     s32 healAmount = gLastUsedAbility == ABILITY_RAIN_DISH ? 16 : 8;
                     SetHealAmount(battler, GetNonDynamaxMaxHP(battler) / healAmount);
                     BattleScriptExecute(BattleScript_RainDishActivates);
+                    effect++;
+                }
+                break;
+            case ABILITY_RENDING_TIDE:
+                if (!IsBattlerAtMaxHp(battler)
+                 && !gBattleMons[battler].volatiles.healBlock)
+                {
+                    s32 healAmount = 16;
+                    SetHealAmount(battler, GetNonDynamaxMaxHP(battler) / healAmount);
+                    BattleScriptExecute(BattleScript_BlackHoleHeals);
                     effect++;
                 }
                 break;
@@ -6641,6 +6661,10 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct BattleContext *ctx)
         modifier = uq4_12_multiply(modifier, UQ_4_12(GetConfig(B_SPORT_DMG_REDUCTION) >= GEN_5 ? 0.33 : 0.5));
     if (IsFieldWaterSportAffected(ctx->moveType))
         modifier = uq4_12_multiply(modifier, UQ_4_12(GetConfig(B_SPORT_DMG_REDUCTION) >= GEN_5 ? 0.33 : 0.5));
+        
+    if (ctx->fieldStatuses & STATUS_FIELD_BLACK_HOLE && ctx->moveType == TYPE_GROUND)
+        modifier = UQ_4_12(0.5);
+
 
     // attacker's abilities
     switch (ctx->abilityAtk)

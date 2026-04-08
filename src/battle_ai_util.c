@@ -3391,6 +3391,16 @@ static u32 GetWeatherDamage(enum BattlerId battlerId)
     enum HoldEffect holdEffect = gAiLogicData->holdEffects[battlerId];
     u32 damage = 0;
     u32 weather = AI_GetWeather();
+
+    if (gFieldStatuses & STATUS_FIELD_BLACK_HOLE && !IsAbilityOnSide(battlerId, ABILITY_RENDING_TIDE))
+    {
+        damage = GetNonDynamaxMaxHP(battlerId) / 16;
+            if (damage == 0)
+                damage = 1;
+
+        return damage;
+    }
+
     if (!weather)
         return 0;
 
@@ -3443,8 +3453,8 @@ bool32 BattlerWillFaintFromWeather(enum BattlerId battler, enum Ability ability)
     if (gAiLogicData->holdEffects[battler] == HOLD_EFFECT_SAFETY_GOGGLES)
         return FALSE;
 
-    if ((DoesBattlerTakeSandstormDamage(battler, ability) || DoesBattlerTakeHailDamage(battler, ability))
-      && gBattleMons[battler].hp <= max(1, GetNonDynamaxMaxHP(battler) / 16))
+    if ((DoesBattlerTakeSandstormDamage(battler, ability) || DoesBattlerTakeHailDamage(battler, ability) || (gFieldStatuses & STATUS_FIELD_BLACK_HOLE && !IsAbilityOnSide(battler, ABILITY_RENDING_TIDE)))
+        && gBattleMons[battler].hp <= max(1, GetNonDynamaxMaxHP(battler) / 16))
         return TRUE;
 
     return FALSE;

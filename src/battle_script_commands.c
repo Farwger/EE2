@@ -14659,6 +14659,10 @@ void BS_TryToClearPrimalWeather(void)
              || (ability == ABILITY_DELTA_STREAM && gBattleWeather & B_WEATHER_STRONG_WINDS))
             && IsBattlerAlive(i))
             shouldNotClear = TRUE;
+
+        //removing the black hole if the user has left
+        if (ability == ABILITY_RENDING_TIDE && gFieldStatuses & STATUS_FIELD_BLACK_HOLE && !IsBattlerAlive(i))
+            gFieldStatuses &= ~STATUS_FIELD_BLACK_HOLE;
     }
     if (gBattleWeather & B_WEATHER_SUN_PRIMAL && !shouldNotClear)
     {

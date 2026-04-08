@@ -877,6 +877,9 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_PKMNDISGUISEWASBUSTED]                = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s disguise was busted!"),
     [STRINGID_ZENMODETRIGGERED]                     = COMPOUND_STRING("{B_SCR_ABILITY} triggered!"),
     [STRINGID_ZENMODEENDED]                         = COMPOUND_STRING("{B_SCR_ABILITY} ended!"),
+    [STRINGID_BLACKHOLESTART]                       = COMPOUND_STRING("Swall's mouth opens!"),
+    [STRINGID_BLACKHOLEHEALS]                       = COMPOUND_STRING("The black hole feeds\nHP to {B_ATK_NAME_WITH_PREFIX}!"),
+    [STRINGID_BLACKHOLEHURTS]                       = COMPOUND_STRING("The black hole tears\nat {B_ATK_NAME_WITH_PREFIX2}!"),
 };
 
 const u16 gTrainerUsedItemStringIds[] =

@@ -1559,6 +1559,22 @@ static s32 GetSwitchinWeatherImpact(enum BattlerId battler)
     enum Ability ability = gAiLogicData->abilities[battler];
     enum HoldEffect holdEffect = gAiLogicData->holdEffects[battler];
 
+    if (gFieldStatuses & STATUS_FIELD_BLACK_HOLE)
+    {
+        if (!IsAbilityOnSide(battler, ABILITY_RENDING_TIDE)) // damage
+        {
+            weatherImpact = maxHP / 16;
+                if (weatherImpact == 0)
+                    weatherImpact = 1;
+        }
+        else // healing
+        {
+            weatherImpact = -(maxHP / 8);
+            if (weatherImpact == 0)
+                weatherImpact = -1;
+        }
+    }
+
     if (HasWeatherEffect())
     {
         // Damage

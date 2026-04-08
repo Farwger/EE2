@@ -181,6 +181,34 @@ static bool32 HandleEndTurnWeatherDamage(enum BattlerId battler)
     return effect;
 }
 
+static bool32 HandleEndTurnRendingTide(enum BattlerId battler)
+{
+    bool32 effect = FALSE;
+
+    if (!(gFieldStatuses & STATUS_FIELD_BLACK_HOLE)) // no Rending Tide
+    {
+        gBattleStruct->eventState.endTurnBattler = 0;
+        gBattleStruct->eventState.endTurn++;
+        return effect;
+    }
+
+    gBattleStruct->eventState.endTurnBattler++;
+
+    if (IsAbilityOnSide(battler, ABILITY_RENDING_TIDE)) //is Rending Tide on the battler or an ally
+    {
+        if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, ABILITY_RENDING_TIDE, MOVE_NONE, TRUE)) // see battle_util.c; this heals the battler
+            effect = TRUE;
+    }
+    else if (IsBattlerAlive(battler))
+    {
+        SetPassiveDamageAmount(battler, GetNonDynamaxMaxHP(battler) / 16);
+        BattleScriptExecute(BattleScript_BlackHoleHurts);
+        effect = TRUE;
+    }
+
+    return effect;
+}
+
 static bool32 HandleEndTurnEmergencyExit(enum BattlerId battler)
 {
     bool32 effect = FALSE;
@@ -1449,6 +1477,7 @@ static bool32 (*const sEndTurnEffectHandlers[])(enum BattlerId battler) =
     [ENDTURN_VARIOUS] = HandleEndTurnVarious,
     [ENDTURN_WEATHER] = HandleEndTurnWeather,
     [ENDTURN_WEATHER_DAMAGE] = HandleEndTurnWeatherDamage,
+    [ENDTURN_RENDING_TIDE] = HandleEndTurnRendingTide,
     [ENDTURN_EMERGENCY_EXIT_1] = HandleEndTurnEmergencyExit,
     [ENDTURN_AFFECTION] = HandleEndTurnAffection,
     [ENDTURN_FUTURE_SIGHT] = HandleEndTurnFutureSight,

@@ -4770,6 +4770,10 @@ u32 GetBattlerTotalSpeedStat(enum BattlerId battler, enum Ability ability, enum 
             speed *= 2;
     }
 
+    //Rending Tide lowers the speed of enemies by 20%
+    if (gFieldStatuses & STATUS_FIELD_BLACK_HOLE && !IsAbilityOnSide(battler, ABILITY_RENDING_TIDE))
+        speed = (speed * 80) / 100;
+
     // other abilities
     if (ability == ABILITY_QUICK_FEET && gBattleMons[battler].status1 & STATUS1_ANY)
         speed = (speed * 150) / 100;

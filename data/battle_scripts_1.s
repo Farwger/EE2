@@ -4422,6 +4422,7 @@ BattleScript_WeatherAbilityActivatesContinue:
 	call BattleScript_ActivateWeatherAbilities
 	return
 
+
 BattleScript_SandSpitActivates::
 	printstring STRINGID_ASANDSTORMKICKEDUP
 	goto BattleScript_WeatherAbilityActivatesContinue
@@ -6442,6 +6443,28 @@ BattleScript_PsychicSurgeActivates::
 	playanimation BS_SCRIPTING, B_ANIM_RESTORE_BG
 	call BattleScript_ActivateTerrainEffects
 	return
+
+BattleScript_RendingTideActivates::
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_BLACKHOLESTART
+	waitmessage B_WAIT_TIME_LONG
+	playanimation_var BS_BATTLER_0, sB_ANIM_ARG1
+	return
+
+BattleScript_BlackHoleHeals::
+	printstring STRINGID_BLACKHOLEHEALS
+	waitmessage B_WAIT_TIME_LONG
+	healthbarupdate BS_ATTACKER, PASSIVE_HP_UPDATE
+	datahpupdate BS_ATTACKER, PASSIVE_HP_UPDATE
+	end2
+
+BattleScript_BlackHoleHurts::
+	printstring STRINGID_BLACKHOLEHURTS
+	waitmessage B_WAIT_TIME_LONG
+	effectivenesssound
+	hitanimation BS_ATTACKER
+	goto BattleScript_DoTurnDmg
 
 BattleScript_BadDreamsActivates::
 	setbyte gBattlerTarget, 0
