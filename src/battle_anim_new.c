@@ -3672,7 +3672,7 @@ const struct SpriteTemplate gSpriteTemplate_FlipTurnBack = {
 const struct SpriteTemplate gUTurnBallSpriteTemplate =
 {
     .tileTag = ANIM_TAG_SMALL_BUBBLES,
-    .paletteTag = ANIM_TAG_RAZOR_LEAF,
+    .paletteTag = ANIM_TAG_SMALL_BUBBLES,
     .oam = &gOamData_AffineOff_ObjNormal_16x16,
     .affineAnims = gAffineAnims_ShadowBall,
     .callback = AnimShadowBall,
@@ -3681,7 +3681,7 @@ const struct SpriteTemplate gUTurnBallSpriteTemplate =
 const struct SpriteTemplate gUTurnBallBackSpriteTemplate =
 {
     .tileTag = ANIM_TAG_SMALL_BUBBLES,
-    .paletteTag = ANIM_TAG_RAZOR_LEAF,
+    .paletteTag = ANIM_TAG_SMALL_BUBBLES,
     .oam = &gOamData_AffineOff_ObjNormal_16x16,
     .affineAnims = gAffineAnims_ShadowBall,
     .callback = AnimAbsorptionOrb,

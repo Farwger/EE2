@@ -1,0 +1,146 @@
+mapscripts BersketCity_MapScripts {
+
+MAP_SCRIPT_ON_TRANSITION {
+    setflag(FLAG_VISITED_BERSKET_CITY)
+    setflag(FLAG_HIDE_RIVAL_BERSKETCITY)
+}
+
+}
+    
+script BersketCity_EventScript_Guljira {
+    msgbox(format("Hey, I'm hungry. Do you have any food?"))
+    msgbox("Lips: Oh no!\n What happened?")
+    msgbox("No food.")
+    msgbox(format("Lips: Something must have gone wrong. This is bad.\p{PLAYER}, this is Guljira. He's our leader.\pBut he's supposed to have special food from the forest. Without it, the hunger is too much, and his great wisdom is gone.\pWe need to talk to the professor."))
+    closemessage
+    end
+}
+
+script BersketCity_EventScript_Rival {
+    lockall
+    opendoor (40, 31)
+    delay (10)
+    applymovement (LOCALID_PLAYER, BersketCity_Movement_StepAway)
+    waitmovement (LOCALID_PLAYER)
+    delay (20)
+
+    checkplayergender
+	if (var(VAR_RESULT) == MALE) {
+        playbgm(MUS_ENCOUNTER_MAY, TRUE)
+    } else {
+        playbgm(MUS_ENCOUNTER_BRENDAN, TRUE)
+    }
+
+    addobject(LOCALID_BERSKET_CITY_GULPINATOR)
+    delay(10)
+    applymovement(LOCALID_BERSKET_CITY_GULPINATOR, Common_Movement_ExclamationMark)
+    playse(SE_PIN)
+    waitmovement
+    applymovement(LOCALID_BERSKET_CITY_GULPINATOR, BersketCity_Movement_GulpinatorEntrance)
+    delay(20)
+    addobject(LOCALID_BERSKET_CITY_RIVAL)
+    call(Common_EventScript_SetupRivalGfxId)
+    applymovement(LOCALID_BERSKET_CITY_RIVAL, BersketCity_Movement_RivalEntrance)
+    waitmovement(LOCALID_BERSKET_CITY_GULPINATOR)
+    waitmovement(LOCALID_BERSKET_CITY_RIVAL)
+    msgbox(format("{RIVAL}: {PLAYER}! You're finally here. Just in time."))
+    msgbox(format("Gulpinator: Behold my true form!"))
+
+    checkplayergender
+    if (var(VAR_RESULT) == MALE) {
+        switch (var(VAR_STARTER_MON)){
+            case 0:
+                trainerbattle_no_intro (TRAINER_MAY_TREECKO, BersketCity_Text_MayDefeat)
+                clearflag(TRAINER_MAY_TREECKO)
+                break
+            case 1:
+                trainerbattle_no_intro (TRAINER_MAY_TORCHIC, BersketCity_Text_MayDefeat)
+                clearflag(TRAINER_MAY_TORCHIC)
+                break
+            case 2:
+                trainerbattle_no_intro (TRAINER_MAY_MUDKIP, BersketCity_Text_MayDefeat)
+                clearflag(TRAINER_MAY_MUDKIP)
+                break
+        }
+    }
+    else {
+        switch (var(VAR_STARTER_MON)){
+            case 0:
+                trainerbattle_no_intro (TRAINER_BRENDAN_TREECKO, BersketCity_Text_BrendanDefeat)
+                clearflag(TRAINER_BRENDAN_TREECKO) // for later battle
+                break
+            case 1:
+                trainerbattle_no_intro (TRAINER_BRENDAN_TORCHIC, BersketCity_Text_BrendanDefeat)
+                clearflag(TRAINER_BRENDAN_TORCHIC)
+                break
+            case 2:
+                trainerbattle_no_intro (TRAINER_BRENDAN_MUDKIP, BersketCity_Text_BrendanDefeat) 
+                clearflag(TRAINER_BRENDAN_MUDKIP)
+                break  
+        }
+    }
+    call (BersketCity_EventScript_RivalDefeated)
+}
+
+script BersketCity_EventScript_RivalDefeated {
+    msgbox(format("{RIVAL}: Looks like my dad was right to give you that Pokémon. Seeing you, I get the feeling you could befriend any Pokémon with ease."))
+    msgbox(format("Gulpinator: And you have a Gulpin friend! Nice!"))
+    msgbox(format("Lips: Hi.\n So you must've eaten the Steel berry.\p Wow.\p That's kind of gross."))
+    msgbox(format("Gulpinator: Better than the Normal berry!"))
+    msgbox(format("Lips: So why'd you lose then?"))
+    msgbox(format("{RIVAL}: Alright, we've gotta go. We're heading to Rustboro to learn this 'Engram' thing.\p Maybe the Professors will give you a copy too.\p And we're off!"))
+    msgbox(format("Gulpinator: Taste ya later!"))
+    closemessage
+    applymovement(LOCALID_BERSKET_CITY_GULPINATOR, BersketCity_Movement_GulpinatorExit)
+    delay(3)
+    applymovement(LOCALID_BERSKET_CITY_RIVAL, BersketCity_Movement_RivalExit)
+    waitmovement(LOCALID_BERSKET_CITY_GULPINATOR)
+    waitmovement(LOCALID_BERSKET_CITY_RIVAL)
+    removeobject(LOCALID_BERSKET_CITY_GULPINATOR)
+    removeobject(LOCALID_BERSKET_CITY_RIVAL)
+    setflag(FLAG_HIDE_RIVAL_BERSKETCITY)
+    setvar(VAR_BERSKET_CITY_STATE, 1)
+    fadedefaultbgm
+    releaseall
+    end
+}
+
+movement BersketCity_Movement_StepAway {
+    face_up
+    lock_facing_direction
+	walk_down
+	unlock_facing_direction
+    face_up
+}
+
+movement BersketCity_Movement_GulpinatorEntrance {
+    walk_down
+	walk_right
+	face_down
+}
+
+movement BersketCity_Movement_RivalEntrance {
+    walk_down
+}
+
+movement BersketCity_Movement_GulpinatorExit {
+    walk_fast_down * 2
+    walk_fast_left * 10
+}
+
+movement BersketCity_Movement_RivalExit {
+    walk_right
+    walk_down
+    walk_fast_down
+    walk_fast_left * 10
+}
+
+text BersketCity_Text_BrendanDefeat{
+    "Wow! That's great!\n"
+	"{PLAYER}, you're pretty good!"
+}
+
+text BersketCity_Text_MayDefeat{
+    "Wow! That's great!\n"
+	"{PLAYER}, you're pretty good!"
+}

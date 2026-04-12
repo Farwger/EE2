@@ -100,7 +100,7 @@
 #define VAR_BADGE_COUNT                                  0x404E // New Var
 #define VAR_LOTAD_SIZE_RECORD                            0x404F
 #define VAR_LITTLEROOT_TOWN_STATE                        0x4050
-#define VAR_OLDALE_TOWN_STATE                            0x4051
+#define VAR_BERSKET_CITY_STATE                           0x4051 // New; freed
 #define VAR_DIFFICULTY                                   0x4052 // New Var
 #define VAR_LAVARIDGE_TOWN_STATE                         0x4053
 #define VAR_CURRENT_SECRET_BASE                          0x4054 // was probably allocated for VAR_FALLARBOR_TOWN_STATE at one point
@@ -218,7 +218,7 @@
 #define VAR_FOSSIL_RESURRECTION_STATE                    0x40C4
 #define VAR_WHICH_FOSSIL_REVIVED                         0x40C5
 #define VAR_STEVENS_HOUSE_STATE                          0x40C6
-#define VAR_OLDALE_RIVAL_STATE                           0x40C7
+#define VAR_OLDALE_RIVAL_STATE                           0x40C7 // freed
 #define VAR_JAGGED_PASS_STATE                            0x40C8
 #define VAR_SCOTT_PETALBURG_ENCOUNTER                    0x40C9
 #define VAR_SKY_PILLAR_STATE                             0x40CA

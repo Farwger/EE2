@@ -909,13 +909,12 @@ enum __attribute__((packed)) Move
     MOVE_MEGA_GULP = 849,
     MOVE_GIGA_GULP = 850,
     MOVE_TERA_GULP = 851,
-    MOVE_SPEW = 852,
-    MOVE_SPOUT = 853, 
-    MOVE_EMESISM = 854, //Spit Up skipped as it is already defined
-    MOVE_HYPER_LICK = 855, //Lick skipped as it is already defined
-    MOVE_SUPER_LICK = 856,
-    MOVE_FORGET = 857,
-    MOVE_CORRUPT = 858,
+    MOVE_SPOUT = 852, 
+    MOVE_EMESISM = 853, //Spit Up skipped as it is already defined
+    MOVE_HYPER_LICK = 854, //Lick skipped as it is already defined
+    MOVE_SUPER_LICK = 855,
+    MOVE_FORGET = 856,
+    MOVE_CORRUPT = 857,
     MOVES_COUNT_NEW,
 
     // Add any custom moves here, not further down!

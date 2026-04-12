@@ -220,6 +220,7 @@ PetalburgCity_Movement_WallyTutorialWally:
 
 PetalburgCity_EventScript_GymSign::
 	msgbox PetalburgCity_Text_GymSign, MSGBOX_SIGN
+	setflag FLAG_HIDE_PETALBURG_GYM_LIPS
 	end
 
 PetalburgCity_EventScript_CitySign::
@@ -262,7 +263,7 @@ PetalburgCity_EventScript_ShowGymToPlayer3::
 PetalburgCity_EventScript_ShowGymToPlayer::
 	applymovement LOCALID_GYM_BOY, Common_Movement_FacePlayer
 	waitmovement 0
-	playbgm MUS_FOLLOW_ME, FALSE
+	@ playbgm MUS_FOLLOW_ME, FALSE
 	playse SE_PIN
 	applymovement LOCALID_GYM_BOY, Common_Movement_ExclamationMark
 	waitmovement 0
@@ -286,7 +287,7 @@ PetalburgCity_EventScript_ShowGymToPlayer::
 	closemessage
 	applymovement LOCALID_GYM_BOY, PetalburgCity_Movement_BoyWalkAway
 	waitmovement 0
-	fadedefaultbgm
+	@ fadedefaultbgm
 	releaseall
 	end
 
@@ -705,12 +706,9 @@ PetalburgCity_Text_WhereIsWally:
 	.string "very soon…$"
 
 PetalburgCity_Text_AreYouRookieTrainer:
-	.string "Hiya! Are you maybe…\n"
-	.string "A rookie TRAINER?\p"
-	.string "Do you know what POKéMON TRAINERS\n"
-	.string "do when they reach a new town?\p"
-	.string "They first check what kind of GYM\n"
-	.string "is in the town.$"
+	.string "Hiya! you're {PLAYER}, right?\n"
+	.string "Your dad wants to see you at\l"
+	.string "the gym.$"
 
 PetalburgCity_Text_ThisIsPetalburgGym:
 	.string "See? This is PETALBURG CITY's GYM.$"

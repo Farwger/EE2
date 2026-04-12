@@ -4893,17 +4893,17 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sSandileLevelUpLearnset,
         .teachableLearnset = sSandileTeachableLearnset,
         .eggMoveLearnset = sSandileEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 29, SPECIES_KROKOROK}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 24, SPECIES_KROKOROK}),
     },
 
     [SPECIES_KROKOROK] =
     {
-        .baseHP        = 60,
-        .baseAttack    = 82,
-        .baseDefense   = 45,
+        .baseHP        = 70,
+        .baseAttack    = 85,
+        .baseDefense   = 60,
         .baseSpeed     = 74,
         .baseSpAttack  = 45,
-        .baseSpDefense = 45,
+        .baseSpDefense = 60,
         .types = MON_TYPES(TYPE_GROUND, TYPE_DARK),
         .catchRate = 90,
         .expYield = 123,
@@ -7790,11 +7790,11 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 
     [SPECIES_VANILLISH] =
     {
-        .baseHP        = 51,
-        .baseAttack    = 65,
+        .baseHP        = 55,
+        .baseAttack    = 60,
         .baseDefense   = 65,
-        .baseSpeed     = 59,
-        .baseSpAttack  = 80,
+        .baseSpeed     = 70,
+        .baseSpAttack  = 90,
         .baseSpDefense = 75,
         .types = MON_TYPES(TYPE_ICE),
         .catchRate = 120,
@@ -7858,7 +7858,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sVanillishLevelUpLearnset,
         .teachableLearnset = sVanillishTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_VANILLUXE}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 42, SPECIES_VANILLUXE}),
     },
 
     [SPECIES_VANILLUXE] =

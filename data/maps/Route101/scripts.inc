@@ -240,6 +240,7 @@ Route101_EventScript_BirchsBag::
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom
 	call_if_eq VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom
+	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_RIVAL @ new
 	warp MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB, 6, 5
 	waitstate
 	release

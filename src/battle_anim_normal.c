@@ -274,12 +274,35 @@ const struct SpriteTemplate gPersistHitSplatSpriteTemplate =
     .callback = AnimHitSplatPersistent,
 };
 
+static const union AffineAnimCmd sAffineAnim_FlashImpact[] =
+{
+    AFFINEANIMCMD_FRAME(0x10, 0x10, 0, 0),
+    AFFINEANIMCMD_FRAME(0x8, 0x8, 0, 22),
+    AFFINEANIMCMD_FRAME(0xFFF8, 0xFFF8, 0, 22),
+    AFFINEANIMCMD_END,
+};
+
+static const union AffineAnimCmd *const sAffineAnims_FlashImpact[] =
+{
+    sAffineAnim_FlashImpact,
+};
+
+const struct SpriteTemplate gFlashImpactSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_CIRCLE_OF_LIGHT,
+    .paletteTag = ANIM_TAG_EXPLOSION,
+    .oam = &gOamData_AffineDouble_ObjBlend_64x64,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = sAffineAnims_FlashImpact,
+    .callback = AnimHitSplatBasic,
+};
+
 static void AnimMovePowerSwapGuardSwapWait(struct Sprite *sprite)
 {
     if (TranslateAnimHorizontalArc(sprite))
         DestroyAnimSprite(sprite);
 }
-
 // arg 0: initial x pixel offset
 // arg 1: initial y pixel offset
 // arg 2: orb type (0..5) - color and size

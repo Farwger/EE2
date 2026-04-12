@@ -393,6 +393,7 @@ static const u8 sMapHealLocations[][3] =
     [MAPSEC_MOSSDEEP_CITY] = {MAP_GROUP(MAP_MOSSDEEP_CITY), MAP_NUM(MAP_MOSSDEEP_CITY), HEAL_LOCATION_MOSSDEEP_CITY},
     [MAPSEC_SOOTOPOLIS_CITY] = {MAP_GROUP(MAP_SOOTOPOLIS_CITY), MAP_NUM(MAP_SOOTOPOLIS_CITY), HEAL_LOCATION_SOOTOPOLIS_CITY},
     [MAPSEC_EVER_GRANDE_CITY] = {MAP_GROUP(MAP_EVER_GRANDE_CITY), MAP_NUM(MAP_EVER_GRANDE_CITY), HEAL_LOCATION_EVER_GRANDE_CITY},
+    [MAPSEC_BERSKET_CITY] = {MAP_GROUP(MAP_BERSKET_CITY), MAP_NUM(MAP_BERSKET_CITY), HEAL_LOCATION_BERSKET_CITY},
     [MAPSEC_ROUTE_101] = {MAP_GROUP(MAP_ROUTE101), MAP_NUM(MAP_ROUTE101), HEAL_LOCATION_NONE},
     [MAPSEC_ROUTE_102] = {MAP_GROUP(MAP_ROUTE102), MAP_NUM(MAP_ROUTE102), HEAL_LOCATION_NONE},
     [MAPSEC_ROUTE_103] = {MAP_GROUP(MAP_ROUTE103), MAP_NUM(MAP_ROUTE103), HEAL_LOCATION_NONE},
@@ -1190,19 +1191,19 @@ static mapsec_u16_t GetMapSecIdAt(u16 x, u16 y)
 
     switch (GetCurrentRegion())
     {
-    case REGION_KANTO:
-        switch (GetKantoSubregion(gMapHeader.regionMapSectionId))
-        {
-        case KANTO_SUBREGION_SEVII123:
-                return sRegionMapSections_Sevii123[y][x];
-        case KANTO_SUBREGION_SEVII45:
-                return sRegionMapSections_Sevii45[y][x];
-        case KANTO_SUBREGION_SEVII67:
-                return sRegionMapSections_Sevii67[y][x];
-        case KANTO_SUBREGION_KANTO:
-        default:
-                return sRegionMapSections_Kanto[y][x];
-        }
+    //case REGION_KANTO:
+  //      switch (GetKantoSubregion(gMapHeader.regionMapSectionId))
+    //    {
+    //    case KANTO_SUBREGION_SEVII123:
+     //           return sRegionMapSections_Sevii123[y][x];
+     //   case KANTO_SUBREGION_SEVII45:
+     //           return sRegionMapSections_Sevii45[y][x];
+      //  case KANTO_SUBREGION_SEVII67:
+     //           return sRegionMapSections_Sevii67[y][x];
+    //    case KANTO_SUBREGION_KANTO:
+     //   default:
+      //          return sRegionMapSections_Kanto[y][x];
+     //   }
     case REGION_HOENN:
     default:
             return sRegionMap_MapSectionLayout[y][x];
@@ -1454,6 +1455,8 @@ static u8 GetMapsecType(mapsec_u16_t mapSecId)
         return FlagGet(FLAG_VISITED_SOOTOPOLIS_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
     case MAPSEC_EVER_GRANDE_CITY:
         return FlagGet(FLAG_VISITED_EVER_GRANDE_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_BERSKET_CITY:
+        return FlagGet(FLAG_VISITED_BERSKET_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
     case MAPSEC_BATTLE_FRONTIER:
         return FlagGet(FLAG_LANDMARK_BATTLE_FRONTIER) ? MAPSECTYPE_BATTLE_FRONTIER : MAPSECTYPE_NONE;
     case MAPSEC_SOUTHERN_ISLAND:
@@ -2214,6 +2217,11 @@ static const struct FlyLocation sFlyLocations[] =
         .regionMapType = REGION_MAP_HOENN,
         .mapsec = MAPSEC_EVER_GRANDE_CITY,
         .flag = FLAG_VISITED_EVER_GRANDE_CITY,
+    },
+    {
+        .regionMapType = REGION_MAP_HOENN,
+        .mapsec = MAPSEC_BERSKET_CITY,
+        .flag = FLAG_VISITED_BERSKET_CITY,
     },
     {
         .regionMapType = REGION_MAP_KANTO,

@@ -315,9 +315,9 @@ PlayersHouse_1F_Text_MaybeDadWillBeOn:
 	.string "Maybe DAD will be on!$"
 
 PlayersHouse_1F_Text_ItsOverWeMissedHim:
-	.string "MOM: Oh… It's over.\p"
-	.string "I think DAD was on, but we missed him.\n"
-	.string "Too bad.$"
+	.string "MOM: Oh… that's odd.\p"
+	.string "Was that a 'Gulpin' with dad?\n"
+	.string "I wonder what they're up to.$"
 
 PlayersHouse_1F_Text_GoIntroduceYourselfNextDoor:
 	.string "Oh, yes.\n"
@@ -362,14 +362,19 @@ PlayersHouse_1F_Text_RegisteredMom:
 	.string "in the POKéNAV.$"
 
 PlayersHouse_1F_Text_Vigoroth1:
-	.string "Fugiiiiih!$"
+	.string "Hey.$"
 
 PlayersHouse_1F_Text_Vigoroth2:
-	.string "Huggoh, uggo uggo…$"
+	.string "Hi.$"
 
 PlayersHouse_1F_Text_ReportFromPetalburgGym:
-	.string "INTERVIEWER: …We brought you this\n"
-	.string "report from in front of PETALBURG GYM.$"
+	.string "Norman: we'll find them, and we'll\n"
+	.string "bring them back home.\p"
+	.string "I've gotten … special help.\p"
+	.string "???: Gulp - I mean, yeah, I'm here\n"
+	.string "to help!\p"
+	.string "Newcaster: That's all for now, folks.\n"
+	.string "Stay tuned for updates.$"
 
 PlayersHouse_1F_Text_TheresAMovieOnTV:
 	.string "There is a movie on TV.\p"

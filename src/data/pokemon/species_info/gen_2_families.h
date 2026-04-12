@@ -138,7 +138,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         )
         .levelUpLearnset = sBayleefLevelUpLearnset,
         .teachableLearnset = sBayleefTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 35, SPECIES_MEGANIUM}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_MEGANIUM}),
     },
 
     [SPECIES_MEGANIUM] =
@@ -711,7 +711,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         )
         .levelUpLearnset = sCroconawLevelUpLearnset,
         .teachableLearnset = sCroconawTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_FERALIGATR}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_FERALIGATR}),
     },
 
     [SPECIES_FERALIGATR] =
@@ -1068,7 +1068,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .levelUpLearnset = sHoothootLevelUpLearnset,
         .teachableLearnset = sHoothootTeachableLearnset,
         .eggMoveLearnset = sHoothootEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 23, SPECIES_NOCTOWL}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 26, SPECIES_NOCTOWL}),
     },
 
     [SPECIES_NOCTOWL] =
@@ -1233,7 +1233,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .baseHP        = 75,
         .baseAttack    = 70,
         .baseDefense   = 50,
-        .baseSpeed     = 105,
+        .baseSpeed     = 100,
         .baseSpAttack  = 55,
         .baseSpDefense = 110,
         .types = MON_TYPES(TYPE_BUG, TYPE_FLYING),
@@ -1245,7 +1245,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
-        .abilities = { ABILITY_SWARM, ABILITY_EARLY_BIRD, ABILITY_SKILL_LINK },
+        .abilities = { ABILITY_SWARM, ABILITY_IRON_FIST, ABILITY_SKILL_LINK },
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("Ledian"),
         .cryId = CRY_LEDIAN,
@@ -2132,7 +2132,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         )
         .levelUpLearnset = sFlaaffyLevelUpLearnset,
         .teachableLearnset = sFlaaffyTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_AMPHAROS}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_AMPHAROS}),
     },
 
     [SPECIES_AMPHAROS] =
@@ -2438,7 +2438,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .levelUpLearnset = sMarillLevelUpLearnset,
         .teachableLearnset = sMarillTeachableLearnset,
         .eggMoveLearnset = sMarillEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 22, SPECIES_AZUMARILL}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 18, SPECIES_AZUMARILL}),
     },
 
     [SPECIES_AZUMARILL] =
@@ -3506,17 +3506,17 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .teachableLearnset = sWooperTeachableLearnset,
         .eggMoveLearnset = sWooperEggMoveLearnset,
         .formSpeciesIdTable = sWooperFormSpeciesIdTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 22, SPECIES_QUAGSIRE}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 24, SPECIES_QUAGSIRE}),
     },
 
     [SPECIES_QUAGSIRE] =
     {
         .baseHP        = 100,
-        .baseAttack    = 90,
+        .baseAttack    = 95,
         .baseDefense   = 95,
         .baseSpeed     = 35,
-        .baseSpAttack  = 80,
-        .baseSpDefense = 80,
+        .baseSpAttack  = 75,
+        .baseSpDefense = 75,
         .types = MON_TYPES(TYPE_WATER, TYPE_GROUND),
         .catchRate = 90,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 151 : 137,
@@ -5035,7 +5035,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .levelUpLearnset = sSnubbullLevelUpLearnset,
         .teachableLearnset = sSnubbullTeachableLearnset,
         .eggMoveLearnset = sSnubbullEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 23, SPECIES_GRANBULL}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_GRANBULL}),
     },
 
     [SPECIES_GRANBULL] =

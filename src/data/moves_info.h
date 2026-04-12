@@ -6916,8 +6916,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Spit Up"),
         .description = COMPOUND_STRING(
-            "Channels the user's\n"
-            "stomach power."),
+            "If the user's digesting,\n"
+            "channels its Eaten type."),
         .effect = EFFECT_TERA_BLAST,
         .power = 80,
         .type = TYPE_NORMAL,
@@ -6926,38 +6926,38 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
-        .mirrorMoveBanned = TRUE,
+        .forcePressure = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_TERA_BLAST,
+            .self = TRUE,
+        }),
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_BETTER_WITH_GOOD_CONDITION : CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = 0,
         .contestComboMoves = {COMBO_STARTER_STOCKPILE},
         .battleAnimScript = gBattleAnimMove_TeraBlast,
+        .validApprenticeMove = TRUE,
     },
 
     [MOVE_SWALLOW] =
     {
         .name = COMPOUND_STRING("Swallow"),
         .description = COMPOUND_STRING(
-            "Absorbs stockpiled power\n"
-            "and restores HP."),
-        .effect = EFFECT_SWALLOW,
-        .power = 0,
-        .type = TYPE_NORMAL,
+            "Eats the foe's held item\n"
+            "to prevent its use."),
+        .effect = EFFECT_KNOCK_OFF,
+        .power = 65,
+        .type = TYPE_DARK,
         .accuracy = 0,
-        .pp = 10,
-        .target = TARGET_USER,
+        .pp = 20,
+        .target = TARGET_SELECTED,
         .priority = 0,
-        .category = DAMAGE_CATEGORY_STATUS,
-        .zMove = { .effect = Z_EFFECT_RESET_STATS },
-        .healingMove = TRUE,
-        .snatchAffected = TRUE,
-        .ignoresProtect = TRUE,
-        .mirrorMoveBanned = TRUE,
-        .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_AVOID_STARTLE_ONCE : CONTEST_EFFECT_IMPROVE_CONDITION_PREVENT_NERVOUSNESS,
-        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_STARTLE_PREV_MON : CONTEST_EFFECT_BADLY_STARTLE_FRONT_MON,
+        .contestCategory = CONTEST_CATEGORY_SMART,
         .contestComboStarterId = 0,
-        .contestComboMoves = {COMBO_STARTER_STOCKPILE},
-        .battleAnimScript = gBattleAnimMove_Swallow,
+        .contestComboMoves = {COMBO_STARTER_FAKE_OUT},
+        .battleAnimScript = gBattleAnimMove_Swallow, //todo
         .validApprenticeMove = TRUE,
     },
 
@@ -9871,7 +9871,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = sUTurnDescription,
         .effect = EFFECT_HIT_ESCAPE,
         .power = 70,
-        .type = TYPE_BUG,
+        .type = TYPE_FLYING,
         .accuracy = 100,
         .pp = 20,
         .target = TARGET_SELECTED,
@@ -21502,59 +21502,40 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .validApprenticeMove = TRUE,
     },
 
-    [MOVE_SPEW] =
-    {
-        .name = COMPOUND_STRING("Spew"),
-        .description = COMPOUND_STRING(
-            "Does damage, channels\n"
-            "secondary typing."),
-        .effect = EFFECT_SPIT_UP,
-        .power = 50,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 25,
-        .target = TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_SPECIAL,
-        .mirrorMoveBanned = TRUE,
-        .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_BETTER_WITH_GOOD_CONDITION : CONTEST_EFFECT_HIGHLY_APPEALING,
-        .contestCategory = CONTEST_CATEGORY_TOUGH,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {COMBO_STARTER_STOCKPILE},
-        .battleAnimScript = gBattleAnimMove_SpitUp,
-        .validApprenticeMove = TRUE,
-    },
-
     [MOVE_SPOUT] =
     {
         .name = COMPOUND_STRING("Spout"),
         .description = COMPOUND_STRING(
-            "Does damage, channels\n"
-            "secondary typing."),
-        .effect = EFFECT_SPIT_UP,
-        .power = 65,
+            "If the user's digesting,\n"
+            "channels its Eaten type."),
+        .effect = EFFECT_TERA_BLAST,
+        .power = 60,
         .type = TYPE_NORMAL,
         .accuracy = 100,
         .pp = 20,
         .target = TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
-        .mirrorMoveBanned = TRUE,
+        .forcePressure = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_TERA_BLAST,
+            .self = TRUE,
+        }),
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_BETTER_WITH_GOOD_CONDITION : CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = 0,
         .contestComboMoves = {COMBO_STARTER_STOCKPILE},
-        .battleAnimScript = gBattleAnimMove_SpitUp,
+        .battleAnimScript = gBattleAnimMove_Spout,
         .validApprenticeMove = TRUE,
     },
 
     [MOVE_EMESISM] =
     {
-        .name = COMPOUND_STRING("Spout"),
+        .name = COMPOUND_STRING("Emesism"),
         .description = COMPOUND_STRING(
-            "Does damage, channels\n"
-            "secondary typing."),
-        .effect = EFFECT_SPIT_UP,
+            "If the user's digesting,\n"
+            "channels its Eaten type."),
+        .effect = EFFECT_TERA_BLAST,
         .power = 100,
         .type = TYPE_NORMAL,
         .accuracy = 100,
@@ -21562,12 +21543,16 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
-        .mirrorMoveBanned = TRUE,
+        .forcePressure = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_TERA_BLAST,
+            .self = TRUE,
+        }),
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_BETTER_WITH_GOOD_CONDITION : CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = 0,
         .contestComboMoves = {COMBO_STARTER_STOCKPILE},
-        .battleAnimScript = gBattleAnimMove_SpitUp,
+        .battleAnimScript = gBattleAnimMove_Emesism,
         .validApprenticeMove = TRUE,
     },
 

@@ -1626,6 +1626,14 @@
       "y": 4,
       "width": 1,
       "height": 1
+    },
+    {
+      "id": "MAPSEC_BERSKET_CITY",
+      "name": "BERSKET CITY",
+      "x": 1,
+      "y": 7,
+      "width": 2,
+      "height": 1
     }
   ]
 }

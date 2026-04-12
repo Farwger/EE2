@@ -42,8 +42,8 @@ LittlerootTown_OnTransition:
 	call_if_eq VAR_LITTLEROOT_TOWN_STATE, 3, LittlerootTown_EventScript_SetMomStandingInFrontOfDoorPos
 	call_if_eq VAR_LITTLEROOT_HOUSES_STATE_MAY, 4, LittlerootTown_EventScript_SetExitedHouseAfterLatiSSTicketEvent
 	call_if_eq VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 4, LittlerootTown_EventScript_SetExitedHouseAfterLatiSSTicketEvent
-	call_if_eq VAR_OLDALE_RIVAL_STATE, 1, LittlerootTown_EventScript_MoveRivalFromOldale
-	call_if_eq VAR_LITTLEROOT_RIVAL_STATE, 3, LittlerootTown_EventScript_SetRivalLeftForRoute103
+	@ call_if_eq VAR_OLDALE_RIVAL_STATE, 1, LittlerootTown_EventScript_MoveRivalFromOldale
+	@ call_if_eq VAR_LITTLEROOT_RIVAL_STATE, 3, LittlerootTown_EventScript_SetRivalLeftForRoute103
 	call_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 1, LittlerootTown_EventScript_HideMapNamePopup
 	call_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 2, LittlerootTown_EventScript_LeftLabAfterDexUpgrade
 	end
@@ -56,14 +56,9 @@ LittlerootTown_EventScript_HideMapNamePopup::
 	setflag FLAG_HIDE_MAP_NAME_POPUP
 	return
 
-LittlerootTown_EventScript_SetRivalLeftForRoute103::
-	setflag FLAG_RIVAL_LEFT_FOR_ROUTE103
-	return
-
-LittlerootTown_EventScript_MoveRivalFromOldale::
-	setvar VAR_OLDALE_RIVAL_STATE, 2
-	setflag FLAG_HIDE_OLDALE_TOWN_RIVAL
-	return
+@ LittlerootTown_EventScript_SetRivalLeftForRoute103::
+	@ setflag FLAG_RIVAL_LEFT_FOR_ROUTE103
+	@ return
 
 LittlerootTown_EventScript_SetExitedHouseAfterLatiSSTicketEvent::
 	setvar VAR_LITTLEROOT_HOUSES_STATE_MAY, 5
@@ -81,7 +76,7 @@ LittlerootTown_EventScript_SetTwinPos::
 	return
 
 LittlerootTown_EventScript_SetTwinGuardingRoutePos::
-	setobjectxyperm LOCALID_LITTLEROOT_TWIN, 7, 2
+	setobjectxyperm LOCALID_LITTLEROOT_TWIN, 8, 3
 	setobjectmovementtype LOCALID_LITTLEROOT_TWIN, MOVEMENT_TYPE_FACE_DOWN
 	return
 
@@ -309,7 +304,7 @@ LittlerootTown_Movement_TwinApproachPlayerLeft:
 	walk_fast_right
 	walk_fast_right
 	walk_fast_right
-	walk_fast_right
+	walk_fast_up
 	walk_fast_up
 	walk_fast_up
 	walk_fast_left
@@ -327,8 +322,6 @@ LittlerootTown_Movement_TwinReturnLeft:
 	walk_left
 	walk_left
 	walk_left
-	walk_left
-	walk_up
 	walk_in_place_faster_down
 	step_end
 
@@ -356,7 +349,7 @@ LittlerootTown_Movement_TwinApproachPlayerRight:
 	delay_8
 	walk_fast_right
 	walk_fast_right
-	walk_fast_right
+	walk_fast_up
 	walk_fast_up
 	walk_fast_up
 	walk_fast_right
@@ -366,7 +359,7 @@ LittlerootTown_Movement_TwinApproachPlayerRight:
 LittlerootTown_Movement_TwinReturnRight:
 	walk_left
 	walk_down
-	walk_left
+	walk_down
 	walk_left
 	walk_left
 	walk_in_place_faster_down

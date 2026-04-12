@@ -157,7 +157,7 @@
 #define FLAG_MET_PRETTY_PETAL_SHOP_OWNER     0x7F
 #define FLAG_ENABLE_ROXANNE_FIRST_CALL       0x80 // Set after defeating Brawly. This will activate a call with Roxanne in order to register her.
 #define FLAG_KYOGRE_ESCAPED_SEAFLOOR_CAVERN  0x81
-#define FLAG_DEFEATED_RIVAL_ROUTE103         0x82
+#define FLAG_HIDE_PETALBURG_GYM_LIPS         0x82 // new; freed
 #define FLAG_RECEIVED_DOLL_LANETTE           0x83
 #define FLAG_RECEIVED_POTION_OLDALE          0x84
 #define FLAG_RECEIVED_AMULET_COIN            0x85
@@ -332,7 +332,7 @@
 #define FLAG_RECEIVED_BELDUM                 0x12A
 #define FLAG_RECEIVED_FANCLUB_TM_THIS_WEEK   0x12B
 #define FLAG_MET_FANCLUB_YOUNGER_BROTHER     0x12C
-#define FLAG_RIVAL_LEFT_FOR_ROUTE103         0x12D
+#define FLAG_HIDE_RIVAL_BERSKETCITY          0x12D // New; freed
 #define FLAG_OMIT_DIVE_FROM_STEVEN_LETTER    0x12E
 #define FLAG_HAS_MATCH_CALL                  0x12F
 #define FLAG_ADDED_MATCH_CALL_TO_POKENAV     0x130
@@ -769,7 +769,7 @@
 #define FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE                  0x2D0
 #define FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH                  0x2D1
 #define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_BEDROOM          0x2D2
-#define FLAG_HIDE_ROUTE_103_RIVAL                                   0x2D3
+#define FLAG_HIDE_ROUTE_103_RIVAL                                   0x2D3 // freed
 #define FLAG_HIDE_PETALBURG_WOODS_DEVON_EMPLOYEE                    0x2D4
 #define FLAG_HIDE_PETALBURG_WOODS_AQUA_GRUNT                        0x2D5
 #define FLAG_HIDE_PETALBURG_CITY_WALLY                              0x2D6
@@ -802,8 +802,8 @@
 #define FLAG_HIDE_VICTORY_ROAD_EXIT_WALLY                           0x2EF
 #define FLAG_HIDE_LITTLEROOT_TOWN_MOM_OUTSIDE                       0x2F0
 #define FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_1F_STEVEN              0x2F1
-#define FLAG_HIDE_LITTLEROOT_TOWN_PLAYERS_HOUSE_VIGOROTH_1          0x2F2
-#define FLAG_HIDE_LITTLEROOT_TOWN_PLAYERS_HOUSE_VIGOROTH_2          0x2F3
+#define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_GULPINATOR             0x2F2 // New; If the player is female, this flag is automatically set (InsideOfTruck). Otherwise it is set once the player is teleported to the lab
+#define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_GULPINATOR         0x2F3 // New; If the player is male, this flag is automatically set (InsideOfTruck). Otherwise it is set once the player is teleported to the lab
 #define FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_1F_TEAM_MAGMA          0x2F4
 #define FLAG_HIDE_LITTLEROOT_TOWN_PLAYERS_BEDROOM_MOM               0x2F5
 #define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_MOM                0x2F6
@@ -1027,7 +1027,7 @@
 #define FLAG_HIDE_NEW_MAUVILLE_VOLTORB_3                            0x3D0
 #define FLAG_HIDE_AQUA_HIDEOUT_B1F_ELECTRODE_1                      0x3D1
 #define FLAG_HIDE_AQUA_HIDEOUT_B1F_ELECTRODE_2                      0x3D2
-#define FLAG_HIDE_OLDALE_TOWN_RIVAL                                 0x3D3
+#define FLAG_HIDE_OLDALE_TOWN_RIVAL                                 0x3D3 // freed
 #define FLAG_HIDE_UNDERWATER_SEA_FLOOR_CAVERN_STOLEN_SUBMARINE      0x3D4
 #define FLAG_HIDE_ROUTE_120_KECLEON_BRIDGE_SHADOW                   0x3D5
 #define FLAG_HIDE_ROUTE_120_KECLEON_1                               0x3D6
@@ -1387,7 +1387,7 @@
 #define FLAG_IS_CHAMPION                            (SYSTEM_FLAGS + 0x1F) // Seems to be related to linking.
 #define FLAG_NURSE_UNION_ROOM_REMINDER              (SYSTEM_FLAGS + 0x20)
 
-#define FLAG_UNUSED_0x881                           (SYSTEM_FLAGS + 0x21) // Unused Flag
+#define FLAG_VISITED_BERSKET_CITY                   (SYSTEM_FLAGS + 0x21) // New
 #define FLAG_UNUSED_0x882                           (SYSTEM_FLAGS + 0x22) // Unused Flag
 #define FLAG_UNUSED_0x883                           (SYSTEM_FLAGS + 0x23) // Unused Flag
 #define FLAG_UNUSED_0x884                           (SYSTEM_FLAGS + 0x24) // Unused Flag

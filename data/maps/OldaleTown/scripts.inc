@@ -3,17 +3,17 @@ OldaleTown_MapScripts::
 	.byte 0
 
 OldaleTown_OnTransition:
-	call Common_EventScript_SetupRivalGfxId
+	@ call Common_EventScript_SetupRivalGfxId
 	setflag FLAG_VISITED_OLDALE_TOWN
 	call_if_unset FLAG_ADVENTURE_STARTED, OldaleTown_EventScript_BlockWestEntrance
 	call_if_unset FLAG_RECEIVED_POTION_OLDALE, OldaleTown_EventScript_MoveMartEmployee
-	call_if_set FLAG_ADVENTURE_STARTED, OldaleTown_EventScript_SetOldaleState
+	@ call_if_set FLAG_ADVENTURE_STARTED, OldaleTown_EventScript_SetOldaleState
 	end
 
 @ This script seems pointless because nothing uses VAR_OLDALE_TOWN_STATE
-OldaleTown_EventScript_SetOldaleState::
-	setvar VAR_OLDALE_TOWN_STATE, 1
-	return
+@ OldaleTown_EventScript_SetOldaleState::
+	@ setvar VAR_OLDALE_TOWN_STATE, 1
+	@ return
 
 OldaleTown_EventScript_BlockWestEntrance::
 	setobjectxyperm LOCALID_FOOTPRINTS_MAN, 1, 11
@@ -215,112 +215,6 @@ OldaleTown_EventScript_NotBlockingPath::
 	release
 	end
 
-OldaleTown_EventScript_Rival::
-	lockall
-	applymovement LOCALID_OLDALE_RIVAL, Common_Movement_FacePlayer
-	waitmovement 0
-	setvar VAR_0x8009, 0
-	goto OldaleTown_EventScript_ShowRivalMessage
-	end
-
-OldaleTown_EventScript_RivalTrigger1::
-	lockall
-	applymovement LOCALID_OLDALE_RIVAL, OldaleTown_Movement_RivalApproachPlayer1
-	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
-	waitmovement 0
-	setvar VAR_0x8009, 1
-	goto OldaleTown_EventScript_ShowRivalMessage
-	end
-
-OldaleTown_EventScript_RivalTrigger2::
-	lockall
-	applymovement LOCALID_OLDALE_RIVAL, OldaleTown_Movement_RivalApproachPlayer2
-	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
-	waitmovement 0
-	setvar VAR_0x8009, 1
-	goto OldaleTown_EventScript_ShowRivalMessage
-	end
-
-OldaleTown_EventScript_RivalTrigger3::
-	lockall
-	applymovement LOCALID_OLDALE_RIVAL, OldaleTown_Movement_RivalApproachPlayer3
-	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
-	waitmovement 0
-	setvar VAR_0x8009, 1
-	goto OldaleTown_EventScript_ShowRivalMessage
-	end
-
-OldaleTown_EventScript_ShowRivalMessage::
-	checkplayergender
-	goto_if_eq VAR_RESULT, MALE, OldaleTown_EventScript_ShowMayMessage
-	goto_if_eq VAR_RESULT, FEMALE, OldaleTown_EventScript_ShowBrendanMessage
-	end
-
-OldaleTown_EventScript_ShowMayMessage::
-	msgbox OldaleTown_Text_MayLetsGoBack, MSGBOX_DEFAULT
-	goto OldaleTown_EventScript_RivalFinish
-	end
-
-OldaleTown_EventScript_ShowBrendanMessage::
-	msgbox OldaleTown_Text_BrendanLetsGoBack, MSGBOX_DEFAULT
-	goto OldaleTown_EventScript_RivalFinish
-	end
-
-OldaleTown_EventScript_RivalFinish::
-	closemessage
-	call_if_eq VAR_0x8009, 0, OldaleTown_EventScript_DoExitMovement1
-	call_if_eq VAR_0x8009, 1, OldaleTown_EventScript_DoExitMovement2
-	applymovement LOCALID_OLDALE_RIVAL, OldaleTown_Movement_RivalExit
-	waitmovement 0
-	removeobject LOCALID_OLDALE_RIVAL
-	setvar VAR_OLDALE_RIVAL_STATE, 2
-	setflag FLAG_HIDE_OLDALE_TOWN_RIVAL
-	releaseall
-	end
-
-OldaleTown_EventScript_DoExitMovement1::
-	goto_if_ne VAR_FACING, DIR_SOUTH, OldaleTown_EventScript_DoExitMovement2
-	applymovement LOCALID_OLDALE_RIVAL, OldaleTown_Movement_RivalExit
-	waitmovement 0
-	return
-
-OldaleTown_EventScript_DoExitMovement2::
-	applymovement LOCALID_PLAYER, OldaleTown_Movement_WatchRivalExit
-	applymovement LOCALID_OLDALE_RIVAL, OldaleTown_Movement_RivalExit
-	waitmovement 0
-	return
-
-OldaleTown_Movement_RivalApproachPlayer1:
-	walk_left
-	walk_left
-	step_end
-
-OldaleTown_Movement_RivalApproachPlayer2:
-	walk_left
-	step_end
-
-OldaleTown_Movement_RivalApproachPlayer3:
-	face_left
-	step_end
-
-OldaleTown_Movement_RivalExit:
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	step_end
-
-OldaleTown_Movement_WatchRivalExit:
-	delay_8
-	delay_4
-	walk_in_place_faster_down
-	step_end
-
 OldaleTown_Movement_PlayerStepBack:
 	delay_8
 	walk_right
@@ -376,10 +270,9 @@ OldaleTown_Text_DiscoveredFootprints:
 	.string "them, okay?$"
 
 OldaleTown_Text_FinishedSketchingFootprints:
-	.string "I finished sketching the footprints of\n"
-	.string "a rare POKéMON.\p"
-	.string "But it turns out they were only my\n"
-	.string "own footprints…$"
+	.string "Some red guys came through here.\p"
+	.string "But then those weird trees sprung up\n"
+	.string "and the red guys haven't come back…$"
 
 OldaleTown_Text_MayLetsGoBack:
 	.string "MAY: {PLAYER}{KUN}!\n"
