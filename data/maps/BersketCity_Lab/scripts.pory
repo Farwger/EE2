@@ -1,0 +1,203 @@
+mapscripts BersketCity_Lab_MapScripts {
+
+}
+
+script BersketCity_Lab_EventScript_PC {
+    msgbox("It's a PC used for research.\nLooks like Gulpin are a focus.\pBetter not mess around with it.", MSGBOX_SIGN)
+    end
+}
+
+script BersketCity_Lab_EventScript_Bookcase {
+    msgbox(format("It's crammed with books on many subjects. There are several books about Gulpin."), MSGBOX_SIGN)
+    end
+}
+
+script BersketCity_Lab_EventScript_Machine {
+    msgbox("It's a serious-looking machine.\nThey must use this for research.\pDo they put Gulpin in this?", MSGBOX_SIGN)
+    end
+}
+
+
+// Jacuzzi main script
+//
+//
+script BersketCity_Lab_EventScript_ProfJacuzzi {
+	lockall
+	faceplayer
+	setvar(VAR_0x8004, 0)
+
+	// if the player has already been given the mission
+	if (var(VAR_BERSKET_CITY_STATE) >= 2) {
+		msgbox(format("Do you have any questions?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call (BersketCity_Lab_EventScript_ProfQuestions)
+		}
+		msgbox ("I will see you soon.")
+		closemessage
+		releaseall
+		end
+	}
+
+	// otherwise, first meeting
+	msgbox(format("{PLAYER}, is it? I'm Professor Jacuzzi."))
+	closemessage
+	switch (var(VAR_FACING)) {
+		case DIR_NORTH:
+			applymovement(LOCALID_BERSKET_LAB_SYRUP, BersketCity_Lab_Movement_SyrupApproach1)
+		case DIR_WEST:
+			applymovement(LOCALID_BERSKET_LAB_SYRUP, BersketCity_Lab_Movement_SyrupApproach2)
+		case DIR_EAST:
+			applymovement(LOCALID_BERSKET_LAB_SYRUP, BersketCity_Lab_Movement_SyrupApproach3)
+	}
+	waitmovement (LOCALID_BERSKET_LAB_SYRUP)
+	delay (5)
+	msgbox(format("And I am 'Professor' Syrup."))
+	msgbox(format("Jacuzzi: It's good to see you, {PLAYER}. Your friends told me you were on your way."))
+	call (BersketCity_Lab_EventScript_Profs)
+}
+
+
+// Syrupt main script
+//
+//
+script BersketCity_Lab_EventScript_ProfSyrup {
+	lockall
+	faceplayer
+	setvar(VAR_0x8004, 1)
+
+	// if the player has already been given the mission
+	if (var(VAR_BERSKET_CITY_STATE) >= 2) {
+		msgbox(format("Do you have any questions?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call (BersketCity_Lab_EventScript_ProfQuestions)
+		}
+		msgbox ("I will see you soon.")
+		closemessage
+		releaseall
+		end
+	}
+
+	// otherwise, first meeting
+	msgbox(format("Hello. I am 'Professor' Syrup. That is what Guljira calls me at least."))
+	closemessage
+	switch (var(VAR_FACING)) {
+		case DIR_NORTH:
+			applymovement(LOCALID_BERSKET_LAB_JACUZZI, BersketCity_Lab_Movement_JacuzziApproach)
+			waitmovement(LOCALID_BERSKET_LAB_JACUZZI)
+			applymovement(LOCALID_BERSKET_LAB_JACUZZI, Common_Movement_WalkInPlaceFasterRight)
+		case DIR_EAST:
+			applymovement(LOCALID_BERSKET_LAB_JACUZZI, BersketCity_Lab_Movement_JacuzziApproach)
+	}
+	waitmovement (LOCALID_BERSKET_LAB_JACUZZI)	
+	delay (5)
+	msgbox(format("{PLAYER}, is it? I'm Professor Jacuzzi."))
+	msgbox(format("It's good to see you. Your friends told me you were on your way."))
+	call (BersketCity_Lab_EventScript_Profs)
+}
+
+
+
+// First meeting with the Professors
+//
+//
+script BersketCity_Lab_EventScript_Profs {
+	msgbox("Lips: I'm here too!")
+	msgbox(format("Syrup: Disciple Lips? Where are you?"))
+	msgbox(format("Lips: I'm in a 'pokéball.'\nIt's my palace!"))
+	msgbox("Syrup: Oh.\nHow are you?")
+	msgbox(format("Lips: Good. I brought {PLAYER} to meet you guys."))
+	msgbox(format("Jacuzzi: Well … we were hoping that you could help us."))
+	msgbox("Lips: Huh?")
+	msgbox(format("Jacuzzi: Our path to the tree has been blocked."))
+	msgbox(format("Lips: … Oh. Oh no!\nThat forest is bad news lately."))
+	applymovement(LOCALID_PLAYER, Common_Movement_QuestionMark)
+	waitmovement(LOCALID_PLAYER)
+	delay(30)
+	msgbox(format("Jacuzzi: I will explain.\pI'm sure you've seen Guljira. He needs a lot of food. Luckily there's a tree in Petalburg Woods with special fruit. It keeps Guljira full.\pBut we can't reach the tree anymore.\pThe whole forest is changing, growing in odd ways. The path to the tree has been blocked by these strange growths. They seem intent on stopping us.\pMy assistants tried to find another path, but they've gone missing!"))
+	msgbox(format("Syrup: We need to find a way to reach the tree or Guljira will starve."))
+	msgbox(format("Jacuzzi: I think he's trying to help us. Today he spat up something I've named an 'Engram.'\pIt seems to be a move, 'Cut,' in physical form.\pWith 'Cut,' perhaps we can … cut our way to the tree and find out what has gone wrong.\pBut first we need to learn the move."))
+	msgbox(format("Syrup: This 'Cut' is a Rock flavored move, and Rustboro has a Rock flavored gym.\pWe want you to go and learn from them. That is what a 'trainer' would do."))
+	
+	if (!flag(FLAG_BADGE01_GET)) {
+		msgbox(format("Lips: Hey, {PLAYER}, let's go beat the gym! Your dad will be proud."))
+		msgbox("… … … … … … … …\n… … … … … … … …")
+		msgbox(format("Jacuzzi: Good, thank you. Here, this is a copy of the Engram."))
+		giveitem(ITEM_ENGRAM_CUT, 1)
+		msgbox(format("Jacuzzi: Rustboro is on the other side of the lake. It's not far.\pThe gym leader should help you learn 'Cut'. That's the point of a gym after all."))
+	}
+	else {
+		msgbox(format("Lips: Funnily enough, we've already been there. But we can go back."))
+		msgbox("… … … … … … … …\n… … … … … … … …")
+		msgbox(format("Jacuzzi: Good, thank you. Here, this is a copy of the Engram."))
+		giveitem(ITEM_ENGRAM_CUT, 1)
+		msgbox(format("Jacuzzi: Show it to the gym leader; she should be able to teach you the move."))
+	}
+	msgbox(format("Before you go, do you have any questions?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		call (BersketCity_Lab_EventScript_ProfQuestions)
+	}
+	msgbox(format("Jacuzzi: Alright. Well, we hope to hear from you soon."))
+	msgbox(format("Syrup: Know that you will succeed. You have already suceeded. Be full."))
+	closemessage
+	setvar(VAR_BERSKET_CITY_STATE, 2)
+	releaseall
+	end
+}
+
+
+// Questions
+//
+//
+script BersketCity_Lab_EventScript_ProfQuestions {
+
+	if (var(VAR_0x8004) == 1) {
+		applymovement(LOCALID_BERSKET_LAB_JACUZZI, Common_Movement_WalkInPlaceFasterRight) // Jacuzzi faces player if player was talking to Syrup
+		waitmovement(LOCALID_BERSKET_LAB_JACUZZI)
+	}
+
+	multichoicedefault(20, 8, MULTI_BERSKETPROFS_QUESTIONS, 0, FALSE)
+	switch (var(VAR_RESULT)) {
+		case 0:
+            msgbox(format("Jacuzzi: It was a few months ago. Gulpin were attacking the city, like they do every year. This time though I built a 'spit up' machine to launch them away.\pBut then the machine malfunctioned. It enlarged one of the Gulpin to a massive size. That's 'Guljira."))
+			msgbox(format("Syrup: It was not a malfunction. In using his 'spit up' against him, you awakened Guljira's true power.\pHis mouth is now large enough to grasp profound wisdom. He has become enlightened."))
+			msgbox(format("Jacuzzi: In all my fifty years of studying Gulpin, I have never seen anything like this. It's amazing. The local Gulpin population now follows Guljira as a leader. And they're not hungry anymore."))
+			msgbox(format("Syrup: Guljira provides for all who hunger."))
+			closemessage
+            call(BersketCity_Lab_EventScript_ProfQuestions)
+        case 1:
+            msgbox(format("Syrup: Guljira spat up eighteen berries of power, one for each of the world's flavors.\pSeventeen disciples ate them and went forth to master the flavors. So that they may eat a way to salvation."))
+			msgbox(format("Lips: Yeah, I got the Normal berry. Kind of boring. It's like plain bread. But it's healthy!"))
+			msgbox(format("Syrup: And your friend, 'Gulpinator.' Well, there was one berry left.\pThe Steel berry.\pOh, Steel, it is the worst flavor. Inedibible even. No one wanted it.\pUntil 'Gulpinator' came along.\nHe is odd."))
+            closemessage
+			call(BersketCity_Lab_EventScript_ProfQuestions)
+        case 2:
+            msgbox("remind player what to do.")
+			closemessage
+            call(BersketCity_Lab_EventScript_ProfQuestions)
+        case 3:
+        case MULTI_B_PRESSED:
+            return
+	}
+	return
+}
+
+
+movement BersketCity_Lab_Movement_SyrupApproach1 {
+	walk_left
+	walk_down * 3
+}
+
+movement BersketCity_Lab_Movement_SyrupApproach2 {
+	walk_left
+	walk_down * 2
+}
+
+movement BersketCity_Lab_Movement_SyrupApproach3 {
+	walk_down * 4
+	walk_left * 2
+}
+
+movement BersketCity_Lab_Movement_JacuzziApproach {
+	walk_right
+	walk_up * 2
+}

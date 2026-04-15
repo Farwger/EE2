@@ -769,7 +769,7 @@
 #define FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE                  0x2D0
 #define FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH                  0x2D1
 #define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_BEDROOM          0x2D2
-#define FLAG_HIDE_ROUTE_103_RIVAL                                   0x2D3 // freed
+#define FLAG_HIDE_ARCEUS_MISSING_PEOPLE                             0x2D3 // New; freed
 #define FLAG_HIDE_PETALBURG_WOODS_DEVON_EMPLOYEE                    0x2D4
 #define FLAG_HIDE_PETALBURG_WOODS_AQUA_GRUNT                        0x2D5
 #define FLAG_HIDE_PETALBURG_CITY_WALLY                              0x2D6
@@ -1316,7 +1316,9 @@
 #define FLAG_UNUSED_0x4EE                                           0x4EE // Unused Flag
 #define FLAG_UNUSED_0x4EF                                           0x4EF // Unused Flag
 
-#define FLAG_DEFEATED_RUSTBORO_GYM                                  0x4F0
+//these flags are redundent with the BADGE_GET flags
+//replace with those in scripts, free these for the Engram learned flags
+#define FLAG_LEARNED_MOVE_CUT                                       0x4F0 // New; freed
 #define FLAG_DEFEATED_DEWFORD_GYM                                   0x4F1
 #define FLAG_DEFEATED_MAUVILLE_GYM                                  0x4F2
 #define FLAG_DEFEATED_LAVARIDGE_GYM                                 0x4F3
@@ -1324,6 +1326,7 @@
 #define FLAG_DEFEATED_FORTREE_GYM                                   0x4F5
 #define FLAG_DEFEATED_MOSSDEEP_GYM                                  0x4F6
 #define FLAG_DEFEATED_SOOTOPOLIS_GYM                                0x4F7
+
 #define FLAG_DEFEATED_METEOR_FALLS_STEVEN                           0x4F8
 
 #define FLAG_UNUSED_0x4F9                                           0x4F9 // Unused Flag

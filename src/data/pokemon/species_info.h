@@ -3184,6 +3184,150 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .teachableLearnset = sSwalotTeachableLearnset,
     },
 
+    [SPECIES_BRENDAN] =
+    {
+        .baseHP        = 100,
+        .baseAttack    = 100,
+        .baseDefense   = 100,
+        .baseSpeed     = 100,
+        .baseSpAttack  = 100,
+        .baseSpDefense = 100,
+        .types = MON_TYPES(TYPE_NORMAL),
+        .catchRate = 0,
+        .expYield = 0,
+        .evYield_HP = 0,
+        .genderRatio = MON_MALE,
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
+        .abilities = { ABILITY_GLUTTONY, ABILITY_NONE, ABILITY_DROUGHT },
+        .bodyColor = BODY_COLOR_PURPLE,
+        .speciesName = _("Brendan"),
+        .cryId = CRY_NONE,
+        .categoryName = _("Human"),
+        .height = 17,
+        .weight = 800,
+        .description = COMPOUND_STRING(
+            "Its powerful stomach acid is capable of\n"
+            "digesting almost anything. The one thing\n"
+            "in the whole world a Swalot can't digest is\n"
+            "its own stomach."),
+        .pokemonScale = 256,
+        .pokemonOffset = 6,
+        .trainerScale = 345,
+        .trainerOffset = 3,
+        .frontPic = gMonFrontPic_Brendan,
+        .frontPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(48, 48) : MON_COORDS_SIZE(56, 56),
+        .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 8 : 5,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 30),
+        ),
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
+        .backPic = gMonBackPic_Swalot,
+        .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(56, 56) : MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 6 : 2,
+        .backAnimId = BACK_ANIM_V_STRETCH,
+        .palette = gMonPalette_Brendan,
+        .shinyPalette = gMonPalette_Brendan,
+        .iconSprite = gMonIcon_Swalot,
+        .iconPalIndex = 2,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(4, 3, SHADOW_SIZE_L)
+        FOOTPRINT(Swalot)
+        OVERWORLD(
+            sPicTable_Swalot,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_SLITHER,
+            sAnimTable_Following,
+            gOverworldPalette_Swalot,
+            gShinyOverworldPalette_Swalot
+        )
+        OVERWORLD_FEMALE(
+            sPicTable_SwalotF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_SLITHER,
+            sAnimTable_Following
+        )
+        .isGulpinForm = TRUE,
+        .levelUpLearnset = sSwalotLevelUpLearnset,
+        .teachableLearnset = sSwalotTeachableLearnset,
+    },
+
+    [SPECIES_MAY] =
+    {
+        .baseHP        = 100,
+        .baseAttack    = 100,
+        .baseDefense   = 100,
+        .baseSpeed     = 100,
+        .baseSpAttack  = 100,
+        .baseSpDefense = 100,
+        .types = MON_TYPES(TYPE_NORMAL),
+        .catchRate = 0,
+        .expYield = 0,
+        .evYield_HP = 0,
+        .genderRatio = MON_FEMALE,
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
+        .abilities = { ABILITY_GLUTTONY, ABILITY_NONE, ABILITY_DROUGHT },
+        .bodyColor = BODY_COLOR_PURPLE,
+        .speciesName = _("May"),
+        .cryId = CRY_NONE,
+        .categoryName = _("Human"),
+        .height = 17,
+        .weight = 800,
+        .description = COMPOUND_STRING(
+            "Its powerful stomach acid is capable of\n"
+            "digesting almost anything. The one thing\n"
+            "in the whole world a Swalot can't digest is\n"
+            "its own stomach."),
+        .pokemonScale = 256,
+        .pokemonOffset = 6,
+        .trainerScale = 345,
+        .trainerOffset = 3,
+        .frontPic = gMonFrontPic_May,
+        .frontPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(48, 48) : MON_COORDS_SIZE(56, 56),
+        .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 8 : 5,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 30),
+        ),
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
+        .backPic = gMonBackPic_Swalot,
+        .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(56, 56) : MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 6 : 2,
+        .backAnimId = BACK_ANIM_V_STRETCH,
+        .palette = gMonPalette_May,
+        .shinyPalette = gMonPalette_May,
+        .iconSprite = gMonIcon_Swalot,
+        .iconPalIndex = 2,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(4, 3, SHADOW_SIZE_L)
+        FOOTPRINT(Swalot)
+        OVERWORLD(
+            sPicTable_Swalot,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_SLITHER,
+            sAnimTable_Following,
+            gOverworldPalette_Swalot,
+            gShinyOverworldPalette_Swalot
+        )
+        OVERWORLD_FEMALE(
+            sPicTable_SwalotF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_SLITHER,
+            sAnimTable_Following
+        )
+        .isGulpinForm = TRUE,
+        .levelUpLearnset = sSwalotLevelUpLearnset,
+        .teachableLearnset = sSwalotTeachableLearnset,
+    },
+
     /*
     [SPECIES_NONE] =
     {

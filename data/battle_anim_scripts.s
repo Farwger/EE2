@@ -24690,6 +24690,9 @@ gBattleAnimMove_AerialAce::
 	createvisualtask AnimTask_TraceMonBlended, 2, 0, 4, 7, 3
 	createsprite gCuttingSliceSpriteTemplate, ANIM_ATTACKER, 2, 40, -32, 0
 	playsewithpan SE_M_RAZOR_WIND2, SOUND_PAN_ATTACKER
+	delay 10
+	createsprite gCuttingSliceSpriteTemplate, ANIM_ATTACKER, 2, 40, -32, 1
+	playsewithpan SE_M_RAZOR_WIND2, SOUND_PAN_ATTACKER
 	delay 5
 	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 0, 3, 10, 1
 	complex_palette_blend selector=F_PAL_BG | F_PAL_BATTLERS, delay=3, num_blends=1, color1=RGB_BLACK, blend_y1=10, color2=RGB_BLACK, blend_y2=0
@@ -26721,17 +26724,15 @@ WhirlpoolEffect:
 gBattleAnimMove_Fly::
 	loadspritegfx ANIM_TAG_ROUND_SHADOW
 	loadspritegfx ANIM_TAG_IMPACT
-	choosetwoturnanim FlySetUp, FlyUnleash
+	goto FlySetUpAndUnleash
 FlyEnd:
 	waitforvisualfinish
 	end
-
-FlySetUp:
+FlySetUpAndUnleash:
 	playsewithpan SE_M_FLY, SOUND_PAN_ATTACKER
 	createsprite gFlyBallUpSpriteTemplate, ANIM_ATTACKER, 2, 0, 0, 13, 336
-	goto FlyEnd
-
-FlyUnleash:
+	waitforvisualfinish
+	delay 10
 	monbg ANIM_DEF_PARTNER
 	setalpha 12, 8
 	playsewithpan SE_M_DOUBLE_TEAM, SOUND_PAN_ATTACKER

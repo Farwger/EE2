@@ -1088,6 +1088,13 @@ static const struct MenuAction sMultichoiceList_HOF_Eggs_Victories_Quit[] = {
     { gText_ShopQuit }
 };
 
+static const struct MenuAction sMultichoiceList_Bersket_Profs_Questions[] = {
+    { COMPOUND_STRING("What's with Guljira?") },
+    { COMPOUND_STRING("Why is Gulpinator part Steel now?") },
+    { COMPOUND_STRING("What should I be doing?") },
+    { gText_Exit }
+};
+
 static const struct MenuAction MultichoiceList_Exit[] =
 {
     {gText_Exit},
@@ -1260,6 +1267,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_HOF_VICTORIES_QUIT]                         = MULTICHOICE(sMultichoiceList_HOF_Victories_Quit),
     [MULTI_EGGS_VICTORIES_QUIT]                        = MULTICHOICE(sMultichoiceList_Eggs_Victories_Quit),
     [MULTI_HOF_EGGS_VICTORIES_QUIT]                    = MULTICHOICE(sMultichoiceList_HOF_Eggs_Victories_Quit),
+    [MULTI_BERSKETPROFS_QUESTIONS]                     = MULTICHOICE(sMultichoiceList_Bersket_Profs_Questions),
 };
 
 const u8 *const gStdStrings[] =

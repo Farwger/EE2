@@ -1,19 +1,57 @@
 mapscripts BersketCity_MapScripts {
 
+
+// VAR_BERSKET_CITY_STATE
+// 1: defeated rival outside the lab
+// 2: spoken to the Professors, given the Engram, given mission
+// 3: obtained the first badge: learned Cut
+// 4: spoken to the professors again (optional)
+// 5: entered Petalburg Woods
+// 6: witnessed a Team Aqua grunt get abducted by the Rot
+// 7: defeated a kid looking for his brother
+// 8: encountered the mad ranger in the Grove
+// 9: defeated the scripted Rot double battle
+// 10: defeated Arceus/Vamporin
+// 11: gave fruit to Guljira (Professors are also there), talked to him, asked to investigate the food storage (to find what the Gulpin were seeking)
+// 12: obtained the first Sacred Ingredient
+// 13: spoken to Guljira, sent on quest for Ambrosia (tunnel is now open)
+
+// At >= 10, the player can ask the Professors about 
+
+
 MAP_SCRIPT_ON_TRANSITION {
     setflag(FLAG_VISITED_BERSKET_CITY)
     setflag(FLAG_HIDE_RIVAL_BERSKETCITY)
+    setvar(VAR_BERSKET_CITY_STATE, 1)
+    setflag(FLAG_BADGE01_GET)
 }
 
 }
     
 script BersketCity_EventScript_Guljira {
-    msgbox(format("Hey, I'm hungry. Do you have any food?"))
-    msgbox("Lips: Oh no!\n What happened?")
-    msgbox("No food.")
-    msgbox(format("Lips: Something must have gone wrong. This is bad.\p{PLAYER}, this is Guljira. He's our leader.\pBut he's supposed to have special food from the forest. Without it, the hunger is too much, and his great wisdom is gone.\pWe need to talk to the professor."))
-    closemessage
-    end
+
+    // if Guljira is still hungry
+    if (var(VAR_BERSKET_CITY_STATE) < 11) {
+        playmoncry (SPECIES_GULPIN, 0)
+        msgbox(format("GUUUULLLLLP\pHey, I'm hungry. Do you have any food?"))
+
+        // haven't talken to profs yet
+        if (var(VAR_BERSKET_CITY_STATE) < 2) {
+            msgbox("Lips: Oh no!\nWhat's happened?")
+            msgbox("No food.\nGulp.")
+            msgbox(format("Lips: Something must have gone wrong. This is bad.\p{PLAYER}, this is Guljira. He's our leader.\pBut he's supposed to have special food from the forest. Without it, the hunger is too much, and his great wisdom is gone.\pWe need to talk to the professors."))
+            closemessage
+            end
+        }
+        // haven't learned Cut yet
+        elif (var(VAR_BERSKET_CITY_STATE) < 3) {
+            msgbox(format("Lips: Don't worry! We're going to get you food. We just need to go to Rustboro first. We'll be quick."))
+            closemessage
+            end
+        }
+    }
+
+    // later dialogue
 }
 
 script BersketCity_EventScript_Rival {
@@ -144,3 +182,34 @@ text BersketCity_Text_MayDefeat{
     "Wow! That's great!\n"
 	"{PLAYER}, you're pretty good!"
 }
+
+
+script BersketCity_EventScript_CitySign {
+    msgbox ("Bersket City\p“The berry-basket of Hoenn.“", MSGBOX_SIGN)
+	end
+}
+
+script BersketCity_EventScript_LabSign {
+    msgbox ("Professor Jacuzzi's lab.", MSGBOX_SIGN)
+    giveitem (ITEM_TM_THUNDERBOLT)
+	end
+}
+
+script BersketCity_EventScript_Resteraunt { // todo
+    msgbox ("Resteraunt.", MSGBOX_SIGN)
+	end
+}
+
+script BersketCity_EventScript_FoodStorage {
+    msgbox ("Bersket food storage.", MSGBOX_SIGN)
+	end
+}
+
+script BersketCity_EventScript_ResturketSign {
+    msgbox (format("Resturket Tunnel\nLinking Bersket, Rustboro, and Verdanturf."), MSGBOX_SIGN)
+	end
+}
+
+
+
+

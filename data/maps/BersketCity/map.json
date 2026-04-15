@@ -183,8 +183,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_3",
-      "x": 34,
-      "y": 15,
+      "x": 32,
+      "y": 17,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -196,8 +196,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_3",
-      "x": 35,
-      "y": 14,
+      "x": 36,
+      "y": 9,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -287,8 +287,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_3",
-      "x": 25,
-      "y": 8,
+      "x": 23,
+      "y": 7,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -392,28 +392,28 @@
       "x": 23,
       "y": 12,
       "elevation": 0,
-      "dest_map": "MAP_BERSKET_CITY",
+      "dest_map": "MAP_BERSKET_CITY_MART",
       "dest_warp_id": "0"
     },
     {
       "x": 40,
       "y": 31,
       "elevation": 0,
-      "dest_map": "MAP_BERSKET_CITY",
+      "dest_map": "MAP_BERSKET_CITY_LAB",
       "dest_warp_id": "0"
     },
     {
       "x": 33,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_BERSKET_CITY",
+      "dest_map": "MAP_BERSKET_CITY_RESTAURANT",
       "dest_warp_id": "0"
     },
     {
       "x": 40,
       "y": 21,
       "elevation": 0,
-      "dest_map": "MAP_BERSKET_CITY",
+      "dest_map": "MAP_BERSKET_CITY_FOOD_STORAGE",
       "dest_warp_id": "0"
     },
     {
@@ -427,40 +427,47 @@
       "x": 11,
       "y": 33,
       "elevation": 0,
-      "dest_map": "MAP_BERSKET_CITY",
+      "dest_map": "MAP_BERSKET_CITY_HIGH_RISE1",
       "dest_warp_id": "0"
     },
     {
       "x": 23,
       "y": 21,
       "elevation": 0,
-      "dest_map": "MAP_BERSKET_CITY",
+      "dest_map": "MAP_BERSKET_CITY_HIGH_RISE2",
       "dest_warp_id": "0"
     },
     {
       "x": 41,
       "y": 9,
       "elevation": 0,
-      "dest_map": "MAP_BERSKET_CITY",
+      "dest_map": "MAP_BERSKET_CITY_HIGH_RISE3",
       "dest_warp_id": "0"
     },
     {
       "x": 15,
       "y": 6,
       "elevation": 0,
-      "dest_map": "MAP_BERSKET_CITY",
+      "dest_map": "MAP_BERSKET_CITY_HOUSE1",
       "dest_warp_id": "0"
     },
     {
       "x": 24,
       "y": 5,
       "elevation": 0,
-      "dest_map": "MAP_BERSKET_CITY",
+      "dest_map": "MAP_BERSKET_CITY_HOUSE2",
       "dest_warp_id": "0"
     },
     {
       "x": 53,
       "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_BERSKET_CITY_HOUSE3",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 0,
+      "y": 36,
       "elevation": 0,
       "dest_map": "MAP_BERSKET_CITY",
       "dest_warp_id": "0"
@@ -516,7 +523,7 @@
       "y": 32,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "BersketCity_EventScript_CitySign"
     },
     {
       "type": "sign",
@@ -524,7 +531,7 @@
       "y": 4,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "BersketCity_EventScript_CitySign"
     },
     {
       "type": "sign",
@@ -532,15 +539,15 @@
       "y": 33,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "BersketCity_EventScript_LabSign"
     },
     {
       "type": "sign",
-      "x": 36,
+      "x": 38,
       "y": 22,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "BersketCity_EventScript_FoodStorage"
     },
     {
       "type": "sign",
@@ -548,7 +555,15 @@
       "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "BersketCity_EventScript_ResturketSign"
+    },
+    {
+      "type": "sign",
+      "x": 32,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "BersketCity_EventScript_Resteraunt"
     }
   ]
 }

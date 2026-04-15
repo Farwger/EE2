@@ -92,6 +92,15 @@ JaggedPass_EventScript_GuardDefeated::
 	releaseall
 	end
 
+@ blocks the player until defeating Team Magna on the summit
+JaggedPass_EventScript_MagmaGuard::
+	msgbox JaggedPass_Text_MagmaHeadBack, MSGBOX_NPC
+	end
+
+JaggedPass_Text_MagmaHeadBack:
+	.string "No one's allowed up here.\p"
+	.string "Head back. Now.$"
+
 JaggedPass_EventScript_Eric::
 	trainerbattle_single TRAINER_ERIC, JaggedPass_Text_EricIntro, JaggedPass_Text_EricDefeat
 	msgbox JaggedPass_Text_EricPostBattle, MSGBOX_AUTOCLOSE

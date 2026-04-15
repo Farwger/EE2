@@ -15827,6 +15827,23 @@ const struct ItemInfo gItemsInfo[] =
         .iconPic = gItemIcon_PokeshiDoll,
         .iconPalette = gItemIconPalette_PokeshiDoll,
     },
+
+    // new
+    [ITEM_ENGRAM_CUT] =
+    {
+        .name = ITEM_NAME("EN 'Cut'"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "Creates a huge\n"
+            "wave, then crashes\n"
+            "it down on the foe."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_PokeshiDoll,
+        .iconPalette = gItemIconPalette_PokeshiDoll,      
+    },
 };
 
 #undef ITEM_NAME

@@ -1027,6 +1027,15 @@ u8 CreateMonSprite_PicBox(u16 species, s16 x, s16 y, u8 subpriority)
 
 u8 CreateMonSprite_FieldMove(u16 species, bool8 isShiny, u32 personality, s16 x, s16 y, u8 subpriority)
 {
+    // overwriting the species to show the player
+    // VAR_0x8007 is set in field_move_scripts.inc to indicate that this is a field move performed by the player (not all field moves are)
+    if (gSaveBlock2Ptr->playerGender == 1 && VarGet(VAR_0x8007) == 7)
+        species = SPECIES_MAY;
+    else if (VarGet(VAR_0x8007) == 7)
+        species = SPECIES_BRENDAN;
+
+    VarSet(VAR_0x8007, 0);
+
     u16 spriteId = CreateMonPicSprite(species, isShiny, personality, TRUE, x, y, 0, species);
     PreservePaletteInWeather(gSprites[spriteId].oam.paletteNum + 0x10);
     if (spriteId == 0xFFFF)
@@ -3291,9 +3300,9 @@ static void SpriteCB_FieldMoveMonSlideOnscreen(struct Sprite *sprite)
         sprite->sOnscreenTimer = 30;
         sprite->callback = SpriteCB_FieldMoveMonWaitAfterCry;
         if (sprite->data[6])
-            PlayCry_NormalNoDucking(sprite->sSpecies, 0, CRY_VOLUME_RS, CRY_PRIORITY_NORMAL);
+            PlayCry_NormalNoDucking(SPECIES_BRENDAN, 0, CRY_VOLUME_RS, CRY_PRIORITY_NORMAL);
         else
-            PlayCry_Normal(sprite->sSpecies, 0);
+            PlayCry_Normal(SPECIES_BRENDAN, 0);
     }
 }
 

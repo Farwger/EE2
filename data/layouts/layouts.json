@@ -9377,20 +9377,20 @@
     {
       "id": "LAYOUT_BERSKET_CITY_LAB",
       "name": "BersketCity_Lab_Layout",
-      "width": 58,
-      "height": 42,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Rustboro",
+      "width": 16,
+      "height": 16,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Lab",
       "border_filepath": "data/layouts/BersketCity_Lab/border.bin",
       "blockdata_filepath": "data/layouts/BersketCity_Lab/map.bin"
     },
     {
       "id": "LAYOUT_BERSKET_CITY_MART",
       "name": "BersketCity_Mart_Layout",
-      "width": 58,
-      "height": 42,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Rustboro",
+      "width": 11,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
       "border_filepath": "data/layouts/BersketCity_Mart/border.bin",
       "blockdata_filepath": "data/layouts/BersketCity_Mart/map.bin"
     },

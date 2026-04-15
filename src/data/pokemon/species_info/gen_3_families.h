@@ -3362,7 +3362,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .levelUpLearnset = sShroomishLevelUpLearnset,
         .teachableLearnset = sShroomishTeachableLearnset,
         .eggMoveLearnset = sShroomishEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_BRELOOM}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 27, SPECIES_BRELOOM}),
     },
 
     [SPECIES_BRELOOM] =
@@ -3371,7 +3371,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .baseAttack    = 110,
         .baseDefense   = 90,
         .baseSpeed     = 70,
-        .baseSpAttack  = 60,
+        .baseSpAttack  = 80,
         .baseSpDefense = 70,
         .types = MON_TYPES(TYPE_GRASS, TYPE_FIGHTING),
         .catchRate = 90,
@@ -11428,7 +11428,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .baseAttack    = 90,
         .baseDefense   = 130,
         .baseSpeed     = 55,
-        .baseSpAttack  = 45,
+        .baseSpAttack  = 80,
         .baseSpDefense = 75,
         .types = MON_TYPES(TYPE_WATER, TYPE_ROCK),
         .catchRate = 25,

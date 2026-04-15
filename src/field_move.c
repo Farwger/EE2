@@ -21,7 +21,8 @@ static bool32 IsFieldMoveUnlocked_Flash(void)
     if (IS_FRLG)
         return FlagGet(FLAG_BADGE01_GET);
 
-    return FlagGet(FLAG_BADGE02_GET);
+    // Mauville badge unlocks Flash
+    return FlagGet(FLAG_BADGE03_GET);
 }
 
 static bool32 IsFieldMoveUnlocked_RockSmash(void)
@@ -29,12 +30,14 @@ static bool32 IsFieldMoveUnlocked_RockSmash(void)
     if (IS_FRLG)
         return FlagGet(FLAG_BADGE06_GET);
 
-    return FlagGet(FLAG_BADGE03_GET);
+    // Lavaridge badge unlocks Rock Smash
+    return FlagGet(FLAG_BADGE04_GET);
 }
 
 static bool32 IsFieldMoveUnlocked_Strength(void)
 {
-    return FlagGet(FLAG_BADGE04_GET);
+    // Dewford badge unlocks Strength
+    return FlagGet(FLAG_BADGE02_GET);
 }
 
 static bool32 IsFieldMoveUnlocked_Surf(void)

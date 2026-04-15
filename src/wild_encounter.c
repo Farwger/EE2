@@ -530,13 +530,21 @@ static bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, enum 
 	switch(randomVariance)
 	{
 		case 0:
-			randomVariance = -1;
+            if (GetMonData(&gPlayerParty[0], MON_DATA_LEVEL) > 1)
+			    randomVariance = -1;
+            else
+                randomVariance = 0;
 			break;
 		case 1:
 			randomVariance = 0;
 			break;
 		case 2:
-			randomVariance = 1;
+            if (VarGet(VAR_BADGE_COUNT) == 0) // easier in the beginning
+                randomVariance = -1;
+            else if (GetMonData(&gPlayerParty[0], MON_DATA_LEVEL) < (VarGet(VAR_BADGE_COUNT) * 5) + 10) // prevent wildmons from breaking level cap
+                randomVariance = 1;
+            else
+                randomVariance = 0;
 			break;
 	}
 

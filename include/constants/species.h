@@ -1741,8 +1741,12 @@
 #define SPECIES_VALVORIN_FAIRY                          1624
 #define SPECIES_LICKITUNG_GHOST                         1625 // Lickitung form
 #define SPECIES_LICKILICKY_GHOST                        1626 // Lickilicky form
+#define SPECIES_BRENDAN                                 1627 // used for field moves, Kyurem battle, maybe more
+#define SPECIES_MAY                                     1628 //
+#define SPECIES_CALFINE                                 1629 // baby Tauros, Miltank
+#define SPECIES_JOEBY                                   1630 // baby Kangaskhan
 
-#define SPECIES_EGG                                     (SPECIES_LICKILICKY_GHOST + 1)
+#define SPECIES_EGG                                     (SPECIES_JOEBY + 1)
 
 #define NUM_SPECIES SPECIES_EGG
 

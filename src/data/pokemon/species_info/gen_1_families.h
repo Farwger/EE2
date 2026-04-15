@@ -15535,8 +15535,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     {
         .baseHP        = 100,
         .baseAttack    = 95,
-        .baseDefense   = 90,
-        .baseSpeed     = 70,
+        .baseDefense   = 85,
+        .baseSpeed     = 75,
         .baseSpAttack  = 65,
         .baseSpDefense = 80,
         .types = MON_TYPES(TYPE_WATER),
@@ -18307,10 +18307,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     [SPECIES_FLAREON] =
     {
         .baseHP        = 75,
-        .baseAttack    = 110,
+        .baseAttack    = 65,
         .baseDefense   = 65,
         .baseSpeed     = 100,
-        .baseSpAttack  = 65,
+        .baseSpAttack  = 110,
         .baseSpDefense = 110,
         .types = MON_TYPES(TYPE_FIRE),
         .catchRate = 45,

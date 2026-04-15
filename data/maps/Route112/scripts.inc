@@ -57,7 +57,7 @@ Route112_EventScript_RouteSignLavaridge::
 	end
 
 Route112_EventScript_Hiker::
-	msgbox Route112_Text_NotEasyToGetBackToLavaridge, MSGBOX_NPC
+	msgbox Route112_Text_EasyToGetBackToLavaridge, MSGBOX_NPC
 	end
 
 Route112_EventScript_Brice::
@@ -122,10 +122,10 @@ Route112_Text_CantLetAnyonePassUntilTheyreBack:
 	.string "You got it. And until they come back,\n"
 	.string "we're not to let anyone pass, right.$"
 
-Route112_Text_NotEasyToGetBackToLavaridge:
-	.string "Eh, I'd like to get to MAUVILLE, but if\n"
-	.string "I went down these ledges, it'd be no\l"
-	.string "easy matter to get back to LAVARIDGE.$"
+Route112_Text_EasyToGetBackToLavaridge:
+	.string "It's a lot easier to get back to\n"
+	.string "Lavaridge after they built\l"
+	.string "these stairs.$"
 
 Route112_Text_MtChimneyCableCarSign:
 	.string "MT. CHIMNEY CABLE CAR\n"
