@@ -2635,17 +2635,4 @@ static const u16 sValvorinFormSpeciesIdTable[] = {
     FORM_SPECIES_END,
 };
 
-static const u16 sLickitungFormSpeciesIdTable[] = {
-    SPECIES_LICKITUNG,
-    SPECIES_LICKITUNG_GHOST,
-    FORM_SPECIES_END,
-};
-
-static const u16 sLickilickyFormSpeciesIdTable[] = {
-    SPECIES_LICKILICKY,
-    SPECIES_LICKILICKY_GHOST,
-    FORM_SPECIES_END,
-};
-
-
 

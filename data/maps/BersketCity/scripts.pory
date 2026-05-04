@@ -185,7 +185,7 @@ text BersketCity_Text_MayDefeat{
 
 
 script BersketCity_EventScript_CitySign {
-    msgbox ("Bersket City\p“The berry-basket of Hoenn.“", MSGBOX_SIGN)
+    msgbox ("BERSKET CITY\p“The berry-basket of Hoenn.“", MSGBOX_SIGN)
 	end
 }
 

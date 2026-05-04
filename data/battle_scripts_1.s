@@ -3986,8 +3986,14 @@ BattleScript_DragonDanceDoMoveAnim::
 BattleScript_DragonDanceTrySpeed::
 	setstatchanger STAT_SPEED, 1, FALSE
 	statbuffchange BS_ATTACKER, STAT_CHANGE_ALLOW_PTR, BattleScript_DragonDanceEnd
-	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_CHANGE, BattleScript_DragonDanceEnd
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_CHANGE, BattleScript_DragonDanceTryHeal
 	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_DragonDanceTryHeal::
+	tryhealquarterhealth BS_ATTACKER, BattleScript_DragonDanceEnd
+	healthbarupdate BS_ATTACKER, PASSIVE_HP_UPDATE
+	datahpupdate BS_ATTACKER, PASSIVE_HP_UPDATE
+	printstring STRINGID_PKMNREGAINEDHEALTH
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_DragonDanceEnd::
 	goto BattleScript_MoveEnd
@@ -5745,11 +5751,16 @@ BattleScript_ThrashConfusesRet::
 	waitmessage B_WAIT_TIME_LONG
 	return
 
+@new
 BattleScript_MoveUsedIsConfused::
-	printstring STRINGID_PKMNISCONFUSED
-	waitmessage B_WAIT_TIME_LONG
 	volatileanimation BS_ATTACKER, VOLATILE_CONFUSION
-	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, FALSE, BattleScript_MoveUsedIsConfusedRet
+	printstring STRINGID_ITHURTCONFUSION
+	waitmessage B_WAIT_TIME_LONG
+	effectivenesssound
+	hitanimation BS_ATTACKER
+	goto BattleScript_DoTurnDmg
+
+@only used by disobedience
 BattleScript_DoSelfConfusionDmg::
 	cancelmultiturnmoves
 	printstring STRINGID_ITHURTCONFUSION
@@ -5764,8 +5775,6 @@ BattleScript_DoSelfConfusionDmg::
 	waitmessage B_WAIT_TIME_LONG
 	tryfaintmon BS_ATTACKER
 	goto BattleScript_MoveEnd
-BattleScript_MoveUsedIsConfusedRet::
-	return
 
 BattleScript_MoveUsedPowder::
 	pause B_WAIT_TIME_SHORT
@@ -5785,7 +5794,7 @@ BattleScript_MoveUsedPowder::
 BattleScript_MoveUsedIsConfusedNoMore::
 	printstring STRINGID_PKMNHEALEDCONFUSION
 	waitmessage B_WAIT_TIME_LONG
-	return
+	end2
 
 BattleScript_PrintPayDayMoneyString::
 	printstring STRINGID_PLAYERPICKEDUPMONEY
@@ -7039,6 +7048,14 @@ BattleScript_TruantLoafingAround::
 	flushtextbox
 	call BattleScript_AbilityPopUp
 	goto BattleScript_MoveUsedLoafingAroundMsg
+
+BattleScript_RottenInaction::
+	flushtextbox
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_ROTTENDISOBEY
+	waitmessage B_WAIT_TIME_LONG
+	moveendto MOVEEND_NEXT_TARGET
+	end
 
 BattleScript_IgnoresAndFallsAsleep::
 	printstring STRINGID_PKMNBEGANTONAP

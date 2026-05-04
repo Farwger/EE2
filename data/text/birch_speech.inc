@@ -1,7 +1,7 @@
 gText_Birch_Welcome::
 	.string "Hi! Sorry to keep you waiting!\p"
 	.string "Welcome to the Hoenn Region!\p"
-	.string "My name is BIRCH.\p"
+	.string "My name is Birch.\p"
 	.string "But everyone calls me --\p"
 	.string "$"
 

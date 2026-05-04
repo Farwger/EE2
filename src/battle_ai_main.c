@@ -3238,7 +3238,7 @@ static s32 AI_DoubleBattle(enum BattlerId battlerAtk, enum BattlerId battlerDef,
     } // check partner move effect
 
     // Adjust for always crit moves
-    if (MoveAlwaysCrits(aiData->partnerMove) && aiData->abilities[battlerAtk] == ABILITY_ANGER_POINT)
+   /* if (MoveAlwaysCrits(aiData->partnerMove) && aiData->abilities[battlerAtk] == ABILITY_ANGER_POINT)
     {
         if (AI_IsSlower(battlerAtk, battlerAtkPartner, move, predictedMoveSpeedCheck, CONSIDER_PRIORITY))   // Partner moving first
         {
@@ -3249,7 +3249,7 @@ static s32 AI_DoubleBattle(enum BattlerId battlerAtk, enum BattlerId battlerDef,
             if (!IsBattleMoveStatus(move) && IsSpreadMove(moveTarget))
                 ADJUST_SCORE(GOOD_EFFECT);
         }
-    }
+    } */
 
     // consider our move effect relative to partner state
     switch (effect)
@@ -3500,7 +3500,7 @@ static s32 AI_DoubleBattle(enum BattlerId battlerAtk, enum BattlerId battlerDef,
         {
             switch (atkPartnerAbility)
             {
-            case ABILITY_ANGER_POINT:
+            /*case ABILITY_ANGER_POINT:
                 if (MoveAlwaysCrits(move)
                     && BattlerStatCanRise(battlerAtkPartner, atkPartnerAbility, STAT_ATK)
                     && AI_IsFaster(battlerAtk, battlerAtkPartner, move, predictedMoveSpeedCheck, CONSIDER_PRIORITY)
@@ -3520,7 +3520,7 @@ static s32 AI_DoubleBattle(enum BattlerId battlerAtk, enum BattlerId battlerDef,
                 {
                     isMoveAffectedByPartnerAbility = FALSE;
                 }
-                break;
+                break; */
             case ABILITY_LIGHTNING_ROD:
             case ABILITY_MOTOR_DRIVE:
             case ABILITY_VOLT_ABSORB:

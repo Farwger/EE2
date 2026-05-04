@@ -424,7 +424,7 @@ BersketCity_EventScript_RivalDefeated_Text_6:
 
 BersketCity_EventScript_CitySign_Text_0:
 # 188 "data/maps/BersketCity/scripts.pory"
-	.string "Bersket City\p“The berry-basket of Hoenn.“$"
+	.string "BERSKET CITY\p“The berry-basket of Hoenn.“$"
 
 BersketCity_EventScript_LabSign_Text_0:
 # 193 "data/maps/BersketCity/scripts.pory"

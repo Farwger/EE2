@@ -395,7 +395,7 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_DONTLEAVEBIRCH]                       = COMPOUND_STRING("PROF. BIRCH: Don't leave me like this!\p"), //no decapitalize until it is everywhere
     [STRINGID_BUTNOTHINGHAPPENED]                   = COMPOUND_STRING("But nothing happened!"),
     [STRINGID_BUTITFAILED]                          = COMPOUND_STRING("But it failed!"),
-    [STRINGID_ITHURTCONFUSION]                      = COMPOUND_STRING("It hurt itself in its confusion!"),
+    [STRINGID_ITHURTCONFUSION]                      = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} hurt itself in its confusion!"),
     [STRINGID_STARTEDTORAIN]                        = COMPOUND_STRING("It started to rain!"),
     [STRINGID_DOWNPOURSTARTED]                      = COMPOUND_STRING("A downpour started!"), // corresponds to DownpourText in pokegold and pokecrystal and is used by Rain Dance in GSC
     [STRINGID_RAINCONTINUES]                        = COMPOUND_STRING("Rain continues to fall."), //not in gen 5+
@@ -878,8 +878,9 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_ZENMODETRIGGERED]                     = COMPOUND_STRING("{B_SCR_ABILITY} triggered!"),
     [STRINGID_ZENMODEENDED]                         = COMPOUND_STRING("{B_SCR_ABILITY} ended!"),
     [STRINGID_BLACKHOLESTART]                       = COMPOUND_STRING("Swall's mouth opens!"),
-    [STRINGID_BLACKHOLEHEALS]                       = COMPOUND_STRING("The black hole feeds\nHP to {B_ATK_NAME_WITH_PREFIX}!"),
-    [STRINGID_BLACKHOLEHURTS]                       = COMPOUND_STRING("The black hole tears\nat {B_ATK_NAME_WITH_PREFIX2}!"),
+    [STRINGID_BLACKHOLEHEALS]                       = COMPOUND_STRING("The black hole feeds {B_ATK_NAME_WITH_PREFIX}!"),
+    [STRINGID_BLACKHOLEHURTS]                       = COMPOUND_STRING("The black hole tears {B_ATK_NAME_WITH_PREFIX}!"),
+    [STRINGID_ROTTENDISOBEY]                        = COMPOUND_STRING("... ... ..."),
 };
 
 const u16 gTrainerUsedItemStringIds[] =

@@ -944,8 +944,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
     [SPECIES_BLASTOISE] =
     {
-        .baseHP        = 89,
-        .baseAttack    = 73,
+        .baseHP        = 90,
+        .baseAttack    = 72,
         .baseDefense   = 100,
         .baseSpeed     = 78,
         .baseSpAttack  = 85,
@@ -1287,7 +1287,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachingType = TM_ILLITERATE,
         .levelUpLearnset = sMetapodLevelUpLearnset,
         .teachableLearnset = sMetapodTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 14, SPECIES_BUTTERFREE}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_BUTTERFREE}),
     },
 
 #if P_UPDATED_EXP_YIELDS >= GEN_8
@@ -1304,9 +1304,9 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     {
         .baseHP        = 80,
         .baseAttack    = 45,
-        .baseDefense   = 60,
+        .baseDefense   = 50,
         .baseSpeed     = 90,
-        .baseSpAttack  = 85,
+        .baseSpAttack  = 90,
         .baseSpDefense = 85,
         .types = MON_TYPES(TYPE_BUG, TYPE_FLYING),
         .catchRate = 45,
@@ -1608,17 +1608,17 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachingType = TM_ILLITERATE,
         .levelUpLearnset = sKakunaLevelUpLearnset,
         .teachableLearnset = sKakunaTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 14, SPECIES_BEEDRILL}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_BEEDRILL}),
     },
 
     [SPECIES_BEEDRILL] =
     {
         .baseHP        = 80,
         .baseAttack    = 90,
-        .baseDefense   = 45,
-        .baseSpeed     = 100,
+        .baseDefense   = 50,
+        .baseSpeed     = 95,
         .baseSpAttack  = 45,
-        .baseSpDefense = 85,
+        .baseSpDefense = 80,
         .types = MON_TYPES(TYPE_BUG, TYPE_POISON),
         .catchRate = 45,
     #if P_UPDATED_EXP_YIELDS >= GEN_8
@@ -1855,7 +1855,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .baseDefense   = 65,
         .baseSpeed     = 71,
         .baseSpAttack  = 70,
-        .baseSpDefense = 50,
+        .baseSpDefense = 60,
         .types = MON_TYPES(TYPE_NORMAL, TYPE_FLYING),
         .catchRate = 120,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 122 : 113,
@@ -1927,10 +1927,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     {
         .baseHP        = 83,
         .baseAttack    = 70,
-        .baseDefense   = 85,
+        .baseDefense   = 75,
         .baseSpeed     = 101,
         .baseSpAttack  = 90,
-        .baseSpDefense = 70,
+        .baseSpDefense = 80,
         .types = MON_TYPES(TYPE_NORMAL, TYPE_FLYING),
         .catchRate = 45,
     #if P_UPDATED_EXP_YIELDS >= GEN_8
@@ -2082,7 +2082,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #if P_FAMILY_RATTATA
     [SPECIES_RATTATA] =
     {
-        .baseHP        = 45,
+        .baseHP        = 55,
         .baseAttack    = 61,
         .baseDefense   = 40,
         .baseSpeed     = 72,
@@ -2166,12 +2166,12 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
     [SPECIES_RATICATE] =
     {
-        .baseHP        = 95,
-        .baseAttack    = 85,
-        .baseDefense   = 70,
+        .baseHP        = 85,
+        .baseAttack    = 88,
+        .baseDefense   = 60,
         .baseSpeed     = 97,
         .baseSpAttack  = 50,
-        .baseSpDefense = 80,
+        .baseSpDefense = 70,
         .types = MON_TYPES(TYPE_NORMAL),
         .catchRate = 127,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 145 : 116,
@@ -2528,8 +2528,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     [SPECIES_FEAROW] =
     {
         .baseHP        = 80,
-        .baseAttack    = 95,
-        .baseDefense   = 75,
+        .baseAttack    = 90,
+        .baseDefense   = 85,
         .baseSpeed     = 100,
         .baseSpAttack  = 61,
         .baseSpDefense = 70,
@@ -2677,12 +2677,12 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
     [SPECIES_ARBOK] =
     {
-        .baseHP        = 90,
+        .baseHP        = 80,
         .baseAttack    = 95,
-        .baseDefense   = 70,
-        .baseSpeed     = 80,
-        .baseSpAttack  = 80,
-        .baseSpDefense = 90,
+        .baseDefense   = 75,
+        .baseSpeed     = 85,
+        .baseSpAttack  = 85,
+        .baseSpDefense = 80,
         .types = MON_TYPES(TYPE_POISON, TYPE_DARK),
         .catchRate = 90,
     #if P_UPDATED_EXP_YIELDS >= GEN_7
@@ -3911,10 +3911,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     {
         .baseHP        = 75,
         .baseAttack    = 90,
-        .baseDefense   = 60,
+        .baseDefense   = 55,
         .baseSpeed     = P_UPDATED_STATS >= GEN_6 ? 110 : 100,
-        .baseSpAttack  = 90,
-        .baseSpDefense = 90,
+        .baseSpAttack  = 85,
+        .baseSpDefense = 85,
         .types = MON_TYPES(TYPE_ELECTRIC),
         .catchRate = 75,
         .expYield = RAICHU_EXP_YIELD,
@@ -4836,11 +4836,11 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
     [SPECIES_NIDOKING] =
     {
-        .baseHP        = 97,
-        .baseAttack    = 102,
-        .baseDefense   = 77,
-        .baseSpeed     = 90,
-        .baseSpAttack  = P_UPDATED_STATS >= GEN_2 ? 85 : 75,
+        .baseHP        = 90,
+        .baseAttack    = 105,
+        .baseDefense   = 80,
+        .baseSpeed     = 85,
+        .baseSpAttack  = 95,
         .baseSpDefense = 75,
         .types = MON_TYPES(TYPE_POISON, TYPE_GROUND),
         .catchRate = 45,
@@ -4943,7 +4943,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
     #if P_UPDATED_ABILITIES >= GEN_4
-        .abilities = { ABILITY_CUTE_CHARM, ABILITY_MAGIC_GUARD, ABILITY_FRIEND_GUARD },
+        .abilities = { ABILITY_CUTE_CHARM, ABILITY_FRIEND_GUARD, ABILITY_MAGIC_GUARD },
     #else
         .abilities = { ABILITY_CUTE_CHARM, ABILITY_NONE, ABILITY_FRIEND_GUARD },
     #endif
@@ -5020,7 +5020,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY),
     #if P_UPDATED_ABILITIES >= GEN_4
-        .abilities = { ABILITY_CUTE_CHARM, ABILITY_MAGIC_GUARD, ABILITY_FRIEND_GUARD },
+        .abilities = { ABILITY_CUTE_CHARM, ABILITY_FRIEND_GUARD, ABILITY_MAGIC_GUARD },
     #else
         .abilities = { ABILITY_CUTE_CHARM, ABILITY_NONE, ABILITY_FRIEND_GUARD },
     #endif
@@ -5102,7 +5102,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY),
     #if P_UPDATED_ABILITIES >= GEN_4
-        .abilities = { ABILITY_CUTE_CHARM, ABILITY_MAGIC_GUARD, ABILITY_UNAWARE },
+        .abilities = { ABILITY_CUTE_CHARM, ABILITY_UNAWARE, ABILITY_MAGIC_GUARD },
     #else
         .abilities = { ABILITY_CUTE_CHARM, ABILITY_NONE, ABILITY_UNAWARE },
     #endif
@@ -5298,7 +5298,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .baseAttack    = 76,
         .baseDefense   = 75,
         .baseSpeed     = 100,
-        .baseSpAttack  = 85,
+        .baseSpAttack  = 100,
         .baseSpDefense = 100,
         .types = MON_TYPES(TYPE_FIRE, TYPE_FAIRY),
         .catchRate = 75,
@@ -5435,11 +5435,11 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
     [SPECIES_NINETALES_ALOLA] =
     {
-        .baseHP        = 80,
+        .baseHP        = 85,
         .baseAttack    = 67,
         .baseDefense   = 75,
         .baseSpeed     = 109,
-        .baseSpAttack  = 85,
+        .baseSpAttack  = 95,
         .baseSpDefense = 100,
         .types = MON_TYPES(TYPE_ICE),
         .catchRate = 75,
@@ -5674,11 +5674,11 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     [SPECIES_WIGGLYTUFF] =
     {
         .baseHP        = 140,
-        .baseAttack    = 44,
-        .baseDefense   = 55,
+        .baseAttack    = 50,
+        .baseDefense   = 60,
         .baseSpeed     = 45,
         .baseSpAttack  = WIGGLYTUFF_SP_ATK,
-        .baseSpDefense = 61,
+        .baseSpDefense = 65,
         .types = JIGGLYPUFF_FAMILY_TYPES,
         .catchRate = 50,
     #if P_UPDATED_EXP_YIELDS >= GEN_8
@@ -5759,8 +5759,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     [SPECIES_ZUBAT] =
     {
         .baseHP        = 50,
-        .baseAttack    = 55,
-        .baseDefense   = 35,
+        .baseAttack    = 60,
+        .baseDefense   = 40,
         .baseSpeed     = 70,
         .baseSpAttack  = 35,
         .baseSpDefense = 40,
@@ -6205,12 +6205,12 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
     [SPECIES_VILEPLUME] =
     {
-        .baseHP        = 75,
+        .baseHP        = 80,
         .baseAttack    = 80,
         .baseDefense   = 85,
-        .baseSpeed     = 50,
+        .baseSpeed     = 45,
         .baseSpAttack  = 105,
-        .baseSpDefense = 100,
+        .baseSpDefense = 105,
         .types = MON_TYPES(TYPE_GRASS, TYPE_POISON),
         .catchRate = 45,
     #if P_UPDATED_EXP_YIELDS >= GEN_8
@@ -6296,8 +6296,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     {
         .baseHP        = 80,
         .baseAttack    = 70,
-        .baseDefense   = 100,
-        .baseSpeed     = 60,
+        .baseDefense   = 95,
+        .baseSpeed     = 50,
         .baseSpAttack  = 90,
         .baseSpDefense = 110,
         .types = MON_TYPES(TYPE_GRASS),
@@ -6404,7 +6404,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG, EGG_GROUP_GRASS),
     #if P_UPDATED_ABILITIES >= GEN_4
-        .abilities = { ABILITY_EFFECT_SPORE, ABILITY_DRY_SKIN, ABILITY_DAMP },
+        .abilities = { ABILITY_EFFECT_SPORE, ABILITY_DRY_SKIN, ABILITY_PARASITIC },
     #else
         .abilities = { ABILITY_EFFECT_SPORE, ABILITY_NONE, ABILITY_DAMP },
     #endif
@@ -6475,12 +6475,12 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
     [SPECIES_PARASECT] =
     {
-        .baseHP        = 85,
+        .baseHP        = 75,
         .baseAttack    = 95,
-        .baseDefense   = 95,
+        .baseDefense   = 80,
         .baseSpeed     = 30,
-        .baseSpAttack  = 80,
-        .baseSpDefense = 95,
+        .baseSpAttack  = 90,
+        .baseSpDefense = 125,
         .types = MON_TYPES(TYPE_GRASS, TYPE_GHOST),
         .catchRate = 75,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 142 : 128,
@@ -6494,7 +6494,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG, EGG_GROUP_GRASS),
     #if P_UPDATED_ABILITIES >= GEN_4
-        .abilities = { ABILITY_DAMP, ABILITY_DRY_SKIN, ABILITY_EFFECT_SPORE },
+        .abilities = { ABILITY_EFFECT_SPORE, ABILITY_DRY_SKIN, ABILITY_PARASITIC },
     #else
         .abilities = { ABILITY_EFFECT_SPORE, ABILITY_NONE, ABILITY_DAMP },
     #endif
@@ -6637,7 +6637,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .baseDefense   = 75,
         .baseSpeed     = 90,
         .baseSpAttack  = 90,
-        .baseSpDefense = 80,
+        .baseSpDefense = 90,
         .types = MON_TYPES(TYPE_BUG, TYPE_POISON),
         .catchRate = 75,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 158 : 138,
@@ -7105,10 +7105,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     {
         .baseHP        = 75,
         .baseAttack    = 80,
-        .baseDefense   = 70,
+        .baseDefense   = 60,
         .baseSpeed     = 115,
-        .baseSpAttack  = 80,
-        .baseSpDefense = 80,
+        .baseSpAttack  = 90,
+        .baseSpDefense = 75,
         .types = MON_TYPES(TYPE_NORMAL),
         .catchRate = 90,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 154 : 148,
@@ -7120,7 +7120,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
     #if P_UPDATED_ABILITIES >= GEN_4
-        .abilities = { ABILITY_LIMBER, ABILITY_TECHNICIAN, ABILITY_UNNERVE },
+        .abilities = { ABILITY_LIMBER, ABILITY_UNNERVE, ABILITY_TECHNICIAN },
     #else
         .abilities = { ABILITY_LIMBER, ABILITY_NONE, ABILITY_UNNERVE },
     #endif
@@ -7578,11 +7578,11 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     [SPECIES_GOLDUCK] =
     {
         .baseHP        = 80,
-        .baseAttack    = 80,
-        .baseDefense   = 80,
-        .baseSpeed     = 95,
+        .baseAttack    = 82,
+        .baseDefense   = 78,
+        .baseSpeed     = 85,
         .baseSpAttack  = 95,
-        .baseSpDefense = 90,
+        .baseSpDefense = 80,
         .types = MON_TYPES(TYPE_WATER),
         .catchRate = 75,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 175 : 174,
@@ -8298,9 +8298,9 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
     [SPECIES_POLIWRATH] =
     {
-        .baseHP        = 100,
-        .baseAttack    = 100,
-        .baseDefense   = 100,
+        .baseHP        = 90,
+        .baseAttack    = 95,
+        .baseDefense   = 95,
         .baseSpeed     = 70,
         .baseSpAttack  = 70,
         .baseSpDefense = P_UPDATED_STATS >= GEN_2 ? 90 : 70,
@@ -8974,7 +8974,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .baseHP        = 100,
         .baseAttack    = 115,
         .baseDefense   = 80,
-        .baseSpeed     = 60,
+        .baseSpeed     = 55,
         .baseSpAttack  = 65,
         .baseSpDefense = P_UPDATED_STATS >= GEN_2 ? 85 : 65,
         .types = MON_TYPES(TYPE_FIGHTING),
@@ -9263,7 +9263,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .baseDefense   = 75,
         .baseSpeed     = 50,
         .baseSpAttack  = 105,
-        .baseSpDefense = 80,
+        .baseSpDefense = 90,
         .types = MON_TYPES(TYPE_GRASS, TYPE_POISON),
         .catchRate = 45,
     #if P_UPDATED_EXP_YIELDS >= GEN_8
@@ -9568,7 +9568,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
-        .abilities = { ABILITY_STURDY, ABILITY_SAND_VEIL, ABILITY_ROCK_HEAD },
+        .abilities = { ABILITY_STURDY, ABILITY_ROCK_HEAD, ABILITY_SOLID_ROCK },
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("Geodude"),
         .cryId = CRY_GEODUDE,
@@ -9640,7 +9640,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
-        .abilities = { ABILITY_STURDY, ABILITY_SAND_VEIL, ABILITY_ROCK_HEAD },
+        .abilities = { ABILITY_STURDY, ABILITY_ROCK_HEAD, ABILITY_SOLID_ROCK },
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("Graveler"),
         .cryId = CRY_GRAVELER,
@@ -9697,12 +9697,12 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
     [SPECIES_GOLEM] =
     {
-        .baseHP        = 100,
-        .baseAttack    = 105,
+        .baseHP        = 95,
+        .baseAttack    = 110,
         .baseDefense   = 130,
         .baseSpeed     = 45,
         .baseSpAttack  = 55,
-        .baseSpDefense = 75,
+        .baseSpDefense = 65,
         .types = MON_TYPES(TYPE_ROCK, TYPE_GROUND),
         .catchRate = 45,
     #if P_UPDATED_EXP_YIELDS >= GEN_8
@@ -9721,7 +9721,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
-        .abilities = { ABILITY_STURDY, ABILITY_SAND_VEIL, ABILITY_ROCK_HEAD },
+        .abilities = { ABILITY_STURDY, ABILITY_ROCK_HEAD, ABILITY_SOLID_ROCK },
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("Golem"),
         .cryId = CRY_GOLEM,
@@ -10053,11 +10053,11 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
     [SPECIES_RAPIDASH] =
     {
-        .baseHP        = 85,
+        .baseHP        = 80,
         .baseAttack    = 100,
-        .baseDefense   = 70,
-        .baseSpeed     = 120,
-        .baseSpAttack  = 70,
+        .baseDefense   = 75,
+        .baseSpeed     = 115,
+        .baseSpAttack  = 80,
         .baseSpDefense = 80,
         .types = MON_TYPES(TYPE_FIRE),
         .catchRate = 60,
@@ -10984,13 +10984,13 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #if P_FAMILY_FARFETCHD
     [SPECIES_FARFETCHD] =
     {
-        .baseHP        = 80,
+        .baseHP        = 70,
         .baseAttack    = 90,
         .baseDefense   = 70,
-        .baseSpeed     = 95,
+        .baseSpeed     = 90,
         .baseSpAttack  = 58,
         .baseSpDefense = 72,
-        .types = MON_TYPES(TYPE_NORMAL, TYPE_FLYING),
+        .types = MON_TYPES(TYPE_FLYING, TYPE_FIGHTING),
         .catchRate = 45,
     #if P_UPDATED_EXP_YIELDS >= GEN_7
         .expYield = 132,
@@ -11612,10 +11612,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     {
         .baseHP        = 105,
         .baseAttack    = 70,
-        .baseDefense   = 70,
+        .baseDefense   = 75,
         .baseSpeed     = 50,
-        .baseSpAttack  = 95,
-        .baseSpDefense = 110,
+        .baseSpAttack  = 100,
+        .baseSpDefense = 100,
         .types = MON_TYPES(TYPE_POISON),
         .catchRate = 75,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 175 : 157,
@@ -12135,8 +12135,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .baseAttack    = 115,
         .baseDefense   = 60,
         .baseSpeed     = 110,
-        .baseSpAttack  = 65,
-        .baseSpDefense = 90,
+        .baseSpAttack  = 75,
+        .baseSpDefense = 75,
         .types = MON_TYPES(TYPE_GHOST, TYPE_POISON),
         .catchRate = 45,
         .expYield = GENGAR_EXP_YIELD,
@@ -12350,7 +12350,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
-        .abilities = { ABILITY_STURDY, ABILITY_WEAK_ARMOR, ABILITY_ROCK_HEAD },
+        .abilities = { ABILITY_ROCK_HEAD, ABILITY_STURDY, ABILITY_SOLID_ROCK},
         .bodyColor = BODY_COLOR_GRAY,
         .speciesName = _("Onix"),
         .cryId = CRY_ONIX,
@@ -12651,8 +12651,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .baseHP        = 85,
         .baseAttack    = 70,
         .baseDefense   = 70,
-        .baseSpeed     = 70,
-        .baseSpAttack  = 80,
+        .baseSpeed     = 65,
+        .baseSpAttack  = 82,
         .baseSpDefense = 115,
         .types = MON_TYPES(TYPE_PSYCHIC),
         .catchRate = 75,
@@ -12739,7 +12739,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #if P_FAMILY_KRABBY
     [SPECIES_KRABBY] =
     {
-        .baseHP        = 35,
+        .baseHP        = 50,
         .baseAttack    = 100,
         .baseDefense   = 90,
         .baseSpeed     = 50,
@@ -12811,7 +12811,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
     [SPECIES_KINGLER] =
     {
-        .baseHP        = 95,
+        .baseHP        = 90,
         .baseAttack    = 115,
         .baseDefense   = 115,
         .baseSpeed     = 75,
@@ -13015,12 +13015,12 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
     [SPECIES_ELECTRODE] =
     {
-        .baseHP        = 70,
+        .baseHP        = 65,
         .baseAttack    = 50,
         .baseDefense   = 70,
         .baseSpeed     = 150,
-        .baseSpAttack  = 85,
-        .baseSpDefense = 85,
+        .baseSpAttack  = 80,
+        .baseSpDefense = 80,
         .types = MON_TYPES(TYPE_ELECTRIC),
         .catchRate = 60,
     #if P_UPDATED_EXP_YIELDS >= GEN_7
@@ -13310,7 +13310,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .baseSpeed     = 55,
         .baseSpAttack  = 110,
     #if P_UPDATED_STATS >= GEN_7
-        .baseSpDefense = 95,
+        .baseSpDefense = 100,
     #elif P_UPDATED_STATS >= GEN_2
         .baseSpDefense = 65,
     #else
@@ -13531,11 +13531,11 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     [SPECIES_MAROWAK] =
     {
         .baseHP        = 85,
-        .baseAttack    = 85,
-        .baseDefense   = 110,
-        .baseSpeed     = 60,
+        .baseAttack    = 95,
+        .baseDefense   = 120,
+        .baseSpeed     = 45,
         .baseSpAttack  = 50,
-        .baseSpDefense = 80,
+        .baseSpDefense = 95,
         .types = MON_TYPES(TYPE_GROUND, TYPE_GHOST),
         .catchRate = 75,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 149 : 124,
@@ -13811,7 +13811,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     {
         .baseHP        = 70,
         .baseAttack    = 110,
-        .baseDefense   = 55,
+        .baseDefense   = 65,
         .baseSpeed     = 95,
         .baseSpAttack  = 35,
         .baseSpDefense = 110,
@@ -13885,7 +13885,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .baseDefense   = 110,
         .baseSpeed     = 76,
         .baseSpAttack  = 35,
-        .baseSpDefense = 70,
+        .baseSpDefense = 80,
         .types = MON_TYPES(TYPE_FIGHTING),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 159 : 140,
@@ -13962,10 +13962,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     {
         .baseHP        = 75,
         .baseAttack    = 95,
-        .baseDefense   = 100,
+        .baseDefense   = 105,
         .baseSpeed     = 70,
         .baseSpAttack  = 35,
-        .baseSpDefense = 100,
+        .baseSpDefense = 105,
         .types = MON_TYPES(TYPE_FIGHTING),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 159 : 138,
@@ -14263,8 +14263,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
     [SPECIES_WEEZING] =
     {
-        .baseHP        = 85,
-        .baseAttack    = 85,
+        .baseHP        = 80,
+        .baseAttack    = 80,
         .baseDefense   = 120,
         .baseSpeed     = 60,
         .baseSpAttack  = 90,
@@ -14497,11 +14497,11 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     [SPECIES_RHYDON] =
     {
         .baseHP        = 110,
-        .baseAttack    = 110,
+        .baseAttack    = 115,
         .baseDefense   = 120,
         .baseSpeed     = 40,
         .baseSpAttack  = 45,
-        .baseSpDefense = 60,
+        .baseSpDefense = 55,
         .types = MON_TYPES(TYPE_GROUND, TYPE_ROCK),
         .catchRate = 60,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 170 : 204,
@@ -14581,11 +14581,11 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     [SPECIES_RHYPERIOR] =
     {
         .baseHP        = 115,
-        .baseAttack    = 55,
-        .baseDefense   = 135,
+        .baseAttack    = 80,
+        .baseDefense   = 130,
         .baseSpeed     = 40,
-        .baseSpAttack  = 120,
-        .baseSpDefense = 75,
+        .baseSpAttack  = 115,
+        .baseSpDefense = 55,
         .types = MON_TYPES(TYPE_GROUND, TYPE_ROCK),
         .catchRate = 30,
     #if P_UPDATED_EXP_YIELDS >= GEN_8
@@ -15533,12 +15533,12 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
     [SPECIES_SEAKING] =
     {
-        .baseHP        = 100,
+        .baseHP        = 80,
         .baseAttack    = 95,
         .baseDefense   = 85,
-        .baseSpeed     = 75,
+        .baseSpeed     = 80,
         .baseSpAttack  = 65,
-        .baseSpDefense = 80,
+        .baseSpDefense = 85,
         .types = MON_TYPES(TYPE_WATER),
         .catchRate = 60,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 158 : 170,
@@ -15691,12 +15691,12 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
     [SPECIES_STARMIE] =
     {
-        .baseHP        = 60,
+        .baseHP        = 65,
         .baseAttack    = 75,
         .baseDefense   = 85,
         .baseSpeed     = 115,
         .baseSpAttack  = 100,
-        .baseSpDefense = P_UPDATED_STATS >= GEN_2 ? 85 : 100,
+        .baseSpDefense = 90,
         .types = MON_TYPES(TYPE_WATER, TYPE_PSYCHIC),
         .catchRate = 60,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 182 : 207,
@@ -15910,12 +15910,12 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
     [SPECIES_MR_MIME] =
     {
-        .baseHP        = 70,
+        .baseHP        = 75,
         .baseAttack    = 45,
-        .baseDefense   = 65,
+        .baseDefense   = 70,
         .baseSpeed     = 90,
         .baseSpAttack  = 100,
-        .baseSpDefense = P_UPDATED_STATS >= GEN_2 ? 120 : 100,
+        .baseSpDefense = 100,
     #if P_UPDATED_TYPES >= GEN_6
         .types = MON_TYPES(TYPE_PSYCHIC, TYPE_FAIRY),
     #else
@@ -16525,10 +16525,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
     [SPECIES_JYNX] =
     {
-        .baseHP        = 80,
+        .baseHP        = 70,
         .baseAttack    = 50,
-        .baseDefense   = 45,
-        .baseSpeed     = 95,
+        .baseDefense   = 50,
+        .baseSpeed     = 100,
         .baseSpAttack  = 105,
         .baseSpDefense = 105,
         .types = MON_TYPES(TYPE_ICE, TYPE_PSYCHIC),
@@ -16617,7 +16617,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
-        .abilities = { ABILITY_STATIC, ABILITY_NONE, ABILITY_VITAL_SPIRIT },
+        .abilities = { ABILITY_STATIC, ABILITY_VITAL_SPIRIT, ABILITY_RECKLESS },
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = TRUE,
         .speciesName = _("Elekid"),
@@ -16689,7 +16689,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
-        .abilities = { ABILITY_STATIC, ABILITY_VITAL_SPIRIT, ABILITY_MOTOR_DRIVE },
+        .abilities = { ABILITY_STATIC, ABILITY_VITAL_SPIRIT, ABILITY_RECKLESS },
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = TRUE,
         .speciesName = _("Electabuzz"),
@@ -16749,12 +16749,12 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #if P_GEN_4_CROSS_EVOS
     [SPECIES_ELECTIVIRE] =
     {
-        .baseHP        = 80,
+        .baseHP        = 85,
         .baseAttack    = 110,
-        .baseDefense   = 72,
+        .baseDefense   = 70,
         .baseSpeed     = 95,
-        .baseSpAttack  = 85,
-        .baseSpDefense = 88,
+        .baseSpAttack  = 95,
+        .baseSpDefense = 85,
         .types = MON_TYPES(TYPE_ELECTRIC, TYPE_FIGHTING),
         .catchRate = 30,
     #if P_UPDATED_EXP_YIELDS >= GEN_8
@@ -16771,7 +16771,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
-        .abilities = { ABILITY_STATIC, ABILITY_VITAL_SPIRIT, ABILITY_MOTOR_DRIVE },
+        .abilities = { ABILITY_MOTOR_DRIVE, ABILITY_VITAL_SPIRIT, ABILITY_RECKLESS },
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("Electivire"),
         .cryId = CRY_ELECTIVIRE,
@@ -17862,7 +17862,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #if P_FAMILY_DITTO
     [SPECIES_DITTO] =
     {
-        .baseHP        = 68,
+        .baseHP        = 48,
         .baseAttack    = 48,
         .baseDefense   = 48,
         .baseSpeed     = 48,
@@ -18308,10 +18308,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     {
         .baseHP        = 75,
         .baseAttack    = 65,
-        .baseDefense   = 65,
+        .baseDefense   = 110,
         .baseSpeed     = 100,
         .baseSpAttack  = 110,
-        .baseSpDefense = 110,
+        .baseSpDefense = 65,
         .types = MON_TYPES(TYPE_FIRE),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 184 : 198,
@@ -18376,9 +18376,9 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .baseHP        = 75,
         .baseAttack    = 65,
         .baseDefense   = 65,
-        .baseSpeed     = 110,
+        .baseSpeed     = 100,
         .baseSpAttack  = 110,
-        .baseSpDefense = 100,
+        .baseSpDefense = 110,
         .types = MON_TYPES(TYPE_PSYCHIC),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 184 : 197,
@@ -18441,10 +18441,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     [SPECIES_UMBREON] =
     {
         .baseHP        = 100,
-        .baseAttack    = 65,
+        .baseAttack    = 75,
         .baseDefense   = 110,
         .baseSpeed     = 65,
-        .baseSpAttack  = 75,
+        .baseSpAttack  = 65,
         .baseSpDefense = 110,
         .types = MON_TYPES(TYPE_DARK),
         .catchRate = 45,
@@ -18577,10 +18577,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     {
         .baseHP        = 65,
         .baseAttack    = 65,
-        .baseDefense   = 100,
+        .baseDefense   = 75,
         .baseSpeed     = 100,
         .baseSpAttack  = 110,
-        .baseSpDefense = 75,
+        .baseSpDefense = 110,
         .types = MON_TYPES(TYPE_ICE),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 184 : 196,
@@ -18871,11 +18871,11 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #if P_GEN_4_CROSS_EVOS
     [SPECIES_PORYGON_Z] =
     {
-        .baseHP        = 90,
+        .baseHP        = 85,
         .baseAttack    = 80,
-        .baseDefense   = 75,
+        .baseDefense   = 70,
         .baseSpeed     = 90,
-        .baseSpAttack  = 110,
+        .baseSpAttack  = 120,
         .baseSpDefense = 90,
         .types = MON_TYPES(TYPE_NORMAL),
         .catchRate = 30,
@@ -19030,7 +19030,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
     [SPECIES_OMASTAR] =
     {
-        .baseHP        = 85,
+        .baseHP        = 80,
         .baseAttack    = 60,
         .baseDefense   = 125,
         .baseSpeed     = 55,
@@ -19180,7 +19180,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
     [SPECIES_KABUTOPS] =
     {
-        .baseHP        = 75,
+        .baseHP        = 70,
         .baseAttack    = 105,
         .baseDefense   = 105,
         .baseSpeed     = 80,
@@ -19616,8 +19616,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     {
         .baseHP        = 90,
         .baseAttack    = 85,
-        .baseDefense   = 90,
-        .baseSpeed     = 95,
+        .baseDefense   = 95,
+        .baseSpeed     = 90,
         .baseSpAttack  = 110,
         .baseSpDefense = 110,
         .types = MON_TYPES(TYPE_ICE, TYPE_FLYING),
@@ -19635,7 +19635,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = 35,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
-        .abilities = { ABILITY_PRESSURE, ABILITY_NONE, ABILITY_SNOW_CLOAK },
+        .abilities = { ABILITY_ROTTEN, ABILITY_NONE, ABILITY_SNOW_CLOAK },
         .bodyColor = BODY_COLOR_BLUE,
         .speciesName = _("Articuno"),
         .cryId = CRY_ARTICUNO,
@@ -19786,7 +19786,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
     #if P_UPDATED_ABILITIES >= GEN_6
-        .abilities = { ABILITY_PRESSURE, ABILITY_NONE, ABILITY_LIGHTNING_ROD },
+        .abilities = { ABILITY_ROTTEN, ABILITY_NONE, ABILITY_LIGHTNING_ROD },
     #else
         .abilities = { ABILITY_PRESSURE, ABILITY_NONE, ABILITY_LIGHTNING_ROD },
     #endif
@@ -19917,10 +19917,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #if P_FAMILY_MOLTRES
     [SPECIES_MOLTRES] =
     {
-        .baseHP        = 95,
+        .baseHP        = 90,
         .baseAttack    = 100,
         .baseDefense   = 90,
-        .baseSpeed     = 90,
+        .baseSpeed     = 95,
         .baseSpAttack  = 115,
         .baseSpDefense = P_UPDATED_STATS >= GEN_2 ? 85 : 125,
         .types = MON_TYPES(TYPE_FIRE, TYPE_FLYING),
@@ -19938,7 +19938,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = 35,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
-        .abilities = { ABILITY_PRESSURE, ABILITY_NONE, ABILITY_FLASH_FIRE },
+        .abilities = { ABILITY_ROTTEN, ABILITY_NONE, ABILITY_FLASH_FIRE },
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("Moltres"),
         .cryId = CRY_MOLTRES,
@@ -20229,15 +20229,15 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sDragonairLevelUpLearnset,
         .teachableLearnset = sDragonairTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 55, SPECIES_DRAGONITE}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 50, SPECIES_DRAGONITE}),
     },
 
     [SPECIES_DRAGONITE] =
     {
         .baseHP        = 100,
         .baseAttack    = 120,
-        .baseDefense   = 100,
-        .baseSpeed     = 80,
+        .baseDefense   = 95,
+        .baseSpeed     = 85,
         .baseSpAttack  = 100,
         .baseSpDefense = 100,
         .types = MON_TYPES(TYPE_DRAGON, TYPE_FLYING),
@@ -20394,7 +20394,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = 0,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
-        .abilities = { ABILITY_PRESSURE, ABILITY_NONE, ABILITY_UNNERVE },
+        .abilities = { ABILITY_ROTTEN, ABILITY_NONE, ABILITY_UNNERVE },
         .bodyColor = BODY_COLOR_PURPLE,
         .speciesName = _("Mewtwo"),
         .cryId = CRY_MEWTWO,
@@ -20628,7 +20628,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = 100,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
-        .abilities = { ABILITY_SYNCHRONIZE, ABILITY_NONE, ABILITY_NONE },
+        .abilities = { ABILITY_ROTTEN, ABILITY_NONE, ABILITY_SYNCHRONIZE },
         .bodyColor = BODY_COLOR_PINK,
         .speciesName = _("Mew"),
         .cryId = CRY_MEW,

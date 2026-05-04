@@ -3692,7 +3692,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
                  && !gBattleMons[battler].volatiles.healBlock)
                 {
                     BattleScriptExecute(BattleScript_IceBodyHeal);
-                    SetHealAmount(battler, GetNonDynamaxMaxHP(battler) / 16);
+                    SetHealAmount(battler, GetNonDynamaxMaxHP(battler) / 8);
                     effect++;
                 }
                 break;
@@ -3705,7 +3705,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
                  && !IsBattlerAtMaxHp(battler)
                  && !gBattleMons[battler].volatiles.healBlock)
                 {
-                    s32 healAmount = gLastUsedAbility == ABILITY_RAIN_DISH ? 16 : 8;
+                    s32 healAmount = 8;
                     SetHealAmount(battler, GetNonDynamaxMaxHP(battler) / healAmount);
                     BattleScriptExecute(BattleScript_RainDishActivates);
                     effect++;
@@ -3816,7 +3816,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
                 if (IsBattlerWeatherAffected(battler, B_WEATHER_SUN))
                 {
                 SOLAR_POWER_HP_DROP:
-                    SetPassiveDamageAmount(battler, GetNonDynamaxMaxHP(battler) / 8);
+                    SetPassiveDamageAmount(battler, GetNonDynamaxMaxHP(battler) / 10);
                     BattleScriptExecute(BattleScript_SolarPowerActivates);
                     effect++;
                 }
@@ -4043,13 +4043,14 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
             }
             break;
         case ABILITY_ANGER_POINT:
-            if (gSpecialStatuses[battler].criticalHit
+            if (gBattlerAttacker != gBattlerTarget
              && IsBattlerTurnDamaged(battler, EXCLUDING_SUBSTITUTES)
              && IsBattlerAlive(battler)
              && CompareStat(battler, STAT_ATK, MAX_STAT_STAGE, CMP_LESS_THAN, gLastUsedAbility))
             {
-                SET_STATCHANGER(STAT_ATK, MAX_STAT_STAGE - gBattleMons[battler].statStages[STAT_ATK], FALSE);
-                BattleScriptCall(BattleScript_TargetsStatWasMaxedOut);
+                gEffectBattler = gBattlerAbility = battler;
+                SET_STATCHANGER(STAT_ATK, 1, FALSE);
+                BattleScriptCall(BattleScript_TargetAbilityStatRaiseRet);
                 effect++;
             }
             break;
@@ -6696,7 +6697,7 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct BattleContext *ctx)
     case ABILITY_SAND_FORCE:
         if ((moveType == TYPE_STEEL || moveType == TYPE_ROCK || moveType == TYPE_GROUND)
             && ctx->weather & B_WEATHER_SANDSTORM)
-           modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
     case ABILITY_RIVALRY:
         if (AreBattlersOfSameGender(battlerAtk, battlerDef))
@@ -6717,7 +6718,7 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct BattleContext *ctx)
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
         break;
     case ABILITY_MEGA_LAUNCHER:
-        if (IsPulseMove(move))
+        if (IsPulseMove(move) || IsBallisticMove(move))
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
         break;
     case ABILITY_WATER_BUBBLE:
@@ -6830,6 +6831,19 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct BattleContext *ctx)
             modifier = uq4_12_multiply(modifier, UQ_4_12(0.5));
             if (ctx->updateFlags)
                 RecordAbilityBattle(battlerDef, ctx->abilityDef);
+        }
+        break;
+    case ABILITY_SAND_VEIL:
+    case ABILITY_SAND_SPIRIT:
+        if (IsBattlerWeatherAffected(battlerDef, B_WEATHER_SANDSTORM))
+        {
+            modifier = uq4_12_multiply(modifier, UQ_4_12(0.5));
+        }
+        break;
+    case ABILITY_SNOW_CLOAK:
+        if (IsBattlerWeatherAffected(battlerDef, B_WEATHER_ICY_ANY))
+        {
+            modifier = uq4_12_multiply(modifier, UQ_4_12(0.5));
         }
         break;
     case ABILITY_MINDFUL:
@@ -7046,8 +7060,11 @@ static inline u32 CalcAttackStat(struct BattleContext *ctx)
     switch (ctx->abilityAtk)
     {
     case ABILITY_HUGE_POWER:
-    case ABILITY_PURE_POWER:
         if (IsBattleMovePhysical(move))
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
+        break;
+    case ABILITY_PURE_POWER:
+        if (IsBattleMoveSpecial(move))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
         break;
     case ABILITY_SLOW_START:
@@ -7467,11 +7484,11 @@ static inline u32 CalcDefenseStat(struct BattleContext *ctx)
         break;
     }
 
-    // sandstorm sp.def boost for rock types
-    if (GetConfig(B_SANDSTORM_SPDEF_BOOST) >= GEN_4 && IS_BATTLER_OF_TYPE(battlerDef, TYPE_ROCK) && IsBattlerWeatherAffected(battlerDef, B_WEATHER_SANDSTORM) && !usesDefStat)
+    // sandstorm def boost for rock types
+    if (GetConfig(B_SANDSTORM_SPDEF_BOOST) >= GEN_4 && IS_BATTLER_OF_TYPE(battlerDef, TYPE_ROCK) && IsBattlerWeatherAffected(battlerDef, B_WEATHER_SANDSTORM) && usesDefStat)
         modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
-    // snow def boost for ice types
-    if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_ICE) && IsBattlerWeatherAffected(battlerDef, B_WEATHER_SNOW) && usesDefStat)
+    // snow sp.def boost for ice types
+    if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_ICE) && IsBattlerWeatherAffected(battlerDef, B_WEATHER_SNOW) && !usesDefStat)
         modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
 
     modifier = ApplyDefensiveBadgeBoost(modifier, battlerDef, move);
@@ -7537,6 +7554,11 @@ static uq4_12_t GetWeatherDamageModifier(struct BattleContext *ctx)
             return UQ_4_12(1.0);
         return (ctx->moveType == TYPE_WATER) ? UQ_4_12(0.5) : UQ_4_12(1.5);
     }
+    if (ctx->weather & B_WEATHER_SNOW)
+    {
+        if (ctx->moveType == TYPE_ICE)
+            return UQ_4_12(1.5);
+    }
     return UQ_4_12(1.0);
 }
 
@@ -7559,7 +7581,7 @@ static inline uq4_12_t GetBurnOrFrostBiteModifier(struct BattleContext *ctx)
 static inline uq4_12_t GetCriticalModifier(bool32 isCrit)
 {
     if (isCrit)
-        return UQ_4_12(1.3);
+        return UQ_4_12(1.5);
     return UQ_4_12(1.0);
 }
 
@@ -7680,9 +7702,14 @@ static inline uq4_12_t GetDefenderAbilitiesModifier(struct BattleContext *ctx)
     case ABILITY_FILTER:
     case ABILITY_SOLID_ROCK:
     case ABILITY_PRISM_ARMOR:
-        if (ctx->typeEffectivenessModifier >= UQ_4_12(2.0))
+        if (ctx->typeEffectivenessModifier == UQ_4_12(2.0))
         {
             modifier = UQ_4_12(0.75);
+            recordAbility = TRUE;
+        }
+        else if (ctx->typeEffectivenessModifier == UQ_4_12(4.0))
+        {
+            modifier = UQ_4_12(0.5);
             recordAbility = TRUE;
         }
         break;
@@ -8063,8 +8090,10 @@ bool32 IsFutureSightAttackerInParty(enum BattlerId battlerAtk, enum BattlerId ba
 #undef DAMAGE_APPLY_MODIFIER
 
 // The chance is 1/N for each stage.
-// sGen7CriticalHitOdds modified to fit the new chances
-static const u32 sGen7CriticalHitOdds[] = {10,  2,  1,  1,   1}; // 1/X
+//
+// sGen7CriticalHitOdds modified to fit the new EE chances
+// 255 should never be returned since critChance == 0 returns false earlier in IsCriticalHit()
+static const u32 sGen7CriticalHitOdds[] = {255,  2,  1,  1,   1}; // 1/X
 static const u32 sGen6CriticalHitOdds[] = {16,  8,  2,  1,   1}; // 1/X
 static const u32 sCriticalHitOdds[]     = {16,  8,  4,  3,   2}; // 1/X, Gens 3,4,5
 static const u32 sGen2CriticalHitOdds[] = {17, 32, 64, 85, 128}; // X/256
@@ -8230,6 +8259,9 @@ static bool32 IsCriticalHit(struct BattleContext *ctx)
         critChance = CalcCritChanceStageGen1(ctx);
     else
         critChance = CalcCritChanceStage(ctx);
+
+    if (critChance == 0)
+        return FALSE;
 
     if (critChance == CRITICAL_HIT_BLOCKED)
         isCrit = FALSE;
@@ -10515,12 +10547,18 @@ bool32 CanMoveSkipAccuracyCalc(enum BattlerId battlerAtk, enum BattlerId battler
     {
         effect = TRUE;
     }
+    else if (move == MOVE_FOCUS_BLAST && gBattleStruct->battlerState[battlerAtk].isFirstTurn)
+    {
+        effect = TRUE;
+    }
 
     if (!effect && HasWeatherEffect())
     {
         if (MoveAlwaysHitsInRain(move) && IsBattlerWeatherAffected(battlerDef, B_WEATHER_RAIN))
             effect = TRUE;
         else if ((gBattleWeather & B_WEATHER_ICY_ANY) && MoveAlwaysHitsInHailSnow(move))
+            effect = TRUE;
+        else if (GetMoveType(move) == TYPE_ROCK && IsBattlerWeatherAffected(battlerDef, B_WEATHER_SANDSTORM))
             effect = TRUE;
 
         if (effect)
@@ -10592,7 +10630,7 @@ u32 GetTotalAccuracy(enum BattlerId battlerAtk, enum BattlerId battlerDef, enum 
     // Target's ability
     switch (defAbility)
     {
-    case ABILITY_SAND_SPIRIT:
+   /* case ABILITY_SAND_SPIRIT:
     case ABILITY_SAND_VEIL:
         if (gBattleWeather & B_WEATHER_SANDSTORM && HasWeatherEffect())
             calc = (calc * 80) / 100; // 1.2 sand veil loss
@@ -10600,7 +10638,7 @@ u32 GetTotalAccuracy(enum BattlerId battlerAtk, enum BattlerId battlerDef, enum 
     case ABILITY_SNOW_CLOAK:
         if ((gBattleWeather & B_WEATHER_ICY_ANY) && HasWeatherEffect())
             calc = (calc * 80) / 100; // 1.2 snow cloak loss
-        break;
+        break; */
     case ABILITY_TANGLED_FEET:
         if (gBattleMons[battlerDef].volatiles.confusionTurns)
             calc = (calc * 50) / 100; // 1.5 tangled feet loss
@@ -10665,6 +10703,9 @@ u32 GetTotalAccuracy(enum BattlerId battlerAtk, enum BattlerId battlerDef, enum 
 
     if (HasWeatherEffect() && gBattleWeather & B_WEATHER_FOG)
         calc = (calc * 60) / 100; // modified by 3/5
+
+    //if (gBattleMons[battlerDef].status1 & STATUS1_PARALYSIS)
+     //   calc = (calc * 150) / 100;
 
     return calc;
 }

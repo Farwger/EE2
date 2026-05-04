@@ -583,6 +583,37 @@ static bool32 HandleEndTurnFrostbite(enum BattlerId battler)
     return effect;
 }
 
+static bool32 HandleEndTurnConfusion(enum BattlerId battler)
+{
+    bool32 effect = FALSE;
+
+    gBattleStruct->eventState.endTurnBattler++;
+
+    if (gBattleMons[battler].volatiles.confusionTurns)
+    {
+        if (!gBattleMons[battler].volatiles.infiniteConfusion)
+            gBattleMons[battler].volatiles.confusionTurns--;
+
+        // confusion dmg
+        if (gBattleMons[battler].volatiles.confusionTurns)
+        {
+            if (IsBattlerAlive(battler) && RandomPercentage(RNG_CONFUSION, 50))
+            {
+                SetPassiveDamageAmount(battler, 40);
+                BattleScriptExecute(BattleScript_MoveUsedIsConfused);
+            }
+        }
+        else // snapped out of confusion
+        {
+            BattleScriptExecute(BattleScript_MoveUsedIsConfusedNoMore);
+        }
+
+        effect = TRUE;
+    }
+
+    return effect;
+}
+
 static bool32 HandleEndTurnNightmare(enum BattlerId battler)
 {
     bool32 effect = FALSE;
@@ -927,7 +958,8 @@ static bool32 HandleEndTurnYawn(enum BattlerId battler)
             else
             {
                 if (B_SLEEP_TURNS >= GEN_5)
-                    gBattleMons[battler].status1 |= (RandomUniform(RNG_SLEEP_TURNS, 2, 4));
+                    gBattleMons[battler].status1 |= (RandomUniform(RNG_SLEEP_TURNS, 2, 3));
+                    // gBattleMons[battler].status1 |= (RandomUniform(RNG_SLEEP_TURNS, 2, 4));
                 else if (B_SLEEP_TURNS >= GEN_3)
                     gBattleMons[battler].status1 |= (RandomUniform(RNG_SLEEP_TURNS, 2, 5));
                 else
@@ -1490,6 +1522,7 @@ static bool32 (*const sEndTurnEffectHandlers[])(enum BattlerId battler) =
     [ENDTURN_POISON] = HandleEndTurnPoison,
     [ENDTURN_BURN] = HandleEndTurnBurn,
     [ENDTURN_FROSTBITE] = HandleEndTurnFrostbite,
+    [ENDTURN_CONFUSION] = HandleEndTurnConfusion,
     [ENDTURN_NIGHTMARE] = HandleEndTurnNightmare,
     [ENDTURN_CURSE] = HandleEndTurnCurse,
     [ENDTURN_WRAP] = HandleEndTurnWrap,

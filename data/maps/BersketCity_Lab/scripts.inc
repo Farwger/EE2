@@ -179,132 +179,134 @@ BersketCity_Lab_EventScript_Profs::
 # 112 "data/maps/BersketCity_Lab/scripts.pory"
 	msgbox BersketCity_Lab_EventScript_Profs_Text_8
 # 113 "data/maps/BersketCity_Lab/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_QuestionMark
-# 114 "data/maps/BersketCity_Lab/scripts.pory"
-	waitmovement LOCALID_PLAYER
-# 115 "data/maps/BersketCity_Lab/scripts.pory"
-	delay 30
-# 116 "data/maps/BersketCity_Lab/scripts.pory"
 	msgbox BersketCity_Lab_EventScript_Profs_Text_9
+# 114 "data/maps/BersketCity_Lab/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_QuestionMark
+# 115 "data/maps/BersketCity_Lab/scripts.pory"
+	waitmovement LOCALID_PLAYER
+# 116 "data/maps/BersketCity_Lab/scripts.pory"
+	delay 30
 # 117 "data/maps/BersketCity_Lab/scripts.pory"
 	msgbox BersketCity_Lab_EventScript_Profs_Text_10
 # 118 "data/maps/BersketCity_Lab/scripts.pory"
 	msgbox BersketCity_Lab_EventScript_Profs_Text_11
 # 119 "data/maps/BersketCity_Lab/scripts.pory"
 	msgbox BersketCity_Lab_EventScript_Profs_Text_12
-# 121 "data/maps/BersketCity_Lab/scripts.pory"
+# 120 "data/maps/BersketCity_Lab/scripts.pory"
+	msgbox BersketCity_Lab_EventScript_Profs_Text_13
+# 122 "data/maps/BersketCity_Lab/scripts.pory"
 	goto_if_unset FLAG_BADGE01_GET, BersketCity_Lab_EventScript_Profs_2
-# 129 "data/maps/BersketCity_Lab/scripts.pory"
-	msgbox BersketCity_Lab_EventScript_Profs_Text_17
 # 130 "data/maps/BersketCity_Lab/scripts.pory"
-	msgbox BersketCity_Lab_EventScript_Profs_Text_14
+	msgbox BersketCity_Lab_EventScript_Profs_Text_18
 # 131 "data/maps/BersketCity_Lab/scripts.pory"
 	msgbox BersketCity_Lab_EventScript_Profs_Text_15
 # 132 "data/maps/BersketCity_Lab/scripts.pory"
-	giveitem ITEM_ENGRAM_CUT, 1
+	msgbox BersketCity_Lab_EventScript_Profs_Text_16
 # 133 "data/maps/BersketCity_Lab/scripts.pory"
-	msgbox BersketCity_Lab_EventScript_Profs_Text_18
+	giveitem ITEM_ENGRAM_CUT, 1
+# 134 "data/maps/BersketCity_Lab/scripts.pory"
+	msgbox BersketCity_Lab_EventScript_Profs_Text_19
 BersketCity_Lab_EventScript_Profs_1:
-# 135 "data/maps/BersketCity_Lab/scripts.pory"
-	msgbox BersketCity_Lab_EventScript_Profs_Text_19, MSGBOX_YESNO
 # 136 "data/maps/BersketCity_Lab/scripts.pory"
+	msgbox BersketCity_Lab_EventScript_Profs_Text_20, MSGBOX_YESNO
+# 137 "data/maps/BersketCity_Lab/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq BersketCity_Lab_EventScript_Profs_6
 BersketCity_Lab_EventScript_Profs_5:
-# 139 "data/maps/BersketCity_Lab/scripts.pory"
-	msgbox BersketCity_Lab_EventScript_Profs_Text_20
 # 140 "data/maps/BersketCity_Lab/scripts.pory"
 	msgbox BersketCity_Lab_EventScript_Profs_Text_21
 # 141 "data/maps/BersketCity_Lab/scripts.pory"
-	closemessage
+	msgbox BersketCity_Lab_EventScript_Profs_Text_22
 # 142 "data/maps/BersketCity_Lab/scripts.pory"
-	setvar VAR_BERSKET_CITY_STATE, 2
+	closemessage
 # 143 "data/maps/BersketCity_Lab/scripts.pory"
+	setvar VAR_BERSKET_CITY_STATE, 2
+# 144 "data/maps/BersketCity_Lab/scripts.pory"
 	releaseall
 	end
 
 BersketCity_Lab_EventScript_Profs_2:
-# 122 "data/maps/BersketCity_Lab/scripts.pory"
-	msgbox BersketCity_Lab_EventScript_Profs_Text_13
 # 123 "data/maps/BersketCity_Lab/scripts.pory"
 	msgbox BersketCity_Lab_EventScript_Profs_Text_14
 # 124 "data/maps/BersketCity_Lab/scripts.pory"
 	msgbox BersketCity_Lab_EventScript_Profs_Text_15
 # 125 "data/maps/BersketCity_Lab/scripts.pory"
-	giveitem ITEM_ENGRAM_CUT, 1
-# 126 "data/maps/BersketCity_Lab/scripts.pory"
 	msgbox BersketCity_Lab_EventScript_Profs_Text_16
+# 126 "data/maps/BersketCity_Lab/scripts.pory"
+	giveitem ITEM_ENGRAM_CUT, 1
+# 127 "data/maps/BersketCity_Lab/scripts.pory"
+	msgbox BersketCity_Lab_EventScript_Profs_Text_17
 	goto BersketCity_Lab_EventScript_Profs_1
 
 BersketCity_Lab_EventScript_Profs_6:
-# 137 "data/maps/BersketCity_Lab/scripts.pory"
+# 138 "data/maps/BersketCity_Lab/scripts.pory"
 	call BersketCity_Lab_EventScript_ProfQuestions
 	goto BersketCity_Lab_EventScript_Profs_5
 
 
 BersketCity_Lab_EventScript_ProfQuestions::
-# 153 "data/maps/BersketCity_Lab/scripts.pory"
+# 154 "data/maps/BersketCity_Lab/scripts.pory"
 	compare VAR_0x8004, 1
 	goto_if_eq BersketCity_Lab_EventScript_ProfQuestions_2
 BersketCity_Lab_EventScript_ProfQuestions_1:
-# 158 "data/maps/BersketCity_Lab/scripts.pory"
-	multichoicedefault 20, 8, MULTI_BERSKETPROFS_QUESTIONS, 0, FALSE
 # 159 "data/maps/BersketCity_Lab/scripts.pory"
-	switch VAR_RESULT
+	multichoicedefault 20, 8, MULTI_BERSKETPROFS_QUESTIONS, 0, FALSE
 # 160 "data/maps/BersketCity_Lab/scripts.pory"
+	switch VAR_RESULT
+# 161 "data/maps/BersketCity_Lab/scripts.pory"
 	case 0, BersketCity_Lab_EventScript_ProfQuestions_6
-# 167 "data/maps/BersketCity_Lab/scripts.pory"
+# 168 "data/maps/BersketCity_Lab/scripts.pory"
 	case 1, BersketCity_Lab_EventScript_ProfQuestions_7
-# 173 "data/maps/BersketCity_Lab/scripts.pory"
+# 174 "data/maps/BersketCity_Lab/scripts.pory"
 	case 2, BersketCity_Lab_EventScript_ProfQuestions_8
-# 177 "data/maps/BersketCity_Lab/scripts.pory"
-	case 3, BersketCity_Lab_EventScript_ProfQuestions_9
 # 178 "data/maps/BersketCity_Lab/scripts.pory"
+	case 3, BersketCity_Lab_EventScript_ProfQuestions_9
+# 179 "data/maps/BersketCity_Lab/scripts.pory"
 	case MULTI_B_PRESSED, BersketCity_Lab_EventScript_ProfQuestions_9
 BersketCity_Lab_EventScript_ProfQuestions_4:
 	return
 
 BersketCity_Lab_EventScript_ProfQuestions_2:
-# 154 "data/maps/BersketCity_Lab/scripts.pory"
-	applymovement LOCALID_BERSKET_LAB_JACUZZI, Common_Movement_WalkInPlaceFasterRight
 # 155 "data/maps/BersketCity_Lab/scripts.pory"
+	applymovement LOCALID_BERSKET_LAB_JACUZZI, Common_Movement_WalkInPlaceFasterRight
+# 156 "data/maps/BersketCity_Lab/scripts.pory"
 	waitmovement LOCALID_BERSKET_LAB_JACUZZI
 	goto BersketCity_Lab_EventScript_ProfQuestions_1
 
 BersketCity_Lab_EventScript_ProfQuestions_6:
-# 161 "data/maps/BersketCity_Lab/scripts.pory"
-	msgbox BersketCity_Lab_EventScript_ProfQuestions_Text_0
 # 162 "data/maps/BersketCity_Lab/scripts.pory"
-	msgbox BersketCity_Lab_EventScript_ProfQuestions_Text_1
+	msgbox BersketCity_Lab_EventScript_ProfQuestions_Text_0
 # 163 "data/maps/BersketCity_Lab/scripts.pory"
-	msgbox BersketCity_Lab_EventScript_ProfQuestions_Text_2
+	msgbox BersketCity_Lab_EventScript_ProfQuestions_Text_1
 # 164 "data/maps/BersketCity_Lab/scripts.pory"
-	msgbox BersketCity_Lab_EventScript_ProfQuestions_Text_3
+	msgbox BersketCity_Lab_EventScript_ProfQuestions_Text_2
 # 165 "data/maps/BersketCity_Lab/scripts.pory"
-	closemessage
+	msgbox BersketCity_Lab_EventScript_ProfQuestions_Text_3
 # 166 "data/maps/BersketCity_Lab/scripts.pory"
+	closemessage
+# 167 "data/maps/BersketCity_Lab/scripts.pory"
 	call BersketCity_Lab_EventScript_ProfQuestions
 	goto BersketCity_Lab_EventScript_ProfQuestions_4
 
 BersketCity_Lab_EventScript_ProfQuestions_7:
-# 168 "data/maps/BersketCity_Lab/scripts.pory"
-	msgbox BersketCity_Lab_EventScript_ProfQuestions_Text_4
 # 169 "data/maps/BersketCity_Lab/scripts.pory"
-	msgbox BersketCity_Lab_EventScript_ProfQuestions_Text_5
+	msgbox BersketCity_Lab_EventScript_ProfQuestions_Text_4
 # 170 "data/maps/BersketCity_Lab/scripts.pory"
-	msgbox BersketCity_Lab_EventScript_ProfQuestions_Text_6
+	msgbox BersketCity_Lab_EventScript_ProfQuestions_Text_5
 # 171 "data/maps/BersketCity_Lab/scripts.pory"
-	closemessage
+	msgbox BersketCity_Lab_EventScript_ProfQuestions_Text_6
 # 172 "data/maps/BersketCity_Lab/scripts.pory"
+	closemessage
+# 173 "data/maps/BersketCity_Lab/scripts.pory"
 	call BersketCity_Lab_EventScript_ProfQuestions
 	goto BersketCity_Lab_EventScript_ProfQuestions_4
 
 BersketCity_Lab_EventScript_ProfQuestions_8:
-# 174 "data/maps/BersketCity_Lab/scripts.pory"
-	msgbox BersketCity_Lab_EventScript_ProfQuestions_Text_7
 # 175 "data/maps/BersketCity_Lab/scripts.pory"
-	closemessage
+	msgbox BersketCity_Lab_EventScript_ProfQuestions_Text_7
 # 176 "data/maps/BersketCity_Lab/scripts.pory"
+	closemessage
+# 177 "data/maps/BersketCity_Lab/scripts.pory"
 	call BersketCity_Lab_EventScript_ProfQuestions
 	goto BersketCity_Lab_EventScript_ProfQuestions_4
 
@@ -312,51 +314,51 @@ BersketCity_Lab_EventScript_ProfQuestions_9:
 	return
 
 
-# 185 "data/maps/BersketCity_Lab/scripts.pory"
-BersketCity_Lab_Movement_SyrupApproach1:
 # 186 "data/maps/BersketCity_Lab/scripts.pory"
+BersketCity_Lab_Movement_SyrupApproach1:
+# 187 "data/maps/BersketCity_Lab/scripts.pory"
 	walk_left
-# 187 "data/maps/BersketCity_Lab/scripts.pory"
+# 188 "data/maps/BersketCity_Lab/scripts.pory"
 	walk_down
-# 187 "data/maps/BersketCity_Lab/scripts.pory"
+# 188 "data/maps/BersketCity_Lab/scripts.pory"
 	walk_down
-# 187 "data/maps/BersketCity_Lab/scripts.pory"
+# 188 "data/maps/BersketCity_Lab/scripts.pory"
 	walk_down
 	step_end
 
-# 190 "data/maps/BersketCity_Lab/scripts.pory"
-BersketCity_Lab_Movement_SyrupApproach2:
 # 191 "data/maps/BersketCity_Lab/scripts.pory"
+BersketCity_Lab_Movement_SyrupApproach2:
+# 192 "data/maps/BersketCity_Lab/scripts.pory"
 	walk_left
-# 192 "data/maps/BersketCity_Lab/scripts.pory"
+# 193 "data/maps/BersketCity_Lab/scripts.pory"
 	walk_down
-# 192 "data/maps/BersketCity_Lab/scripts.pory"
+# 193 "data/maps/BersketCity_Lab/scripts.pory"
 	walk_down
 	step_end
 
-# 195 "data/maps/BersketCity_Lab/scripts.pory"
+# 196 "data/maps/BersketCity_Lab/scripts.pory"
 BersketCity_Lab_Movement_SyrupApproach3:
-# 196 "data/maps/BersketCity_Lab/scripts.pory"
-	walk_down
-# 196 "data/maps/BersketCity_Lab/scripts.pory"
-	walk_down
-# 196 "data/maps/BersketCity_Lab/scripts.pory"
-	walk_down
-# 196 "data/maps/BersketCity_Lab/scripts.pory"
+# 197 "data/maps/BersketCity_Lab/scripts.pory"
 	walk_down
 # 197 "data/maps/BersketCity_Lab/scripts.pory"
+	walk_down
+# 197 "data/maps/BersketCity_Lab/scripts.pory"
+	walk_down
+# 197 "data/maps/BersketCity_Lab/scripts.pory"
+	walk_down
+# 198 "data/maps/BersketCity_Lab/scripts.pory"
 	walk_left
-# 197 "data/maps/BersketCity_Lab/scripts.pory"
+# 198 "data/maps/BersketCity_Lab/scripts.pory"
 	walk_left
 	step_end
 
-# 200 "data/maps/BersketCity_Lab/scripts.pory"
-BersketCity_Lab_Movement_JacuzziApproach:
 # 201 "data/maps/BersketCity_Lab/scripts.pory"
+BersketCity_Lab_Movement_JacuzziApproach:
+# 202 "data/maps/BersketCity_Lab/scripts.pory"
 	walk_right
-# 202 "data/maps/BersketCity_Lab/scripts.pory"
+# 203 "data/maps/BersketCity_Lab/scripts.pory"
 	walk_up
-# 202 "data/maps/BersketCity_Lab/scripts.pory"
+# 203 "data/maps/BersketCity_Lab/scripts.pory"
 	walk_up
 	step_end
 
@@ -418,7 +420,7 @@ BersketCity_Lab_EventScript_Profs_Text_1:
 BersketCity_Lab_EventScript_Profs_Text_2:
 # 106 "data/maps/BersketCity_Lab/scripts.pory"
 	.string "Lips: I'm in a 'pokéball.'\n"
-	.string "It's my palace!$"
+	.string "It's my shrine!$"
 
 BersketCity_Lab_EventScript_Profs_Text_3:
 # 107 "data/maps/BersketCity_Lab/scripts.pory"
@@ -426,30 +428,35 @@ BersketCity_Lab_EventScript_Profs_Text_3:
 
 BersketCity_Lab_EventScript_Profs_Text_4:
 # 108 "data/maps/BersketCity_Lab/scripts.pory"
-	.string "Lips: Good. I brought {PLAYER} to\n"
-	.string "meet you guys.$"
+	.string "Lips: Good.\p"
+	.string "I brought {PLAYER} to meet you guys.$"
 
 BersketCity_Lab_EventScript_Profs_Text_5:
 # 109 "data/maps/BersketCity_Lab/scripts.pory"
-	.string "Jacuzzi: Well … we were hoping that you\n"
-	.string "could help us.$"
+	.string "… … …$"
 
 BersketCity_Lab_EventScript_Profs_Text_6:
 # 110 "data/maps/BersketCity_Lab/scripts.pory"
-	.string "Lips: Huh?$"
+	.string "Jacuzzi: We are hoping that you can\n"
+	.string "help us.$"
 
 BersketCity_Lab_EventScript_Profs_Text_7:
 # 111 "data/maps/BersketCity_Lab/scripts.pory"
-	.string "Jacuzzi: Our path to the tree has been\n"
-	.string "blocked.$"
+	.string "Lips: Huh?$"
 
 BersketCity_Lab_EventScript_Profs_Text_8:
 # 112 "data/maps/BersketCity_Lab/scripts.pory"
-	.string "Lips: … Oh. Oh no!\n"
-	.string "That forest is bad news lately.$"
+	.string "Jacuzzi: Our path to the tree has been\n"
+	.string "blocked.$"
 
 BersketCity_Lab_EventScript_Profs_Text_9:
-# 116 "data/maps/BersketCity_Lab/scripts.pory"
+# 113 "data/maps/BersketCity_Lab/scripts.pory"
+	.string "Lips: … Oh. Oh no!\n"
+	.string "There's something wrong with that\l"
+	.string "forest!$"
+
+BersketCity_Lab_EventScript_Profs_Text_10:
+# 117 "data/maps/BersketCity_Lab/scripts.pory"
 	.string "Jacuzzi: I will explain.\p"
 	.string "I'm sure you've seen Guljira. He needs a\n"
 	.string "lot of food. Luckily there's a tree in\l"
@@ -463,13 +470,13 @@ BersketCity_Lab_EventScript_Profs_Text_9:
 	.string "My assistants tried to find another\n"
 	.string "path, but they've gone missing!$"
 
-BersketCity_Lab_EventScript_Profs_Text_10:
-# 117 "data/maps/BersketCity_Lab/scripts.pory"
+BersketCity_Lab_EventScript_Profs_Text_11:
+# 118 "data/maps/BersketCity_Lab/scripts.pory"
 	.string "Syrup: We need to find a way to reach\n"
 	.string "the tree or Guljira will starve.$"
 
-BersketCity_Lab_EventScript_Profs_Text_11:
-# 118 "data/maps/BersketCity_Lab/scripts.pory"
+BersketCity_Lab_EventScript_Profs_Text_12:
+# 119 "data/maps/BersketCity_Lab/scripts.pory"
 	.string "Jacuzzi: I think he's trying to help us.\n"
 	.string "Today he spat up something I've named\l"
 	.string "an 'Engram.'\p"
@@ -480,63 +487,63 @@ BersketCity_Lab_EventScript_Profs_Text_11:
 	.string "wrong.\p"
 	.string "But first we need to learn the move.$"
 
-BersketCity_Lab_EventScript_Profs_Text_12:
-# 119 "data/maps/BersketCity_Lab/scripts.pory"
+BersketCity_Lab_EventScript_Profs_Text_13:
+# 120 "data/maps/BersketCity_Lab/scripts.pory"
 	.string "Syrup: This 'Cut' is a Rock flavored\n"
 	.string "move, and Rustboro has a Rock flavored\l"
 	.string "gym.\p"
 	.string "We want you to go and learn from them.\n"
 	.string "That is what a 'trainer' would do.$"
 
-BersketCity_Lab_EventScript_Profs_Text_13:
-# 122 "data/maps/BersketCity_Lab/scripts.pory"
+BersketCity_Lab_EventScript_Profs_Text_14:
+# 123 "data/maps/BersketCity_Lab/scripts.pory"
 	.string "Lips: Hey, {PLAYER}, let's go beat the\n"
 	.string "gym! Your dad will be proud.$"
 
-BersketCity_Lab_EventScript_Profs_Text_14:
-# 123 "data/maps/BersketCity_Lab/scripts.pory"
-	.string "… … … … … … … …\n… … … … … … … …$"
-
 BersketCity_Lab_EventScript_Profs_Text_15:
 # 124 "data/maps/BersketCity_Lab/scripts.pory"
+	.string "… … … … … … … …\n… … … … … … … …$"
+
+BersketCity_Lab_EventScript_Profs_Text_16:
+# 125 "data/maps/BersketCity_Lab/scripts.pory"
 	.string "Jacuzzi: Good, thank you. Here, this is a\n"
 	.string "copy of the Engram.$"
 
-BersketCity_Lab_EventScript_Profs_Text_16:
-# 126 "data/maps/BersketCity_Lab/scripts.pory"
+BersketCity_Lab_EventScript_Profs_Text_17:
+# 127 "data/maps/BersketCity_Lab/scripts.pory"
 	.string "Jacuzzi: Rustboro is on the other side\n"
 	.string "of the lake. It's not far.\p"
 	.string "The gym leader should help you learn\n"
 	.string "'Cut'. That's the point of a gym after\l"
 	.string "all.$"
 
-BersketCity_Lab_EventScript_Profs_Text_17:
-# 129 "data/maps/BersketCity_Lab/scripts.pory"
+BersketCity_Lab_EventScript_Profs_Text_18:
+# 130 "data/maps/BersketCity_Lab/scripts.pory"
 	.string "Lips: Funnily enough, we've already\n"
 	.string "been there. But we can go back.$"
 
-BersketCity_Lab_EventScript_Profs_Text_18:
-# 133 "data/maps/BersketCity_Lab/scripts.pory"
+BersketCity_Lab_EventScript_Profs_Text_19:
+# 134 "data/maps/BersketCity_Lab/scripts.pory"
 	.string "Jacuzzi: Show it to the gym leader; she\n"
 	.string "should be able to teach you the move.$"
 
-BersketCity_Lab_EventScript_Profs_Text_19:
-# 135 "data/maps/BersketCity_Lab/scripts.pory"
+BersketCity_Lab_EventScript_Profs_Text_20:
+# 136 "data/maps/BersketCity_Lab/scripts.pory"
 	.string "Before you go, do you have any\n"
 	.string "questions?$"
 
-BersketCity_Lab_EventScript_Profs_Text_20:
-# 139 "data/maps/BersketCity_Lab/scripts.pory"
+BersketCity_Lab_EventScript_Profs_Text_21:
+# 140 "data/maps/BersketCity_Lab/scripts.pory"
 	.string "Jacuzzi: Alright. Well, we hope to hear\n"
 	.string "from you soon.$"
 
-BersketCity_Lab_EventScript_Profs_Text_21:
-# 140 "data/maps/BersketCity_Lab/scripts.pory"
+BersketCity_Lab_EventScript_Profs_Text_22:
+# 141 "data/maps/BersketCity_Lab/scripts.pory"
 	.string "Syrup: Know that you will succeed. You\n"
 	.string "have already suceeded. Be full.$"
 
 BersketCity_Lab_EventScript_ProfQuestions_Text_0:
-# 161 "data/maps/BersketCity_Lab/scripts.pory"
+# 162 "data/maps/BersketCity_Lab/scripts.pory"
 	.string "Jacuzzi: It was a few months ago.\n"
 	.string "Gulpin were attacking the city, like\l"
 	.string "they do every year. This time though I\l"
@@ -547,7 +554,7 @@ BersketCity_Lab_EventScript_ProfQuestions_Text_0:
 	.string "size. That's 'Guljira.$"
 
 BersketCity_Lab_EventScript_ProfQuestions_Text_1:
-# 162 "data/maps/BersketCity_Lab/scripts.pory"
+# 163 "data/maps/BersketCity_Lab/scripts.pory"
 	.string "Syrup: It was not a malfunction. In\n"
 	.string "using his 'spit up' against him, you\l"
 	.string "awakened Guljira's true power.\p"
@@ -556,7 +563,7 @@ BersketCity_Lab_EventScript_ProfQuestions_Text_1:
 	.string "enlightened.$"
 
 BersketCity_Lab_EventScript_ProfQuestions_Text_2:
-# 163 "data/maps/BersketCity_Lab/scripts.pory"
+# 164 "data/maps/BersketCity_Lab/scripts.pory"
 	.string "Jacuzzi: In all my fifty years of\n"
 	.string "studying Gulpin, I have never seen\l"
 	.string "anything like this. It's amazing. The\l"
@@ -565,12 +572,12 @@ BersketCity_Lab_EventScript_ProfQuestions_Text_2:
 	.string "hungry anymore.$"
 
 BersketCity_Lab_EventScript_ProfQuestions_Text_3:
-# 164 "data/maps/BersketCity_Lab/scripts.pory"
+# 165 "data/maps/BersketCity_Lab/scripts.pory"
 	.string "Syrup: Guljira provides for all who\n"
 	.string "hunger.$"
 
 BersketCity_Lab_EventScript_ProfQuestions_Text_4:
-# 168 "data/maps/BersketCity_Lab/scripts.pory"
+# 169 "data/maps/BersketCity_Lab/scripts.pory"
 	.string "Syrup: Guljira spat up eighteen berries\n"
 	.string "of power, one for each of the world's\l"
 	.string "flavors.\p"
@@ -579,13 +586,13 @@ BersketCity_Lab_EventScript_ProfQuestions_Text_4:
 	.string "they may eat a way to salvation.$"
 
 BersketCity_Lab_EventScript_ProfQuestions_Text_5:
-# 169 "data/maps/BersketCity_Lab/scripts.pory"
+# 170 "data/maps/BersketCity_Lab/scripts.pory"
 	.string "Lips: Yeah, I got the Normal berry. Kind\n"
 	.string "of boring. It's like plain bread. But it's\l"
 	.string "healthy!$"
 
 BersketCity_Lab_EventScript_ProfQuestions_Text_6:
-# 170 "data/maps/BersketCity_Lab/scripts.pory"
+# 171 "data/maps/BersketCity_Lab/scripts.pory"
 	.string "Syrup: And your friend, 'Gulpinator.'\n"
 	.string "Well, there was one berry left.\p"
 	.string "The Steel berry.\p"
@@ -595,5 +602,5 @@ BersketCity_Lab_EventScript_ProfQuestions_Text_6:
 	.string "He is odd.$"
 
 BersketCity_Lab_EventScript_ProfQuestions_Text_7:
-# 174 "data/maps/BersketCity_Lab/scripts.pory"
+# 175 "data/maps/BersketCity_Lab/scripts.pory"
 	.string "remind player what to do.$"

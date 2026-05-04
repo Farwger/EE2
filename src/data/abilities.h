@@ -341,7 +341,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Rain Dish"),
         .description = COMPOUND_STRING("Slight HP recovery in rain."),
-        .aiRating = 3,
+        .aiRating = 4,
     },
 
     [ABILITY_SAND_STREAM] =
@@ -560,7 +560,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_PURE_POWER] =
     {
         .name = _("Pure Power"),
-        .description = COMPOUND_STRING("Raises Attack."),
+        .description = COMPOUND_STRING("Raises Sp. Attack."),
         .aiRating = 10,
     },
 
@@ -708,7 +708,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Solar Power"),
         .description = COMPOUND_STRING("Powers up in sunshine."),
-        .aiRating = 3,
+        .aiRating = 4,
     },
 
     [ABILITY_QUICK_FEET] =
@@ -859,7 +859,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Ice Body"),
         .description = COMPOUND_STRING("HP recovery in Hail or Snow."),
-        .aiRating = 3,
+        .aiRating = 4,
     },
 
     [ABILITY_SOLID_ROCK] =
@@ -2547,5 +2547,12 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("What could have been..."),
         .aiRating = 8,
         .breakable = TRUE,
+    },
+
+    [ABILITY_ROTTEN] =
+    {
+        .name = _("Rotten"),
+        .description = COMPOUND_STRING("Will not fight."),
+        .aiRating = -3,
     },
 };

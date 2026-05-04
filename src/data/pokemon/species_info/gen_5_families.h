@@ -12422,7 +12422,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
-        .abilities = { ABILITY_FLAME_BODY, ABILITY_NONE, ABILITY_SWARM },
+        .abilities = { ABILITY_FLAME_BODY, ABILITY_SWARM, ABILITY_NONE },
         .bodyColor = BODY_COLOR_WHITE,
         .speciesName = _("Larvesta"),
         .cryId = CRY_LARVESTA,
@@ -12479,16 +12479,16 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sLarvestaLevelUpLearnset,
         .teachableLearnset = sLarvestaTeachableLearnset,
         .eggMoveLearnset = sLarvestaEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 59, SPECIES_VOLCARONA}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 50, SPECIES_VOLCARONA}),
     },
 
     [SPECIES_VOLCARONA] =
     {
         .baseHP        = 85,
         .baseAttack    = 60,
-        .baseDefense   = 65,
-        .baseSpeed     = 100,
-        .baseSpAttack  = 135,
+        .baseDefense   = 75,
+        .baseSpeed     = 105,
+        .baseSpAttack  = 120,
         .baseSpDefense = 105,
         .types = MON_TYPES(TYPE_BUG, TYPE_FIRE),
         .catchRate = 15,
@@ -12501,7 +12501,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
-        .abilities = { ABILITY_FLAME_BODY, ABILITY_NONE, ABILITY_SWARM },
+        .abilities = { ABILITY_FLAME_BODY, ABILITY_SWARM, ABILITY_DROUGHT },
         .bodyColor = BODY_COLOR_WHITE,
         .speciesName = _("Volcarona"),
         .cryId = CRY_VOLCARONA,
@@ -12512,7 +12512,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .description = COMPOUND_STRING(
             "When volcanic ash darkened the\n"
             "atmosphere, it appeared and saved Pokémon\n"
-            "from freezing, Volcarona's fire provided a\n"
+            "from freezing. Volcarona's fire provided a\n"
             "replacement for the sun."),
         .pokemonScale = 259,
         .pokemonOffset = 1,

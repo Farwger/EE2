@@ -172,7 +172,7 @@ uq4_12_t GetTeraMultiplier(struct BattleContext *ctx)
     // STAB is reduced
     else if (ctx->moveType != teraType && IS_BATTLER_OF_BASE_TYPE(ctx->battlerAtk, ctx->moveType))
     {
-        return UQ_4_12(1.25);
+        return UQ_4_12(1.3);
     }
     // Neither base or Tera type.
     else

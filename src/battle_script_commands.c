@@ -10768,7 +10768,10 @@ static u32 ComputeCaptureOdds(u32 wildMonBattler, u32 playerBattler)
     if (ball.guaranteedCapture)
         return CAPTURE_GUARANTEED;
     struct BattlePokemon *battleMon = &gBattleMons[wildMonBattler];
-    u32 odds = (battleMon->maxHP * 3 -  battleMon->hp * 2);
+
+    // (100 * 3) - (50 * 2) = 200; simulating a pokemon with half health
+
+    u32 odds = 200; //(battleMon->maxHP * 3 -  battleMon->hp * 2);
     s32 catchRate;
 
     if (gBattleTypeFlags & BATTLE_TYPE_SAFARI)
@@ -10780,7 +10783,7 @@ static u32 ComputeCaptureOdds(u32 wildMonBattler, u32 playerBattler)
     if (catchRate <= 0)
         catchRate = catchRate + ball.flatBonus;
 
-    odds = odds * catchRate / (battleMon->maxHP * 3);
+    odds = odds * catchRate / 300; //(battleMon->maxHP * 3);
     odds = odds * ball.multiplier / ball.divider;
 
     u8 badgeCount = 0;

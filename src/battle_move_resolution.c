@@ -371,6 +371,7 @@ static enum CancelerResult CancelerImprisoned(struct BattleContext *ctx)
     return CANCELER_RESULT_SUCCESS;
 }
 
+/*
 static enum CancelerResult CancelerConfused(struct BattleContext *ctx)
 {
     if (gBattleMons[ctx->battlerAtk].volatiles.confusionTurns)
@@ -412,6 +413,7 @@ static enum CancelerResult CancelerConfused(struct BattleContext *ctx)
     }
     return CANCELER_RESULT_SUCCESS;
 }
+*/
 
 static enum CancelerResult CancelerGhost(struct BattleContext *ctx) // GHOST in pokemon tower
 {
@@ -427,18 +429,31 @@ static enum CancelerResult CancelerGhost(struct BattleContext *ctx) // GHOST in 
     return CANCELER_RESULT_SUCCESS;
 }
 
+
 static enum CancelerResult CancelerParalyzed(struct BattleContext *ctx)
 {
     if (gBattleMons[ctx->battlerAtk].status1 & STATUS1_PARALYSIS
-        && !(B_MAGIC_GUARD == GEN_4 && IsAbilityAndRecord(ctx->battlerAtk, ctx->abilityAtk, ABILITY_MAGIC_GUARD))
-        && !RandomPercentage(RNG_PARALYSIS, 75))
+        && !(B_MAGIC_GUARD == GEN_4 && IsAbilityAndRecord(ctx->battlerAtk, ctx->abilityAtk, ABILITY_MAGIC_GUARD)))
     {
-        CancelMultiTurnMoves(gBattlerAttacker, SKY_DROP_ATTACKCANCELER_CHECK);
-        gBattlescriptCurrInstr = BattleScript_MoveUsedIsParalyzed;
-        return CANCELER_RESULT_FAILURE;
+        // paralyzeCounter counts up to 2, one each turn.
+        // The victim is fully paralyzed every 3 turns.
+        if (gBattleMons[ctx->battlerAtk].volatiles.paralyzeCounter == 2)
+        {
+            CancelMultiTurnMoves(gBattlerAttacker, SKY_DROP_ATTACKCANCELER_CHECK);
+            gBattlescriptCurrInstr = BattleScript_MoveUsedIsParalyzed;
+
+            gBattleMons[ctx->battlerAtk].volatiles.paralyzeCounter = 0;
+
+            return CANCELER_RESULT_FAILURE;
+        }
+        else
+        {
+            gBattleMons[ctx->battlerAtk].volatiles.paralyzeCounter++;
+        }    
     }
     return CANCELER_RESULT_SUCCESS;
-}
+} 
+
 
 static enum CancelerResult CancelerInfatuation(struct BattleContext *ctx)
 {
@@ -1976,6 +1991,19 @@ static enum CancelerResult CancelerMultihitMoves(struct BattleContext *ctx)
     return CANCELER_RESULT_SUCCESS;
 }
 
+static enum CancelerResult CancelerRotten(struct BattleContext *ctx)
+{
+    if (GetBattlerAbility(ctx->battlerAtk) == ABILITY_ROTTEN)
+    {
+        CancelMultiTurnMoves(ctx->battlerAtk, SKY_DROP_ATTACKCANCELER_CHECK);
+        gBattlerAbility = ctx->battlerAtk;
+        gBattlescriptCurrInstr = BattleScript_RottenInaction;
+        gBattleStruct->moveResultFlags[ctx->battlerDef] |= MOVE_RESULT_MISSED;
+        return CANCELER_RESULT_FAILURE;
+    }
+    return CANCELER_RESULT_SUCCESS;
+}
+
 static enum CancelerResult (*const sMoveSuccessOrderCancelers[])(struct BattleContext *ctx) =
 {
     [CANCELER_CLEAR_FLAGS] = CancelerClearFlags,
@@ -1993,7 +2021,7 @@ static enum CancelerResult (*const sMoveSuccessOrderCancelers[])(struct BattleCo
     [CANCELER_VOLATILE_BLOCKED] = CancelerVolatileBlocked,
     [CANCELER_TAUNTED] = CancelerTaunted,
     [CANCELER_IMPRISONED] = CancelerImprisoned,
-    [CANCELER_CONFUSED] = CancelerConfused,
+  // [CANCELER_CONFUSED] = CancelerConfused,
     [CANCELER_GHOST] = CancelerGhost,
     [CANCELER_PARALYZED] = CancelerParalyzed,
     [CANCELER_INFATUATION] = CancelerInfatuation,
@@ -2023,6 +2051,7 @@ static enum CancelerResult (*const sMoveSuccessOrderCancelers[])(struct BattleCo
     [CANCELER_TARGET_FAILURE] = CancelerTargetFailure,
     [CANCELER_NOT_FULLY_PROTECTED] = CancelerNotFullyProtected,
     [CANCELER_MULTIHIT_MOVES] = CancelerMultihitMoves,
+    [CANCELER_ROTTEN] = CancelerRotten,
 };
 
 enum CancelerResult DoAttackCanceler(void)

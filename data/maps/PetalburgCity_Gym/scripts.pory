@@ -1606,9 +1606,9 @@ script PetalburgCity_Gym_EventScript_MeetLips {
 	applymovement(LOCALID_PETALBURG_GYM_LIPS, PetalburgCity_Gym_Movement_LipsEntry)
 	waitmovement(LOCALID_PETALBURG_GYM_LIPS)
 	delay (5)
-	msgbox (format("I'm back.\p Oh, hi, you must be {PLAYER}.\p I'm Lips. I'm just a Normal Gulpin. But don't worry, I'm not going to eat your food."))
-	msgbox (format("Norman: Lips here came to help us with the … problems in the woods.\p We're still trying to sort it out."))
-	msgbox (format("Lips: It's the 'Rot.' Well, that's what Guljira says.\p He sent me to do what Gulpin are supposed to do. Before we lost our way."))
+	msgbox (format("I'm back.\p Oh, you must be {PLAYER}.\p I'm Lips.\pYeah, I'm just a Normal Gulpin.\pBut don't worry, I'm not going to eat your food."))
+	msgbox (format("Norman: Lips came here to help us with the … problems in the woods.\p We're still trying to sort it out."))
+	msgbox (format("Lips: Guljira wants me to do what Gulpin are supposed to do. Before we lost our way."))
 	closemessage
 	switch (var(VAR_FACING)) {
 		case DIR_SOUTH:
@@ -1632,26 +1632,26 @@ movement PetalburgCity_Gym_Movement_LipsMoveAside {
 }
 
 script PetalburgCity_Gym_EventScript_RecruitLips {
-	msgbox ("Lips: You humans are weird.")
 	msgbox (format("Norman: {PLAYER}, I think that Lips should go with you.\pYou two can go on an adventure, and hopefully find a solution to our problem."))
 	msgbox (format("Lips: It'll be fun.\p Also … you don't have a choice!\p I'm coming with you. Even if you put me in a 'vault,' I'll still be there beside you! That's Gulpin power."))
 	givemon (SPECIES_GULPIN_NORMAL, 6, ITEM_ORAN_BERRY)
     if (var(VAR_RESULT) == 0) {
         call (PetalburgCity_Gym_EventScript_WelcomeLips)
-        msgbox (gText_NicknameThisPokemon, MSGBOX_YESNO)
-        if (var(VAR_RESULT) == YES) {
-            call (Common_EventScript_GetGiftMonPartySlot)
-            call (Common_EventScript_NameReceivedPartyMon)
-        }
+    //    msgbox (gText_NicknameThisPokemon, MSGBOX_YESNO)
+    //    if (var(VAR_RESULT) == YES) {
+    //        call (Common_EventScript_GetGiftMonPartySlot)
+    //        call (Common_EventScript_NameReceivedPartyMon)
+    //    }
     }
     elif (var(VAR_RESULT) == 1) {
-         call (PetalburgCity_Gym_EventScript_WelcomeLips)
-         msgbox (gText_NicknameThisPokemon, MSGBOX_YESNO)
-        if (var(VAR_RESULT) == YES) {
-            call (Common_EventScript_NameReceivedBoxMon)
-        }
-            call (Common_EventScript_TransferredToPC)
-        }
+        call (PetalburgCity_Gym_EventScript_WelcomeLips)
+		call (Common_EventScript_TransferredToPC)
+    //    msgbox (gText_NicknameThisPokemon, MSGBOX_YESNO)
+    //    if (var(VAR_RESULT) == YES) {
+    //        call (Common_EventScript_NameReceivedBoxMon)
+    //    }
+    //        call (Common_EventScript_TransferredToPC)
+    //    }
     else {
         goto (Common_EventScript_NoMoreRoomForPokemon)
     }
@@ -1668,7 +1668,7 @@ script PetalburgCity_Gym_EventScript_RecruitLips {
 }
 
 script PetalburgCity_Gym_EventScript_WelcomeLips {
-    bufferspeciesname (1, SPECIES_GULPIN)
+    bufferspeciesname (1, SPECIES_GULPIN_NORMAL)
 	setflag (FLAG_HIDE_PETALBURG_GYM_LIPS)
     removeobject (LOCALID_PETALBURG_GYM_LIPS)
     playfanfare (4)
@@ -1676,6 +1676,5 @@ script PetalburgCity_Gym_EventScript_WelcomeLips {
     message (format("Lips has joined {PLAYER}'s party!"))
     waitmessage
     waitfanfare
-    bufferspeciesname (0, SPECIES_GULPIN)
     return
 }

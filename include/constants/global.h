@@ -109,11 +109,15 @@ enum Language
 #define ROAMER_COUNT 1 // Number of maximum concurrent active roamers
 
 // Bag constants
-#define BAG_ITEMS_COUNT 30
-#define BAG_KEYITEMS_COUNT 30
-#define BAG_POKEBALLS_COUNT 16
-#define BAG_TMHM_COUNT 64
-#define BAG_BERRIES_COUNT 46
+// Raise or lower keyitem count based on how many key items end up being in the game (and how long they stick around in the bag)
+// The main items count can be raised or lowered to compensate for key items
+// 34 is the number of CCs in the game; set to 35 just in case. Might raise or lower
+// There's no need for 46 different kinds of berries
+#define BAG_ITEMS_COUNT 65 // 30
+#define BAG_KEYITEMS_COUNT 40 // 30
+#define BAG_POKEBALLS_COUNT 10 // 16
+#define BAG_TMHM_COUNT 35 // 64
+#define BAG_BERRIES_COUNT 36 // 46
 
 // Number of facilities for Ranking Hall.
 // 7 facilities for single mode + tower double mode + tower multi mode.

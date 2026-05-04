@@ -369,6 +369,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_PIKE_QUEEN] = { _("PIKE QUEEN") },
     [TRAINER_CLASS_PYRAMID_KING] = { _("PYRAMID KING") },
     [TRAINER_CLASS_RS_PROTAG] = { _("{PKMN} TRAINER") },
+    [TRAINER_CLASS_ROTTER] = { _("Rotter") },
 
     [TRAINER_CLASS_YOUNGSTER_FRLG] =       { _("YOUNGSTER"), 4 },
     [TRAINER_CLASS_BUG_CATCHER_FRLG] =     { _("BUG CATCHER"), 3 },
@@ -5916,7 +5917,7 @@ enum Type GetDynamicMoveType(struct Pokemon *mon, enum Move move, enum BattlerId
                 if (gBattleWeather & B_WEATHER_RAIN && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA)
                     return TYPE_WATER;
                 else if (gBattleWeather & B_WEATHER_SANDSTORM)
-                    return TYPE_ROCK;
+                    return TYPE_GROUND;
                 else if (gBattleWeather & B_WEATHER_SUN && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA)
                     return TYPE_FIRE;
                 else if (gBattleWeather & B_WEATHER_ICY_ANY)

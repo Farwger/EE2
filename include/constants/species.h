@@ -1739,12 +1739,11 @@
 #define SPECIES_VALVORIN_DRAGON                         1622
 #define SPECIES_VALVORIN_DARK                           1623
 #define SPECIES_VALVORIN_FAIRY                          1624
-#define SPECIES_LICKITUNG_GHOST                         1625 // Lickitung form
-#define SPECIES_LICKILICKY_GHOST                        1626 // Lickilicky form
-#define SPECIES_BRENDAN                                 1627 // used for field moves, Kyurem battle, maybe more
-#define SPECIES_MAY                                     1628 //
-#define SPECIES_CALFINE                                 1629 // baby Tauros, Miltank
-#define SPECIES_JOEBY                                   1630 // baby Kangaskhan
+#define SPECIES_LICKIETY                                1625 // Lickitung form
+#define SPECIES_BRENDAN                                 1626 // used for field moves, Kyurem battle, maybe more
+#define SPECIES_MAY                                     1627 //
+#define SPECIES_CALFINE                                 1628 // baby Tauros/Miltank
+#define SPECIES_JOEBY                                   1629 // baby Kangaskhan
 
 #define SPECIES_EGG                                     (SPECIES_JOEBY + 1)
 
